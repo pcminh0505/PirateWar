@@ -9,19 +9,48 @@
 /* Begin PBXBuildFile section */
 		24036E6728A2A2E300F54BBC /* PirateWarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E5728A2A2E200F54BBC /* PirateWarApp.swift */; };
 		24036E6828A2A2E300F54BBC /* PirateWarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E5728A2A2E200F54BBC /* PirateWarApp.swift */; };
-		24036E6928A2A2E300F54BBC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E5828A2A2E200F54BBC /* ContentView.swift */; };
-		24036E6A28A2A2E300F54BBC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E5828A2A2E200F54BBC /* ContentView.swift */; };
+		24036E6928A2A2E300F54BBC /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E5828A2A2E200F54BBC /* LaunchView.swift */; };
+		24036E6A28A2A2E300F54BBC /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E5828A2A2E200F54BBC /* LaunchView.swift */; };
 		24036E6B28A2A2E300F54BBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24036E5928A2A2E300F54BBC /* Assets.xcassets */; };
 		24036E6C28A2A2E300F54BBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24036E5928A2A2E300F54BBC /* Assets.xcassets */; };
+		24036E8A28A2A57700F54BBC /* pirates.json in Resources */ = {isa = PBXBuildFile; fileRef = 24036E8928A2A57700F54BBC /* pirates.json */; };
+		24036E8B28A2A57700F54BBC /* pirates.json in Resources */ = {isa = PBXBuildFile; fileRef = 24036E8928A2A57700F54BBC /* pirates.json */; };
+		24036E8E28A2A59E00F54BBC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 24036E8D28A2A59E00F54BBC /* Lottie */; };
+		24036E9128A2A5A800F54BBC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 24036E9028A2A5A800F54BBC /* Lottie */; };
+		24036E9328A2A7FD00F54BBC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9228A2A7FD00F54BBC /* HomeView.swift */; };
+		24036E9428A2A7FD00F54BBC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9228A2A7FD00F54BBC /* HomeView.swift */; };
+		24036E9728A2AE4300F54BBC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9628A2AE4300F54BBC /* Color.swift */; };
+		24036E9828A2AE4300F54BBC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9628A2AE4300F54BBC /* Color.swift */; };
+		24036E9A28A2B44F00F54BBC /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9928A2B44F00F54BBC /* LottieView.swift */; };
+		24036E9B28A2B44F00F54BBC /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9928A2B44F00F54BBC /* LottieView.swift */; };
+		24036E9D28A2B6D300F54BBC /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9C28A2B6D300F54BBC /* PrimaryButton.swift */; };
+		24036E9E28A2B6D300F54BBC /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9C28A2B6D300F54BBC /* PrimaryButton.swift */; };
+		24036EA028A2C21200F54BBC /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9F28A2C21200F54BBC /* PlayView.swift */; };
+		24036EA128A2C21200F54BBC /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9F28A2C21200F54BBC /* PlayView.swift */; };
+		24036EA328A2C22500F54BBC /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA228A2C22500F54BBC /* LeaderboardView.swift */; };
+		24036EA428A2C22500F54BBC /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA228A2C22500F54BBC /* LeaderboardView.swift */; };
+		24036EA628A2C23600F54BBC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA528A2C23600F54BBC /* SettingsView.swift */; };
+		24036EA728A2C23600F54BBC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA528A2C23600F54BBC /* SettingsView.swift */; };
+		24036EA928A2C25000F54BBC /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA828A2C25000F54BBC /* HowToPlayView.swift */; };
+		24036EAA28A2C25000F54BBC /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA828A2C25000F54BBC /* HowToPlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		24036E5728A2A2E200F54BBC /* PirateWarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateWarApp.swift; sourceTree = "<group>"; };
-		24036E5828A2A2E200F54BBC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		24036E5828A2A2E200F54BBC /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		24036E5928A2A2E300F54BBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24036E5E28A2A2E300F54BBC /* PirateWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PirateWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24036E6428A2A2E300F54BBC /* PirateWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PirateWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24036E6628A2A2E300F54BBC /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		24036E8928A2A57700F54BBC /* pirates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pirates.json; sourceTree = "<group>"; };
+		24036E9228A2A7FD00F54BBC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		24036E9628A2AE4300F54BBC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		24036E9928A2B44F00F54BBC /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		24036E9C28A2B6D300F54BBC /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		24036E9F28A2C21200F54BBC /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
+		24036EA228A2C22500F54BBC /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		24036EA528A2C23600F54BBC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		24036EA828A2C25000F54BBC /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24036E8E28A2A59E00F54BBC /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24036E9128A2A5A800F54BBC /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,8 +85,12 @@
 		24036E5628A2A2E200F54BBC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				24036E9528A2AC7E00F54BBC /* Extensions */,
+				24036E8428A2A52200F54BBC /* Components */,
+				24036E8328A2A51D00F54BBC /* Views */,
+				24036E8228A2A51900F54BBC /* Utils */,
+				24036E8128A2A50E00F54BBC /* Models */,
 				24036E5728A2A2E200F54BBC /* PirateWarApp.swift */,
-				24036E5828A2A2E200F54BBC /* ContentView.swift */,
 				24036E5928A2A2E300F54BBC /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -78,6 +113,59 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		24036E8128A2A50E00F54BBC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		24036E8228A2A51900F54BBC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		24036E8328A2A51D00F54BBC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				24036E5828A2A2E200F54BBC /* LaunchView.swift */,
+				24036E9228A2A7FD00F54BBC /* HomeView.swift */,
+				24036E9F28A2C21200F54BBC /* PlayView.swift */,
+				24036EA828A2C25000F54BBC /* HowToPlayView.swift */,
+				24036EA228A2C22500F54BBC /* LeaderboardView.swift */,
+				24036EA528A2C23600F54BBC /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		24036E8428A2A52200F54BBC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				24036E8528A2A54D00F54BBC /* Lottie */,
+				24036E9C28A2B6D300F54BBC /* PrimaryButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		24036E8528A2A54D00F54BBC /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				24036E8928A2A57700F54BBC /* pirates.json */,
+				24036E9928A2B44F00F54BBC /* LottieView.swift */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		24036E9528A2AC7E00F54BBC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				24036E9628A2AE4300F54BBC /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,6 +182,9 @@
 			dependencies = (
 			);
 			name = "PirateWar (iOS)";
+			packageProductDependencies = (
+				24036E8D28A2A59E00F54BBC /* Lottie */,
+			);
 			productName = "PirateWar (iOS)";
 			productReference = 24036E5E28A2A2E300F54BBC /* PirateWar.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +202,9 @@
 			dependencies = (
 			);
 			name = "PirateWar (macOS)";
+			packageProductDependencies = (
+				24036E9028A2A5A800F54BBC /* Lottie */,
+			);
 			productName = "PirateWar (macOS)";
 			productReference = 24036E6428A2A2E300F54BBC /* PirateWar.app */;
 			productType = "com.apple.product-type.application";
@@ -142,6 +236,10 @@
 				Base,
 			);
 			mainGroup = 24036E5128A2A2E200F54BBC;
+			packageReferences = (
+				24036E8C28A2A59E00F54BBC /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				24036E8F28A2A5A800F54BBC /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 24036E5F28A2A2E300F54BBC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -157,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24036E8A28A2A57700F54BBC /* pirates.json in Resources */,
 				24036E6B28A2A2E300F54BBC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24036E8B28A2A57700F54BBC /* pirates.json in Resources */,
 				24036E6C28A2A2E300F54BBC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,8 +276,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24036E6928A2A2E300F54BBC /* ContentView.swift in Sources */,
+				24036EA328A2C22500F54BBC /* LeaderboardView.swift in Sources */,
+				24036E9D28A2B6D300F54BBC /* PrimaryButton.swift in Sources */,
+				24036E6928A2A2E300F54BBC /* LaunchView.swift in Sources */,
+				24036EA628A2C23600F54BBC /* SettingsView.swift in Sources */,
+				24036E9328A2A7FD00F54BBC /* HomeView.swift in Sources */,
+				24036EA028A2C21200F54BBC /* PlayView.swift in Sources */,
+				24036EA928A2C25000F54BBC /* HowToPlayView.swift in Sources */,
+				24036E9A28A2B44F00F54BBC /* LottieView.swift in Sources */,
 				24036E6728A2A2E300F54BBC /* PirateWarApp.swift in Sources */,
+				24036E9728A2AE4300F54BBC /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,8 +293,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24036E6A28A2A2E300F54BBC /* ContentView.swift in Sources */,
+				24036EA428A2C22500F54BBC /* LeaderboardView.swift in Sources */,
+				24036E9E28A2B6D300F54BBC /* PrimaryButton.swift in Sources */,
+				24036E6A28A2A2E300F54BBC /* LaunchView.swift in Sources */,
+				24036EA728A2C23600F54BBC /* SettingsView.swift in Sources */,
+				24036E9428A2A7FD00F54BBC /* HomeView.swift in Sources */,
+				24036EA128A2C21200F54BBC /* PlayView.swift in Sources */,
+				24036EAA28A2C25000F54BBC /* HowToPlayView.swift in Sources */,
+				24036E9B28A2B44F00F54BBC /* LottieView.swift in Sources */,
 				24036E6828A2A2E300F54BBC /* PirateWarApp.swift in Sources */,
+				24036E9828A2AE4300F54BBC /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +566,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		24036E8C28A2A59E00F54BBC /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		24036E8F28A2A5A800F54BBC /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		24036E8D28A2A59E00F54BBC /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24036E8C28A2A59E00F54BBC /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		24036E9028A2A5A800F54BBC /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24036E8C28A2A59E00F54BBC /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 24036E5228A2A2E200F54BBC /* Project object */;
 }
