@@ -11,7 +11,7 @@ import Foundation
 class ShipCompartment {
     var location: Coordinate = .zero
     var flooded: Bool
-    
+
     init(location: Coordinate, flooded: Bool = false) {
         self.location = location
         self.flooded = flooded
