@@ -33,6 +33,10 @@
 		24036EA728A2C23600F54BBC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA528A2C23600F54BBC /* SettingsView.swift */; };
 		24036EA928A2C25000F54BBC /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA828A2C25000F54BBC /* HowToPlayView.swift */; };
 		24036EAA28A2C25000F54BBC /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA828A2C25000F54BBC /* HowToPlayView.swift */; };
+		C909E45B28A63FA900DD9282 /* Fleet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45A28A63FA900DD9282 /* Fleet.swift */; };
+		C909E45D28A63FFF00DD9282 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45C28A63FFF00DD9282 /* Coordinate.swift */; };
+		C909E45F28A6457E00DD9282 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45E28A6457E00DD9282 /* Ship.swift */; };
+		C909E46128A645AA00DD9282 /* ShipCompartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E46028A645AA00DD9282 /* ShipCompartment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +55,10 @@
 		24036EA228A2C22500F54BBC /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		24036EA528A2C23600F54BBC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		24036EA828A2C25000F54BBC /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
+		C909E45A28A63FA900DD9282 /* Fleet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fleet.swift; sourceTree = "<group>"; };
+		C909E45C28A63FFF00DD9282 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		C909E45E28A6457E00DD9282 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
+		C909E46028A645AA00DD9282 /* ShipCompartment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipCompartment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,11 +93,10 @@
 		24036E5628A2A2E200F54BBC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C909E45928A63D0400DD9282 /* Models */,
 				24036E9528A2AC7E00F54BBC /* Extensions */,
 				24036E8428A2A52200F54BBC /* Components */,
 				24036E8328A2A51D00F54BBC /* Views */,
-				24036E8228A2A51900F54BBC /* Utils */,
-				24036E8128A2A50E00F54BBC /* Models */,
 				24036E5728A2A2E200F54BBC /* PirateWarApp.swift */,
 				24036E5928A2A2E300F54BBC /* Assets.xcassets */,
 			);
@@ -111,20 +118,6 @@
 				24036E6628A2A2E300F54BBC /* macOS.entitlements */,
 			);
 			path = macOS;
-			sourceTree = "<group>";
-		};
-		24036E8128A2A50E00F54BBC /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		24036E8228A2A51900F54BBC /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		24036E8328A2A51D00F54BBC /* Views */ = {
@@ -164,6 +157,17 @@
 				24036E9628A2AE4300F54BBC /* Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C909E45928A63D0400DD9282 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C909E45A28A63FA900DD9282 /* Fleet.swift */,
+				C909E45C28A63FFF00DD9282 /* Coordinate.swift */,
+				C909E45E28A6457E00DD9282 /* Ship.swift */,
+				C909E46028A645AA00DD9282 /* ShipCompartment.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,14 +280,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C909E46128A645AA00DD9282 /* ShipCompartment.swift in Sources */,
 				24036EA328A2C22500F54BBC /* LeaderboardView.swift in Sources */,
+				C909E45F28A6457E00DD9282 /* Ship.swift in Sources */,
 				24036E9D28A2B6D300F54BBC /* PrimaryButton.swift in Sources */,
 				24036E6928A2A2E300F54BBC /* LaunchView.swift in Sources */,
 				24036EA628A2C23600F54BBC /* SettingsView.swift in Sources */,
 				24036E9328A2A7FD00F54BBC /* HomeView.swift in Sources */,
 				24036EA028A2C21200F54BBC /* PlayView.swift in Sources */,
+				C909E45B28A63FA900DD9282 /* Fleet.swift in Sources */,
 				24036EA928A2C25000F54BBC /* HowToPlayView.swift in Sources */,
 				24036E9A28A2B44F00F54BBC /* LottieView.swift in Sources */,
+				C909E45D28A63FFF00DD9282 /* Coordinate.swift in Sources */,
 				24036E6728A2A2E300F54BBC /* PirateWarApp.swift in Sources */,
 				24036E9728A2AE4300F54BBC /* Color.swift in Sources */,
 			);
