@@ -55,7 +55,6 @@ final class Game: ObservableObject {
             selectedZone = location
             zoneStates[location.x][location.y] = .selected
         } else if (selectedZone == location) { // Already selected
-            print("Tapped Inside")
             //see if we hit a ship
             if let hitShip = fleet.ship(at: location) {
                 hitShip.hit(at: location)

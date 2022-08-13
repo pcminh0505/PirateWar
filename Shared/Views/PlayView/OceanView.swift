@@ -20,11 +20,9 @@ struct OceanView: View {
                     let x = index - (y * Game.numCols)
                     let location = Coordinate(x: x, y: y)
                     OceanZoneView(state: $game.zoneStates[x][y])
-                        .frame(height: geo.size.height / CGFloat(Game.numRows))
                         .onTapGesture {
                         game.zoneTapped(location)
                     }
-
                 }
             }
         }

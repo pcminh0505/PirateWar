@@ -14,8 +14,10 @@ struct OceanZoneView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .strokeBorder(.black, lineWidth: 2)
-                .background(.blue)
+                .strokeBorder(.black, lineWidth: 1)
+                .background(Color.theme.ocean)
+                .aspectRatio(1.0, contentMode: .fit)
+                
 
             if (state != .clear) {
                 ScaledShape(shape: Circle(), scale: circleScale)

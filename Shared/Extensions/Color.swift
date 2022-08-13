@@ -22,6 +22,7 @@ struct ColorTheme {
     let primaryText = Color("PrimaryTextColor")
     let secondaryText = Color("SecondaryTextColor")
     
+    let ocean = Color("OceanColor")
     let red = Color("Red")
     let blue = Color("DodgerBlue")
     let midBlue = Color("EastBay")
