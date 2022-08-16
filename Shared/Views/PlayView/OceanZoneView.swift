@@ -22,6 +22,7 @@ struct OceanZoneView: View {
             if (state != .clear) {
                 ScaledShape(shape: Circle(), scale: circleScale)
                     .fill(circleColor())
+                    .zIndex(2)
             }
         }
     }
@@ -30,7 +31,7 @@ struct OceanZoneView: View {
         if (state == .hit) {
             return .red
         } else if (state == .sunk) {
-            return .black
+            return Color.theme.ocean // No display
         } else if (state == .selected) {
             return .green
         } else {

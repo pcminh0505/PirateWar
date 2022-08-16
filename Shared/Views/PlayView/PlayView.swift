@@ -14,9 +14,9 @@ struct PlayView: View {
         VStack {
             ToolbarView()
             OceanView()
-            StatusView(squareSize: UIScreen.main.bounds.width * 0.8 / 10)
+            Spacer()
+//            StatusView(squareSize: UIScreen.main.bounds.width * 0.5 / 10)
         }
-
         .padding()
         .navigationBarHidden(true)
         .background(Color.theme.background)

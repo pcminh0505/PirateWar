@@ -17,32 +17,32 @@ struct StatusView: View {
                 .foregroundColor(Color.theme.primaryText)
                 .font(.title3)
                 .bold()
-            
+
             HStack (alignment: .bottom) {
                 ForEach(game.fleet.ships, id: \.name) { ship in
-                    ZStack {
-                        VStack (spacing: 0) {
-                            ForEach((1...ship.length), id: \.self) { _ in
-                                ZStack {
-                                    Rectangle()
-                                        .strokeBorder(.black, lineWidth: 1)
-                                        .background(Color.theme.ocean)
-                                        .frame(width: squareSize, height: squareSize)
-                                    if (ship.isSunk()) {
-                                        Circle()
-                                            .fill(Color.black)
-                                            .frame(width: squareSize / 2, height: squareSize / 2)
+//                    ZStack {
+                    VStack (spacing: 0) {
+                        ForEach((1...ship.length), id: \.self) { _ in
+                            ZStack {
+                                Rectangle()
+                                    .strokeBorder(.black, lineWidth: 1)
+                                    .background(Color.theme.ocean)
+                                    .frame(width: squareSize, height: squareSize)
+                                if (ship.isSunk()) {
+                                    Circle()
+                                        .fill(Color.black)
+                                        .frame(width: squareSize / 2, height: squareSize / 2)
 
-                                    }
                                 }
                             }
                         }
-                            .frame(maxWidth: .infinity, alignment: .center)
-                        Image(ship.name)
-                            .resizable()
-                            .frame(width: squareSize, height: squareSize * CGFloat(ship.length))
-                            .clipped()
                     }
+                        .frame(maxWidth: .infinity, alignment: .center)
+//                        Image(ship.name)
+//                            .resizable()
+//                            .frame(width: squareSize, height: squareSize * CGFloat(ship.length))
+//                            .clipped()
+//                    }
                 }
             }
         }

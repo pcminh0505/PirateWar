@@ -24,6 +24,10 @@ class Ship {
             compartments.append(ShipCompartment(location: coordinate))
         }
     }
+    
+    func isVertical() -> Bool {
+        return compartments[0].location.x == compartments[1].location.x
+    }
 
     // Return all the coordinates that the ship occupies
     func coordinates() -> [Coordinate] {
