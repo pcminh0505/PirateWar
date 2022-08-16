@@ -45,9 +45,7 @@ class Ship {
     func hit(at location: Coordinate) {
         if let compartment = compartments.first(where: { $0.location == location }) {
             compartment.flooded = true
-//            return true
         }
-//        return false
     }
 }
 

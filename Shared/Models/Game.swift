@@ -33,7 +33,7 @@ final class Game: ObservableObject {
      */
     func reset() {
         self.zoneStates = defaultZoneStates()
-        self.fleet.deploy(on: self.ocean)
+        self.fleet.randomDeploy(on: self.ocean)
         self.message = ""
         self.selectedZone = Coordinate.unset
     }

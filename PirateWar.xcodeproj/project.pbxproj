@@ -44,6 +44,7 @@
 		C909E45D28A63FFF00DD9282 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45C28A63FFF00DD9282 /* Coordinate.swift */; };
 		C909E45F28A6457E00DD9282 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45E28A6457E00DD9282 /* Ship.swift */; };
 		C909E46128A645AA00DD9282 /* ShipCompartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E46028A645AA00DD9282 /* ShipCompartment.swift */; };
+		C97FA52328AB54430085DFC4 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97FA52228AB54430085DFC4 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		C909E45C28A63FFF00DD9282 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		C909E45E28A6457E00DD9282 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		C909E46028A645AA00DD9282 /* ShipCompartment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipCompartment.swift; sourceTree = "<group>"; };
+		C97FA52228AB54430085DFC4 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				2447A16B28A67112008CFD49 /* ToolbarView.swift */,
 				2447A16D28A6713B008CFD49 /* OceanView.swift */,
 				2447A16F28A6C9C3008CFD49 /* StatusView.swift */,
+				C97FA52228AB54430085DFC4 /* TestView.swift */,
 			);
 			path = PlayView;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				C909E45D28A63FFF00DD9282 /* Coordinate.swift in Sources */,
 				2447A16E28A6713B008CFD49 /* OceanView.swift in Sources */,
 				2447A16A28A670E2008CFD49 /* OceanZoneView.swift in Sources */,
+				C97FA52328AB54430085DFC4 /* TestView.swift in Sources */,
 				24036E6728A2A2E300F54BBC /* PirateWarApp.swift in Sources */,
 				2447A16C28A67112008CFD49 /* ToolbarView.swift in Sources */,
 				24036E9728A2AE4300F54BBC /* Color.swift in Sources */,

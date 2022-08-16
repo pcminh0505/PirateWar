@@ -36,7 +36,7 @@ class Fleet {
     }
 
     // Deploy the fleet in random locations on the given ocean
-    func deploy(on ocean: Ocean) {
+    func randomDeploy(on ocean: Ocean) {
         ships.removeAll()
         for ship in Fleet.shipsInFleet {
             //get all the possible locations that the ship can fit in the ocean without intersecting
@@ -55,6 +55,11 @@ class Fleet {
             let deployedShip = Ship(ship.name, coordinates: shipCoordinates)
             ships.append(deployedShip)
         }
+    }
+    
+    func dragDeploy(on ocean: Ocean, ship: String, location: [Coordinate]) {
+        let deployedShip = Ship(ship, coordinates: location)
+        ships.append(deployedShip)
     }
 
     // Returns all the Coordinates of the deployed fleet in an array
