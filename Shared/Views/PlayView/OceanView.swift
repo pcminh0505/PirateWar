@@ -25,6 +25,16 @@ struct OceanView: View {
                     }
                 }
             }
+            
+//            VStack {
+//                ForEach(game.fleet.ships, id: \.name) { ship in
+//                    Image(ship.name)
+//                        .resizable()
+//                        .scaledToFit()
+//                }
+//            }
+            
+            
         }
     }
 }

@@ -31,13 +31,15 @@
 		24036EA728A2C23600F54BBC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA528A2C23600F54BBC /* SettingsView.swift */; };
 		24036EA928A2C25000F54BBC /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA828A2C25000F54BBC /* HowToPlayView.swift */; };
 		24036EAA28A2C25000F54BBC /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA828A2C25000F54BBC /* HowToPlayView.swift */; };
+		2410CC2728A7A6E700749E53 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2410CC2628A7A6E700749E53 /* AudioManager.swift */; };
 		2447A16328A66AEC008CFD49 /* Ocean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16228A66AEC008CFD49 /* Ocean.swift */; };
 		2447A16528A66BDC008CFD49 /* OceanZoneState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16428A66BDC008CFD49 /* OceanZoneState.swift */; };
 		2447A16728A66C04008CFD49 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16628A66C04008CFD49 /* Game.swift */; };
 		2447A16A28A670E2008CFD49 /* OceanZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16928A670E2008CFD49 /* OceanZoneView.swift */; };
 		2447A16C28A67112008CFD49 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16B28A67112008CFD49 /* ToolbarView.swift */; };
 		2447A16E28A6713B008CFD49 /* OceanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16D28A6713B008CFD49 /* OceanView.swift */; };
-		2447A17028A6C9C3008CFD49 /* FleetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16F28A6C9C3008CFD49 /* FleetView.swift */; };
+		2447A17028A6C9C3008CFD49 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16F28A6C9C3008CFD49 /* StatusView.swift */; };
+		247B0B4828AAB2E300273173 /* AIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B4728AAB2E300273173 /* AIModel.swift */; };
 		C909E45B28A63FA900DD9282 /* Fleet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45A28A63FA900DD9282 /* Fleet.swift */; };
 		C909E45D28A63FFF00DD9282 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45C28A63FFF00DD9282 /* Coordinate.swift */; };
 		C909E45F28A6457E00DD9282 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45E28A6457E00DD9282 /* Ship.swift */; };
@@ -59,13 +61,15 @@
 		24036EA228A2C22500F54BBC /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		24036EA528A2C23600F54BBC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		24036EA828A2C25000F54BBC /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
+		2410CC2628A7A6E700749E53 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		2447A16228A66AEC008CFD49 /* Ocean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ocean.swift; sourceTree = "<group>"; };
 		2447A16428A66BDC008CFD49 /* OceanZoneState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanZoneState.swift; sourceTree = "<group>"; };
 		2447A16628A66C04008CFD49 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		2447A16928A670E2008CFD49 /* OceanZoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanZoneView.swift; sourceTree = "<group>"; };
 		2447A16B28A67112008CFD49 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		2447A16D28A6713B008CFD49 /* OceanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanView.swift; sourceTree = "<group>"; };
-		2447A16F28A6C9C3008CFD49 /* FleetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetView.swift; sourceTree = "<group>"; };
+		2447A16F28A6C9C3008CFD49 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		247B0B4728AAB2E300273173 /* AIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIModel.swift; sourceTree = "<group>"; };
 		C909E45A28A63FA900DD9282 /* Fleet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fleet.swift; sourceTree = "<group>"; };
 		C909E45C28A63FFF00DD9282 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		C909E45E28A6457E00DD9282 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 		24036E5628A2A2E200F54BBC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2410CC2528A7A5B200749E53 /* Managers */,
 				C909E45928A63D0400DD9282 /* Models */,
 				24036E9528A2AC7E00F54BBC /* Extensions */,
 				24036E8428A2A52200F54BBC /* Components */,
@@ -169,6 +174,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		2410CC2528A7A5B200749E53 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2410CC2628A7A6E700749E53 /* AudioManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		2447A16828A67081008CFD49 /* PlayView */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,7 +189,7 @@
 				2447A16928A670E2008CFD49 /* OceanZoneView.swift */,
 				2447A16B28A67112008CFD49 /* ToolbarView.swift */,
 				2447A16D28A6713B008CFD49 /* OceanView.swift */,
-				2447A16F28A6C9C3008CFD49 /* FleetView.swift */,
+				2447A16F28A6C9C3008CFD49 /* StatusView.swift */,
 			);
 			path = PlayView;
 			sourceTree = "<group>";
@@ -185,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				C909E45A28A63FA900DD9282 /* Fleet.swift */,
+				247B0B4728AAB2E300273173 /* AIModel.swift */,
 				C909E45C28A63FFF00DD9282 /* Coordinate.swift */,
 				C909E45E28A6457E00DD9282 /* Ship.swift */,
 				C909E46028A645AA00DD9282 /* ShipCompartment.swift */,
@@ -308,13 +322,15 @@
 				C909E46128A645AA00DD9282 /* ShipCompartment.swift in Sources */,
 				24036EA328A2C22500F54BBC /* LeaderboardView.swift in Sources */,
 				C909E45F28A6457E00DD9282 /* Ship.swift in Sources */,
+				247B0B4828AAB2E300273173 /* AIModel.swift in Sources */,
 				24036E6928A2A2E300F54BBC /* LaunchView.swift in Sources */,
 				24036EA628A2C23600F54BBC /* SettingsView.swift in Sources */,
+				2410CC2728A7A6E700749E53 /* AudioManager.swift in Sources */,
 				24036E9328A2A7FD00F54BBC /* HomeView.swift in Sources */,
 				2447A16328A66AEC008CFD49 /* Ocean.swift in Sources */,
 				24036EA028A2C21200F54BBC /* PlayView.swift in Sources */,
 				C909E45B28A63FA900DD9282 /* Fleet.swift in Sources */,
-				2447A17028A6C9C3008CFD49 /* FleetView.swift in Sources */,
+				2447A17028A6C9C3008CFD49 /* StatusView.swift in Sources */,
 				24036EA928A2C25000F54BBC /* HowToPlayView.swift in Sources */,
 				2447A16528A66BDC008CFD49 /* OceanZoneState.swift in Sources */,
 				24036E9A28A2B44F00F54BBC /* LottieView.swift in Sources */,

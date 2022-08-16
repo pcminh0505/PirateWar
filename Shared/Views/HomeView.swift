@@ -15,10 +15,9 @@ struct HomeView: View {
         "settings": "⚙️ Settings",
     ]
     private var playOptions: [String: String] = [
-        "pvp": "👥 Two Player (PvP)",
         "bot": "🤖 Single Player (vs AI)",
         "practice": "🎯 Practice",
-        "back": "Back",
+        "back": "⬅ Back",
     ]
 
     @State private var menuSelection: String? = nil
@@ -61,7 +60,7 @@ struct HomeView_Previews: PreviewProvider {
 
 extension HomeView {
     private var menuList: some View {
-        VStack (alignment: .leading, spacing: 10) {
+        VStack (alignment: .leading, spacing: 20) {
             NavigationLink(tag: "instruction", selection: $menuSelection) {
                 HowToPlayView()
             } label: {
@@ -77,8 +76,7 @@ extension HomeView {
             } label: {
                 EmptyView()
             }
-
-
+            
             Button {
                 isSelectingPlayMode.toggle()
             } label: {
@@ -137,12 +135,7 @@ extension HomeView {
         }
     }
     private var playList: some View {
-        VStack (alignment: .leading, spacing: 10) {
-//            NavigationLink(tag: "pvp", selection: $playSelection) {
-//                PlayView()
-//            } label: {
-//                EmptyView()
-//            }
+        VStack (alignment: .leading, spacing: 20) {
 //            NavigationLink(tag: "bot", selection: $playSelection) {
 //                PlayView()
 //            } label: {
@@ -153,21 +146,7 @@ extension HomeView {
             } label: {
                 EmptyView()
             }
-
-            Button {
-                playSelection = "pvp"
-            } label: {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.theme.primaryText, lineWidth: 3)
-                    .overlay(
-                    Text(playOptions["pvp"]!)
-                        .font(.headline)
-                )
-                    .frame(height: 55)
-            }
-                .controlSize(.regular)
-                .cornerRadius(20)
-
+            
             Button {
                 playSelection = "bot"
             } label: {
@@ -210,6 +189,7 @@ extension HomeView {
                 .controlSize(.regular)
                 .cornerRadius(20)
         }
+        .padding(.top, -55)
     }
 
 }

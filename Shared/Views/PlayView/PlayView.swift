@@ -14,11 +14,12 @@ struct PlayView: View {
         VStack {
             ToolbarView()
             OceanView()
-            FleetView(squareSize: UIScreen.main.bounds.width * 0.6 / 10)
+            StatusView(squareSize: UIScreen.main.bounds.width * 0.8 / 10)
         }
 
         .padding()
         .navigationBarHidden(true)
+        .background(Color.theme.background)
         
     }
 }
@@ -26,6 +27,8 @@ struct PlayView: View {
 struct PlayView_Previews: PreviewProvider {
     static var previews: some View {
         PlayView()
+            .preferredColorScheme(.dark)
             .environmentObject(Game())
+            .previewInterfaceOrientation(.portrait)
     }
 }

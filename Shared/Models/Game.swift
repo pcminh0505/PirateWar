@@ -61,7 +61,7 @@ final class Game: ObservableObject {
                 zoneStates[location.x][location.y] = .hit
 
                 if (hitShip.isSunk()) {
-                    message = "You sunk my \(hitShip.name)!"
+                    message = "🔥 \(hitShip.name) sunk!"
                     hitShip.coordinates().forEach { shipCompartment in
                         zoneStates[shipCompartment.x][shipCompartment.y] = .sunk
                     }
