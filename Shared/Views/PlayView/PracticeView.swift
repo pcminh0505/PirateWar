@@ -1,5 +1,5 @@
 //
-//  PlayView.swift
+//  PracticeView.swift
 //  PirateWar
 //
 //  Created by Minh Pham on 09/08/2022.
@@ -7,13 +7,14 @@
 
 import SwiftUI
 
-struct PlayView: View {
+struct PracticeView: View {
     @EnvironmentObject var game: Game
     
     var body: some View {
         VStack {
             ToolbarView()
             OceanView()
+//            TestView()
             Spacer()
 //            StatusView(squareSize: UIScreen.main.bounds.width * 0.5 / 10)
         }
@@ -24,9 +25,9 @@ struct PlayView: View {
     }
 }
 
-struct PlayView_Previews: PreviewProvider {
+struct Practice_Previews: PreviewProvider {
     static var previews: some View {
-        PlayView()
+        PracticeView()
             .preferredColorScheme(.dark)
             .environmentObject(Game())
             .previewInterfaceOrientation(.portrait)

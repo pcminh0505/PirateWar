@@ -136,13 +136,13 @@ extension HomeView {
     }
     private var playList: some View {
         VStack (alignment: .leading, spacing: 20) {
-//            NavigationLink(tag: "bot", selection: $playSelection) {
-//                PlayView()
-//            } label: {
-//                EmptyView()
-//            }
+            NavigationLink(tag: "bot", selection: $playSelection) {
+                BotView()
+            } label: {
+                EmptyView()
+            }
             NavigationLink(tag: "practice", selection: $playSelection) {
-                PlayView()
+                PracticeView()
             } label: {
                 EmptyView()
             }

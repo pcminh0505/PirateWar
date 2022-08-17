@@ -23,8 +23,7 @@
 		24036E9828A2AE4300F54BBC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9628A2AE4300F54BBC /* Color.swift */; };
 		24036E9A28A2B44F00F54BBC /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9928A2B44F00F54BBC /* LottieView.swift */; };
 		24036E9B28A2B44F00F54BBC /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9928A2B44F00F54BBC /* LottieView.swift */; };
-		24036EA028A2C21200F54BBC /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9F28A2C21200F54BBC /* PlayView.swift */; };
-		24036EA128A2C21200F54BBC /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9F28A2C21200F54BBC /* PlayView.swift */; };
+		24036EA028A2C21200F54BBC /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036E9F28A2C21200F54BBC /* PracticeView.swift */; };
 		24036EA328A2C22500F54BBC /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA228A2C22500F54BBC /* LeaderboardView.swift */; };
 		24036EA428A2C22500F54BBC /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA228A2C22500F54BBC /* LeaderboardView.swift */; };
 		24036EA628A2C23600F54BBC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA528A2C23600F54BBC /* SettingsView.swift */; };
@@ -40,11 +39,17 @@
 		2447A16E28A6713B008CFD49 /* OceanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16D28A6713B008CFD49 /* OceanView.swift */; };
 		2447A17028A6C9C3008CFD49 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16F28A6C9C3008CFD49 /* StatusView.swift */; };
 		247B0B4828AAB2E300273173 /* AIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B4728AAB2E300273173 /* AIModel.swift */; };
+		247B0B5128ABFDFB00273173 /* DraggableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5028ABFDFB00273173 /* DraggableImage.swift */; };
+		247B0B5228ABFDFB00273173 /* DraggableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5028ABFDFB00273173 /* DraggableImage.swift */; };
+		247B0B5428AC9FFE00273173 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5328AC9FFE00273173 /* HapticManager.swift */; };
+		247B0B5528AC9FFE00273173 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5328AC9FFE00273173 /* HapticManager.swift */; };
+		247B0B5B28ACDD9600273173 /* BotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5A28ACDD9600273173 /* BotView.swift */; };
+		247B0B5C28ACDD9600273173 /* BotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5A28ACDD9600273173 /* BotView.swift */; };
 		C909E45B28A63FA900DD9282 /* Fleet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45A28A63FA900DD9282 /* Fleet.swift */; };
 		C909E45D28A63FFF00DD9282 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45C28A63FFF00DD9282 /* Coordinate.swift */; };
 		C909E45F28A6457E00DD9282 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45E28A6457E00DD9282 /* Ship.swift */; };
 		C909E46128A645AA00DD9282 /* ShipCompartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E46028A645AA00DD9282 /* ShipCompartment.swift */; };
-		C97FA52328AB54430085DFC4 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97FA52228AB54430085DFC4 /* TestView.swift */; };
+		C97FA52328AB54430085DFC4 /* DeployView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97FA52228AB54430085DFC4 /* DeployView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +63,7 @@
 		24036E9228A2A7FD00F54BBC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		24036E9628A2AE4300F54BBC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		24036E9928A2B44F00F54BBC /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		24036E9F28A2C21200F54BBC /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
+		24036E9F28A2C21200F54BBC /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
 		24036EA228A2C22500F54BBC /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		24036EA528A2C23600F54BBC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		24036EA828A2C25000F54BBC /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
@@ -71,11 +76,14 @@
 		2447A16D28A6713B008CFD49 /* OceanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanView.swift; sourceTree = "<group>"; };
 		2447A16F28A6C9C3008CFD49 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		247B0B4728AAB2E300273173 /* AIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIModel.swift; sourceTree = "<group>"; };
+		247B0B5028ABFDFB00273173 /* DraggableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableImage.swift; sourceTree = "<group>"; };
+		247B0B5328AC9FFE00273173 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		247B0B5A28ACDD9600273173 /* BotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotView.swift; sourceTree = "<group>"; };
 		C909E45A28A63FA900DD9282 /* Fleet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fleet.swift; sourceTree = "<group>"; };
 		C909E45C28A63FFF00DD9282 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		C909E45E28A6457E00DD9282 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		C909E46028A645AA00DD9282 /* ShipCompartment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipCompartment.swift; sourceTree = "<group>"; };
-		C97FA52228AB54430085DFC4 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		C97FA52228AB54430085DFC4 /* DeployView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +162,11 @@
 		24036E8428A2A52200F54BBC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				247B0B5928ACDD4D00273173 /* FleetDeploy */,
+				247B0B5828ACDD2C00273173 /* Ocean */,
+				247B0B5728ACDD0300273173 /* GameStatus */,
 				24036E8528A2A54D00F54BBC /* Lottie */,
+				247B0B5028ABFDFB00273173 /* DraggableImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -180,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				2410CC2628A7A6E700749E53 /* AudioManager.swift */,
+				247B0B5328AC9FFE00273173 /* HapticManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -187,14 +200,36 @@
 		2447A16828A67081008CFD49 /* PlayView */ = {
 			isa = PBXGroup;
 			children = (
-				24036E9F28A2C21200F54BBC /* PlayView.swift */,
-				2447A16928A670E2008CFD49 /* OceanZoneView.swift */,
-				2447A16B28A67112008CFD49 /* ToolbarView.swift */,
-				2447A16D28A6713B008CFD49 /* OceanView.swift */,
-				2447A16F28A6C9C3008CFD49 /* StatusView.swift */,
-				C97FA52228AB54430085DFC4 /* TestView.swift */,
+				24036E9F28A2C21200F54BBC /* PracticeView.swift */,
+				247B0B5A28ACDD9600273173 /* BotView.swift */,
 			);
 			path = PlayView;
+			sourceTree = "<group>";
+		};
+		247B0B5728ACDD0300273173 /* GameStatus */ = {
+			isa = PBXGroup;
+			children = (
+				2447A16F28A6C9C3008CFD49 /* StatusView.swift */,
+				2447A16B28A67112008CFD49 /* ToolbarView.swift */,
+			);
+			path = GameStatus;
+			sourceTree = "<group>";
+		};
+		247B0B5828ACDD2C00273173 /* Ocean */ = {
+			isa = PBXGroup;
+			children = (
+				2447A16928A670E2008CFD49 /* OceanZoneView.swift */,
+				2447A16D28A6713B008CFD49 /* OceanView.swift */,
+			);
+			path = Ocean;
+			sourceTree = "<group>";
+		};
+		247B0B5928ACDD4D00273173 /* FleetDeploy */ = {
+			isa = PBXGroup;
+			children = (
+				C97FA52228AB54430085DFC4 /* DeployView.swift */,
+			);
+			path = FleetDeploy;
 			sourceTree = "<group>";
 		};
 		C909E45928A63D0400DD9282 /* Models */ = {
@@ -323,15 +358,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C909E46128A645AA00DD9282 /* ShipCompartment.swift in Sources */,
+				247B0B5428AC9FFE00273173 /* HapticManager.swift in Sources */,
 				24036EA328A2C22500F54BBC /* LeaderboardView.swift in Sources */,
 				C909E45F28A6457E00DD9282 /* Ship.swift in Sources */,
 				247B0B4828AAB2E300273173 /* AIModel.swift in Sources */,
 				24036E6928A2A2E300F54BBC /* LaunchView.swift in Sources */,
 				24036EA628A2C23600F54BBC /* SettingsView.swift in Sources */,
 				2410CC2728A7A6E700749E53 /* AudioManager.swift in Sources */,
+				247B0B5B28ACDD9600273173 /* BotView.swift in Sources */,
 				24036E9328A2A7FD00F54BBC /* HomeView.swift in Sources */,
 				2447A16328A66AEC008CFD49 /* Ocean.swift in Sources */,
-				24036EA028A2C21200F54BBC /* PlayView.swift in Sources */,
+				24036EA028A2C21200F54BBC /* PracticeView.swift in Sources */,
 				C909E45B28A63FA900DD9282 /* Fleet.swift in Sources */,
 				2447A17028A6C9C3008CFD49 /* StatusView.swift in Sources */,
 				24036EA928A2C25000F54BBC /* HowToPlayView.swift in Sources */,
@@ -341,7 +378,8 @@
 				C909E45D28A63FFF00DD9282 /* Coordinate.swift in Sources */,
 				2447A16E28A6713B008CFD49 /* OceanView.swift in Sources */,
 				2447A16A28A670E2008CFD49 /* OceanZoneView.swift in Sources */,
-				C97FA52328AB54430085DFC4 /* TestView.swift in Sources */,
+				247B0B5128ABFDFB00273173 /* DraggableImage.swift in Sources */,
+				C97FA52328AB54430085DFC4 /* DeployView.swift in Sources */,
 				24036E6728A2A2E300F54BBC /* PirateWarApp.swift in Sources */,
 				2447A16C28A67112008CFD49 /* ToolbarView.swift in Sources */,
 				24036E9728A2AE4300F54BBC /* Color.swift in Sources */,
@@ -355,10 +393,12 @@
 				24036EA428A2C22500F54BBC /* LeaderboardView.swift in Sources */,
 				24036E6A28A2A2E300F54BBC /* LaunchView.swift in Sources */,
 				24036EA728A2C23600F54BBC /* SettingsView.swift in Sources */,
+				247B0B5228ABFDFB00273173 /* DraggableImage.swift in Sources */,
 				24036E9428A2A7FD00F54BBC /* HomeView.swift in Sources */,
-				24036EA128A2C21200F54BBC /* PlayView.swift in Sources */,
 				24036EAA28A2C25000F54BBC /* HowToPlayView.swift in Sources */,
 				24036E9B28A2B44F00F54BBC /* LottieView.swift in Sources */,
+				247B0B5528AC9FFE00273173 /* HapticManager.swift in Sources */,
+				247B0B5C28ACDD9600273173 /* BotView.swift in Sources */,
 				24036E6828A2A2E300F54BBC /* PirateWarApp.swift in Sources */,
 				24036E9828A2AE4300F54BBC /* Color.swift in Sources */,
 			);

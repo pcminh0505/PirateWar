@@ -27,16 +27,19 @@ struct OceanView: View {
                     }
                 }
                 ForEach(game.fleet.ships, id: \.name) { ship in
-                    let baseOffsetX = geo.size.width * 0.05
-                    let offsetX = ship.isVertical() ? baseOffsetX + CGFloat(ship.compartments[0].location.x) * geo.size.width * 0.1 : baseOffsetX + CGFloat(ship.compartments[0].location.y) * geo.size.width * 0.1
-                    let baseOffsetY = ship.length % 2 == 0 ? geo.size.width * 0.1 * CGFloat(ship.length / 2):
-                        geo.size.width * 0.1 * CGFloat(ship.length / 2) + geo.size.width * 0.05
-                    
-                    let offsetY = ship.isVertical() ? baseOffsetY + CGFloat(ship.compartments[0].location.y) * geo.size.width * 0.1 : -(baseOffsetY + CGFloat(ship.compartments[0].location.x) * geo.size.width * 0.1)
+                    let squareSize: CGFloat = geo.size.width * 0.1
+
+                    let baseOffsetX = squareSize / 2
+
+                    let offsetX = ship.isVertical() ? baseOffsetX + CGFloat(ship.compartments[0].location.x) * squareSize: baseOffsetX + CGFloat(ship.compartments[0].location.y) * squareSize
+
+                    let baseOffsetY = ship.length % 2 == 0 ? squareSize * CGFloat(ship.length / 2): squareSize * CGFloat(ship.length / 2) + squareSize / 2
+
+                    let offsetY = ship.isVertical() ? baseOffsetY + CGFloat(ship.compartments[0].location.y) * squareSize: -(baseOffsetY + CGFloat(ship.compartments[0].location.x) * squareSize)
 
                     Image(ship.name)
                         .resizable()
-                        .frame(width: geo.size.width * 0.1, height: geo.size.width * 0.1 * CGFloat(ship.length))
+                        .frame(width: squareSize, height: squareSize * CGFloat(ship.length))
                         .clipped()
                         .position(x: geo.frame(in: .local).minX, y: ship.isVertical() ? geo.frame(in: .local).minY : geo.frame(in: .local).maxY)
                         .offset(x: offsetX,
