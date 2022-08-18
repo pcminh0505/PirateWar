@@ -14,7 +14,6 @@ struct PracticeView: View {
         VStack {
             ToolbarView()
             OceanView()
-//            TestView()
             Spacer()
 //            StatusView(squareSize: UIScreen.main.bounds.width * 0.5 / 10)
         }

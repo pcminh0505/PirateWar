@@ -1,0 +1,83 @@
+//
+//  DeployView.swift
+//  PirateWar
+//
+//  Created by Minh Pham on 17/08/2022.
+//
+
+import SwiftUI
+
+struct DeployView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+    @State var fleet = [[Coordinate]](repeating: [.zero], count: 5)
+    @State var shipStatus = [(isVertical: Bool, topLocation: Coordinate)](repeating: (isVertical: true, topLocation: .zero), count: 5)
+    @State var shipBaseCoordinate: [Coordinate] = [
+        Coordinate(x: 0, y: 0),
+        Coordinate(x: 1, y: 0),
+        Coordinate(x: 2, y: 0),
+        Coordinate(x: 3, y: 0),
+        Coordinate(x: 4, y: 0),
+    ]
+
+
+    var body: some View {
+
+        VStack {
+            Text("Deploy your fleet 📌")
+                .font(.title2)
+                .bold()
+                .foregroundColor(Color.theme.primaryText)
+                .padding(.bottom, 20)
+            VStack (alignment: .leading, spacing: 10) {
+                Text("1. Drag the ship to your prefered position")
+                Text("2. Tap to rotate the ship horizontally or vertically")
+                Text("3. Note that you can only drag/rotate a ship on a valid postion (within the board and not overlapping with others")
+                Text("4. Need reference? Refer to this link")
+            }
+                .font(.headline)
+                .foregroundColor(Color.theme.primaryText)
+            Spacer()
+            DeployOceanView(shipBaseCoordinate: shipBaseCoordinate, fleet: $fleet, shipStatus: $shipStatus)
+            Spacer()
+            HStack {
+                Button (action: { presentationMode.wrappedValue.dismiss() }) {
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.theme.primaryText, lineWidth: 3)
+                        .overlay(
+                        Text("↩️ Back")
+                            .font(.headline)
+                    )
+                        .frame(height: 55)
+                }
+                    .controlSize(.regular)
+                    .cornerRadius(20)
+
+                Button {
+                    print("Start Game")
+                } label: {
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.theme.primaryText, lineWidth: 3)
+                        .overlay(
+                        Text("🏴‍☠️ Start Game")
+                            .font(.headline)
+                    )
+                        .frame(height: 55)
+                }
+                    .controlSize(.regular)
+                    .cornerRadius(20)
+            }
+                .background(Color.theme.background)
+                .foregroundColor(Color.theme.primaryText)
+        }
+            .padding()
+            .navigationBarHidden(true)
+            .background(Color.theme.background)
+    }
+}
+
+struct DeployView_Previews: PreviewProvider {
+    static var previews: some View {
+        DeployView()
+    }
+}

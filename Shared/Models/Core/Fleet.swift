@@ -57,9 +57,11 @@ class Fleet {
         }
     }
     
-    func dragDeploy(on ocean: Ocean, ship: String, location: [Coordinate]) {
-        let deployedShip = Ship(ship, coordinates: location)
-        ships.append(deployedShip)
+    func dragDeploy(on ocean: Ocean, deployedShips: [Ship]) {
+        ships.removeAll()
+        for ship in deployedShips {
+            ships.append(ship)
+        }
     }
 
     // Returns all the Coordinates of the deployed fleet in an array

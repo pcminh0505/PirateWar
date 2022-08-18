@@ -31,7 +31,7 @@ struct LaunchView: View {
                     LottieView(name: "pirates", loopMode: .playOnce)
                     Text("🏴‍☠️ Pirate War 📌")
                         .foregroundColor(Color.theme.primaryText).opacity(opacity)
-                        .font(.headline)
+                        .font(.title2)
                         .padding(.top, 320)
                         .onAppear {
                         // Adjust in and out opacity animation

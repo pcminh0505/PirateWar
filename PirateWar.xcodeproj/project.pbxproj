@@ -42,13 +42,15 @@
 		247B0B5128ABFDFB00273173 /* DraggableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5028ABFDFB00273173 /* DraggableImage.swift */; };
 		247B0B5428AC9FFE00273173 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5328AC9FFE00273173 /* HapticManager.swift */; };
 		247B0B5528AC9FFE00273173 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5328AC9FFE00273173 /* HapticManager.swift */; };
-		247B0B5B28ACDD9600273173 /* BotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5A28ACDD9600273173 /* BotView.swift */; };
-		247B0B5C28ACDD9600273173 /* BotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5A28ACDD9600273173 /* BotView.swift */; };
+		247B0B5B28ACDD9600273173 /* DeployView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5A28ACDD9600273173 /* DeployView.swift */; };
+		247B0B5C28ACDD9600273173 /* DeployView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5A28ACDD9600273173 /* DeployView.swift */; };
+		24C32E3E28AE372100EC14FC /* HumanGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C32E3D28AE372100EC14FC /* HumanGame.swift */; };
+		24C32E4128AE540F00EC14FC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C32E4028AE540F00EC14FC /* Location.swift */; };
 		C909E45B28A63FA900DD9282 /* Fleet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45A28A63FA900DD9282 /* Fleet.swift */; };
 		C909E45D28A63FFF00DD9282 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45C28A63FFF00DD9282 /* Coordinate.swift */; };
 		C909E45F28A6457E00DD9282 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45E28A6457E00DD9282 /* Ship.swift */; };
 		C909E46128A645AA00DD9282 /* ShipCompartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E46028A645AA00DD9282 /* ShipCompartment.swift */; };
-		C97FA52328AB54430085DFC4 /* DeployView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97FA52228AB54430085DFC4 /* DeployView.swift */; };
+		C97FA52328AB54430085DFC4 /* DeployOceanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97FA52228AB54430085DFC4 /* DeployOceanView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,12 +79,14 @@
 		247B0B4728AAB2E300273173 /* AIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIModel.swift; sourceTree = "<group>"; };
 		247B0B5028ABFDFB00273173 /* DraggableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableImage.swift; sourceTree = "<group>"; };
 		247B0B5328AC9FFE00273173 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
-		247B0B5A28ACDD9600273173 /* BotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotView.swift; sourceTree = "<group>"; };
+		247B0B5A28ACDD9600273173 /* DeployView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployView.swift; sourceTree = "<group>"; };
+		24C32E3D28AE372100EC14FC /* HumanGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanGame.swift; sourceTree = "<group>"; };
+		24C32E4028AE540F00EC14FC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		C909E45A28A63FA900DD9282 /* Fleet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fleet.swift; sourceTree = "<group>"; };
 		C909E45C28A63FFF00DD9282 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		C909E45E28A6457E00DD9282 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		C909E46028A645AA00DD9282 /* ShipCompartment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipCompartment.swift; sourceTree = "<group>"; };
-		C97FA52228AB54430085DFC4 /* DeployView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployView.swift; sourceTree = "<group>"; };
+		C97FA52228AB54430085DFC4 /* DeployOceanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployOceanView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 		24036E5628A2A2E200F54BBC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				24C32E4228AE542600EC14FC /* Utils */,
 				2410CC2528A7A5B200749E53 /* Managers */,
 				C909E45928A63D0400DD9282 /* Models */,
 				24036E9528A2AC7E00F54BBC /* Extensions */,
@@ -199,7 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				24036E9F28A2C21200F54BBC /* PracticeView.swift */,
-				247B0B5A28ACDD9600273173 /* BotView.swift */,
+				247B0B5A28ACDD9600273173 /* DeployView.swift */,
 			);
 			path = PlayView;
 			sourceTree = "<group>";
@@ -226,22 +231,39 @@
 			isa = PBXGroup;
 			children = (
 				247B0B5028ABFDFB00273173 /* DraggableImage.swift */,
-				C97FA52228AB54430085DFC4 /* DeployView.swift */,
+				C97FA52228AB54430085DFC4 /* DeployOceanView.swift */,
 			);
 			path = FleetDeploy;
 			sourceTree = "<group>";
 		};
-		C909E45928A63D0400DD9282 /* Models */ = {
+		24C32E3C28AE36F700EC14FC /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				C909E45A28A63FA900DD9282 /* Fleet.swift */,
-				247B0B4728AAB2E300273173 /* AIModel.swift */,
 				C909E45C28A63FFF00DD9282 /* Coordinate.swift */,
 				C909E45E28A6457E00DD9282 /* Ship.swift */,
 				C909E46028A645AA00DD9282 /* ShipCompartment.swift */,
 				2447A16228A66AEC008CFD49 /* Ocean.swift */,
 				2447A16428A66BDC008CFD49 /* OceanZoneState.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		24C32E4228AE542600EC14FC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				24C32E4028AE540F00EC14FC /* Location.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C909E45928A63D0400DD9282 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				24C32E3C28AE36F700EC14FC /* Core */,
+				247B0B4728AAB2E300273173 /* AIModel.swift */,
 				2447A16628A66C04008CFD49 /* Game.swift */,
+				24C32E3D28AE372100EC14FC /* HumanGame.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -357,14 +379,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C909E46128A645AA00DD9282 /* ShipCompartment.swift in Sources */,
+				24C32E3E28AE372100EC14FC /* HumanGame.swift in Sources */,
 				247B0B5428AC9FFE00273173 /* HapticManager.swift in Sources */,
 				24036EA328A2C22500F54BBC /* LeaderboardView.swift in Sources */,
 				C909E45F28A6457E00DD9282 /* Ship.swift in Sources */,
 				247B0B4828AAB2E300273173 /* AIModel.swift in Sources */,
+				24C32E4128AE540F00EC14FC /* Location.swift in Sources */,
 				24036E6928A2A2E300F54BBC /* LaunchView.swift in Sources */,
 				24036EA628A2C23600F54BBC /* SettingsView.swift in Sources */,
 				2410CC2728A7A6E700749E53 /* AudioManager.swift in Sources */,
-				247B0B5B28ACDD9600273173 /* BotView.swift in Sources */,
+				247B0B5B28ACDD9600273173 /* DeployView.swift in Sources */,
 				24036E9328A2A7FD00F54BBC /* HomeView.swift in Sources */,
 				2447A16328A66AEC008CFD49 /* Ocean.swift in Sources */,
 				24036EA028A2C21200F54BBC /* PracticeView.swift in Sources */,
@@ -378,7 +402,7 @@
 				2447A16E28A6713B008CFD49 /* OceanView.swift in Sources */,
 				2447A16A28A670E2008CFD49 /* OceanZoneView.swift in Sources */,
 				247B0B5128ABFDFB00273173 /* DraggableImage.swift in Sources */,
-				C97FA52328AB54430085DFC4 /* DeployView.swift in Sources */,
+				C97FA52328AB54430085DFC4 /* DeployOceanView.swift in Sources */,
 				24036E6728A2A2E300F54BBC /* PirateWarApp.swift in Sources */,
 				2447A16C28A67112008CFD49 /* ToolbarView.swift in Sources */,
 				24036E9728A2AE4300F54BBC /* Color.swift in Sources */,
@@ -396,7 +420,7 @@
 				24036EAA28A2C25000F54BBC /* HowToPlayView.swift in Sources */,
 				24036E9B28A2B44F00F54BBC /* LottieView.swift in Sources */,
 				247B0B5528AC9FFE00273173 /* HapticManager.swift in Sources */,
-				247B0B5C28ACDD9600273173 /* BotView.swift in Sources */,
+				247B0B5C28ACDD9600273173 /* DeployView.swift in Sources */,
 				24036E6828A2A2E300F54BBC /* PirateWarApp.swift in Sources */,
 				24036E9828A2AE4300F54BBC /* Color.swift in Sources */,
 			);

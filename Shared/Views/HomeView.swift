@@ -137,7 +137,7 @@ extension HomeView {
     private var playList: some View {
         VStack (alignment: .leading, spacing: 20) {
             NavigationLink(tag: "bot", selection: $playSelection) {
-                BotView()
+                DeployView()
             } label: {
                 EmptyView()
             }

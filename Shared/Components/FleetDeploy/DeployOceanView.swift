@@ -7,16 +7,17 @@
 
 import SwiftUI
 
-struct DeployView: View {
+struct DeployOceanView: View {
     let range = (0..<(Game.numCols * Game.numRows))
     let columns = [GridItem](repeating: GridItem(.flexible(), spacing: 0), count: Game.numCols)
+    var shipBaseCoordinate: [Coordinate]
 
-    // Top of the ship location
-    @State var shipStatus = [(isVertical: Bool, topLocation: Coordinate)](repeating: (isVertical: true, topLocation: .zero), count: 5)
-    @State var shipBaseCoordinate = [Coordinate](repeating: .zero, count: 5)
     @State var stateChange = [Bool](repeating: false, count: 5)
-    var body: some View {
+    @Binding var fleet: [[Coordinate]]
+    // Top of the ship location
+    @Binding var shipStatus: [(isVertical: Bool, topLocation: Coordinate)]
 
+    var body: some View {
         GeometryReader { geo in
             ZStack {
                 LazyVGrid(columns: columns, spacing: 0) {
@@ -42,26 +43,14 @@ struct DeployView: View {
                     let offsetX: CGFloat = !shipStatus[index].isVertical ? CGFloat(movedX + movedY) * squareSize : 0
                     let offsetY: CGFloat = !shipStatus[index].isVertical ? CGFloat(movedY - movedX) * squareSize : 0
 
-                    if (index == 4) {
-//                        let _ = print(stateChange[index])
-//                        let _ = print(shipStatus[index].isVertical)
-//                        let _ = print(stateChange[index] ?
-//                        shipStatus[index].isVertical ? "Use Rotate" : "Use offset"
-//                        : shipStatus[index].isVertical ? "Use offset" : "Use Rotate")
-//                        let _ = print(movedX, movedY)
-                        let _ = print("Current location: ", shipStatus[index].topLocation.description)
-                        let _ = print("---------")
-                    }
-
-
-                    DraggableImage(name: ship.name, length: ship.length, index: index, squareSize: squareSize, initCoordinate: shipBaseCoordinate[index], shipStatus: $shipStatus[index], stateChange: $stateChange[index])
+                    DraggableImage(name: ship.name, length: ship.length, index: index, squareSize: squareSize, initCoordinate: shipBaseCoordinate[index], shipStatus: $shipStatus[index], stateChange: $stateChange[index], fleetLocation: $fleet)
                         .rotationEffect(shipStatus[index].isVertical ? Angle(degrees: 0) : Angle(degrees: 90))
                         .position(x: geo.frame(in: .local).minX + initOffsetX, y: geo.frame(in: .local).minY + initOffsetY)
                         .overlay(
                         Color.clear
                             .onAppear {
-                            self.shipStatus[index].topLocation = Coordinate(x: index, y: 0)
-                            self.shipBaseCoordinate[index] = Coordinate(x: index, y: 0)
+                            shipStatus[index].topLocation = Coordinate(x: index, y: 0)
+                            fleet[index] = LocationHelper.mapFullCoordinate(isVertical: shipStatus[index].isVertical, length: ship.length, topLocation: shipStatus[index].topLocation)
                         }
                     )
                         .offset(x: !shipStatus[index].isVertical && ship.length % 2 == 0 ? squareSize / 2 : 0, y: !shipStatus[index].isVertical && ship.length % 2 == 0 ? squareSize / 2 : 0)
@@ -80,10 +69,21 @@ struct DeployView: View {
                                 currentCoordinate.x -= ship.length / 2
                                 currentCoordinate.y -= ship.length / 2
                             }
-                            if Game().ocean.contains(currentCoordinate) {
-                                self.shipStatus[index].isVertical.toggle()
+
+                            let ocean = Ocean(numCols: 10, numRows: 10)
+
+                            var otherShips = fleet
+                            otherShips.remove(at: index)
+
+                            let newShipLocation = LocationHelper.mapFullCoordinate(isVertical: !shipStatus[index].isVertical, length: ship.length, topLocation: currentCoordinate)
+
+                            if (ocean.contains(currentCoordinate) &&
+                                    ocean.contains(fleet[index]) &&
+                                    !LocationHelper.isOverlapped (shipCoordinate: newShipLocation, fleet: otherShips)) {
                                 self.stateChange[index] = true
-                                self.shipStatus[index].topLocation = currentCoordinate
+                                shipStatus[index].isVertical.toggle()
+                                shipStatus[index].topLocation = currentCoordinate
+                                fleet[index] = LocationHelper.mapFullCoordinate(isVertical: shipStatus[index].isVertical, length: ship.length, topLocation: currentCoordinate)
                             }
                         }
                     }
@@ -97,8 +97,14 @@ struct DeployView: View {
 
 }
 
-struct TestView_Previews: PreviewProvider {
+struct DeployOceanView_Previews: PreviewProvider {
     static var previews: some View {
-        DeployView()
+        DeployOceanView(shipBaseCoordinate: [Coordinate(x: 0, y: 0),
+                                             Coordinate(x: 1, y: 0),
+                                             Coordinate(x: 2, y: 0),
+                                             Coordinate(x: 3, y: 0),
+                                             Coordinate(x: 4, y: 0)],
+                        fleet: .constant([[.zero], [.zero], [.zero], [.zero], [.zero]]),
+                        shipStatus: .constant([(isVertical: true, topLocation: Coordinate(x: 0, y: 0))]))
     }
 }
