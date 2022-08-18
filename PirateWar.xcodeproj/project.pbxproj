@@ -40,7 +40,6 @@
 		2447A17028A6C9C3008CFD49 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16F28A6C9C3008CFD49 /* StatusView.swift */; };
 		247B0B4828AAB2E300273173 /* AIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B4728AAB2E300273173 /* AIModel.swift */; };
 		247B0B5128ABFDFB00273173 /* DraggableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5028ABFDFB00273173 /* DraggableImage.swift */; };
-		247B0B5228ABFDFB00273173 /* DraggableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5028ABFDFB00273173 /* DraggableImage.swift */; };
 		247B0B5428AC9FFE00273173 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5328AC9FFE00273173 /* HapticManager.swift */; };
 		247B0B5528AC9FFE00273173 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5328AC9FFE00273173 /* HapticManager.swift */; };
 		247B0B5B28ACDD9600273173 /* BotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5A28ACDD9600273173 /* BotView.swift */; };
@@ -166,7 +165,6 @@
 				247B0B5828ACDD2C00273173 /* Ocean */,
 				247B0B5728ACDD0300273173 /* GameStatus */,
 				24036E8528A2A54D00F54BBC /* Lottie */,
-				247B0B5028ABFDFB00273173 /* DraggableImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -227,6 +225,7 @@
 		247B0B5928ACDD4D00273173 /* FleetDeploy */ = {
 			isa = PBXGroup;
 			children = (
+				247B0B5028ABFDFB00273173 /* DraggableImage.swift */,
 				C97FA52228AB54430085DFC4 /* DeployView.swift */,
 			);
 			path = FleetDeploy;
@@ -393,7 +392,6 @@
 				24036EA428A2C22500F54BBC /* LeaderboardView.swift in Sources */,
 				24036E6A28A2A2E300F54BBC /* LaunchView.swift in Sources */,
 				24036EA728A2C23600F54BBC /* SettingsView.swift in Sources */,
-				247B0B5228ABFDFB00273173 /* DraggableImage.swift in Sources */,
 				24036E9428A2A7FD00F54BBC /* HomeView.swift in Sources */,
 				24036EAA28A2C25000F54BBC /* HowToPlayView.swift in Sources */,
 				24036E9B28A2B44F00F54BBC /* LottieView.swift in Sources */,
