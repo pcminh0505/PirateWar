@@ -86,7 +86,7 @@ struct DeployView: View {
             .navigationBarHidden(true)
             .background(Color.theme.background)
             .onAppear {
-            AudioManager.instance.startPlayer(track: "deploy", loop: true)
+            BackgroundManager.instance.startPlayer(track: "deploy", loop: true)
         }
     }
         

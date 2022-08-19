@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OceanView: View {
+    let isDeployedFleet: Bool
+
     @EnvironmentObject var game: Game
     let range = (0..<(Game.numCols * Game.numRows))
     let columns = [GridItem](repeating: GridItem(.flexible(), spacing: 0), count: Game.numCols)
@@ -46,7 +48,7 @@ struct OceanView: View {
                                 y: offsetY)
                         .rotationEffect(Angle(degrees: ship.isVertical() ? 0 : 90))
                         .allowsHitTesting(false)
-                        .opacity(ship.isSunk() ? 1.0 : 0.0)
+                        .opacity(isDeployedFleet ? 0.3 : ship.isSunk() ? 0.3 : 0.0)
                 }
             }
                 .frame(maxWidth: geo.size.width)
@@ -58,7 +60,7 @@ struct OceanView: View {
 
 struct OceanView_Previews: PreviewProvider {
     static var previews: some View {
-        OceanView()
+        OceanView(isDeployedFleet: true)
             .environmentObject(Game())
 
     }

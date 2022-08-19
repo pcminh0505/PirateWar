@@ -73,7 +73,7 @@ extension HomeView {
             } label: {
                 EmptyView()
             }
-            
+
             Button {
                 isSelectingPlayMode.toggle()
             } label: {
@@ -143,7 +143,7 @@ extension HomeView {
             } label: {
                 EmptyView()
             }
-            
+
             Button {
                 playSelection = "bot"
             } label: {
@@ -186,7 +186,7 @@ extension HomeView {
                 .controlSize(.regular)
                 .cornerRadius(20)
         }
-        .padding(.top, -55)
+            .padding(.top, -55)
     }
 
 }

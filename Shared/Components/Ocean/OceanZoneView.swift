@@ -20,22 +20,23 @@ struct OceanZoneView: View {
                 
 
             if (state != .clear) {
-                ScaledShape(shape: Circle(), scale: circleScale)
-                    .fill(circleColor())
-                    .zIndex(2)
+                statusImage()
             }
         }
     }
-
-    func circleColor() -> Color {
+    func statusImage() -> some View {
         if (state == .hit) {
-            return .red
+            return Image(systemName: "circle.circle.fill")
+                .foregroundColor(Color.theme.red)
         } else if (state == .sunk) {
-            return Color.theme.ocean // No display
+            return Image(systemName: "xmark")
+                .foregroundColor(Color.black)
         } else if (state == .selected) {
-            return .green
+            return Image(systemName: "circle.dotted")
+                .foregroundColor(Color.theme.metal)
         } else {
-            return .white
+            return Image(systemName: "circle")
+                .foregroundColor(Color.white)
         }
     }
 }

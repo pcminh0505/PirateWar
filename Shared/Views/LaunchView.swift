@@ -26,7 +26,7 @@ struct LaunchView: View {
                         .navigationBarHidden(true)
                 }
                     .onAppear {
-                    AudioManager.instance.startPlayer(track: "homebackground", loop: true)
+                    BackgroundManager.instance.startPlayer(track: "homebackground", loop: true)
                 }
             } else {
                 ZStack {

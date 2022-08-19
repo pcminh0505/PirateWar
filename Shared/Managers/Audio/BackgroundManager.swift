@@ -10,8 +10,8 @@
 import Foundation
 import AVKit
 
-final class AudioManager {
-    static let instance = AudioManager()
+final class BackgroundManager {
+    static let instance = BackgroundManager()
     var player: AVAudioPlayer?
 
     func startPlayer(track: String, loop: Bool, speed: Float = 1.0) {
