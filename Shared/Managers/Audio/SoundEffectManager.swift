@@ -1,5 +1,5 @@
 //
-//  AudioManager.swift
+//  SoundEffect.swift
 //  PirateWar (iOS)
 //
 //  Created by Minh Pham on 13/08/2022.
@@ -10,8 +10,8 @@
 import Foundation
 import AVKit
 
-final class AudioManager {
-    static let instance = AudioManager()
+final class SoundEffectManager {
+    static let instance = SoundEffectManager()
     var player: AVAudioPlayer?
 
     func startPlayer(track: String, loop: Bool, speed: Float = 1.0) {

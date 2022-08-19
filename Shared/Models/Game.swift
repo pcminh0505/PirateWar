@@ -39,9 +39,7 @@ class Game: ObservableObject {
         self.fleet.dragDeploy(on: self.ocean, deployedShips: deployedFleet)
     }
 
-    /*
-     start a new game
-     */
+    // MARK: - Reset/Start a new game
     func reset() {
         self.zoneStates = defaultZoneStates()
         self.fleet.randomDeploy(on: self.ocean)
@@ -49,9 +47,8 @@ class Game: ObservableObject {
         self.selectedZone = Coordinate.unset
     }
 
-    /*
-     handle when an OceanZoneView is tapped
-     */
+    
+    // MARK: - Handle when an OceanZoneView is tapped
     func zoneTapped(_ location: Coordinate) {
         //if we already tapped this location or the game is over, just ignore it
         if ((zoneStates[location.x][location.y] == .sunk) ||
@@ -76,15 +73,17 @@ class Game: ObservableObject {
                     hitShip.coordinates().forEach { shipCompartment in
                         zoneStates[shipCompartment.x][shipCompartment.y] = .sunk
                     }
-                    AudioManager.instance.startPlayer(track: "sunk", loop: false)
+                    SoundEffectManager.instance.startPlayer(track: "sunk", loop: false)
+                    HapticManager.notification(type: .success)
                 } else {
                     message = "Hit"
-                    AudioManager.instance.startPlayer(track: "hit", loop: false)
+                    SoundEffectManager.instance.startPlayer(track: "hit", loop: false)
+                    HapticManager.notification(type: .success)
                 }
             } else {
                 zoneStates[location.x][location.y] = .miss
                 message = "Miss"
-                AudioManager.instance.startPlayer(track: "miss", loop: false, speed: 1.5)
+                SoundEffectManager.instance.startPlayer(track: "miss", loop: false, speed: 1.5)
             }
             selectedZone = Coordinate.unset
         } else {
@@ -98,6 +97,8 @@ class Game: ObservableObject {
         //are we done?
         if (over) {
             message += " YOU WIN!"
+            SoundEffectManager.instance.startPlayer(track: "victory", loop: false)
+            HapticManager.notification(type: .success)
         }
     }
 

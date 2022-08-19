@@ -85,7 +85,11 @@ struct DeployView: View {
             .padding()
             .navigationBarHidden(true)
             .background(Color.theme.background)
+            .onAppear {
+            AudioManager.instance.startPlayer(track: "deploy", loop: true)
+        }
     }
+        
 
     func createShip() -> [Ship] {
         var deployedFleet: [Ship] = []

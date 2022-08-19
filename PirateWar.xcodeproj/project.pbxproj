@@ -35,6 +35,11 @@
 		2425349428AF8B7D00C992E1 /* hit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2425349228AF8B7C00C992E1 /* hit.mp3 */; };
 		2425349528AF8B7D00C992E1 /* miss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2425349328AF8B7D00C992E1 /* miss.mp3 */; };
 		2425349728AF8D2F00C992E1 /* sunk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2425349628AF8D2F00C992E1 /* sunk.mp3 */; };
+		2425349928AFE2D800C992E1 /* victory.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2425349828AFE2D800C992E1 /* victory.mp3 */; };
+		2425349B28AFE76A00C992E1 /* defeat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2425349A28AFE76A00C992E1 /* defeat.mp3 */; };
+		2425349D28AFEC2900C992E1 /* deploy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2425349C28AFEC2900C992E1 /* deploy.mp3 */; };
+		2425349F28AFECE000C992E1 /* ocean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2425349E28AFECE000C992E1 /* ocean.mp3 */; };
+		242534A128AFFF0700C992E1 /* SoundEffectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242534A028AFFF0700C992E1 /* SoundEffectManager.swift */; };
 		2447A16328A66AEC008CFD49 /* Ocean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16228A66AEC008CFD49 /* Ocean.swift */; };
 		2447A16528A66BDC008CFD49 /* OceanZoneState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16428A66BDC008CFD49 /* OceanZoneState.swift */; };
 		2447A16728A66C04008CFD49 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16628A66C04008CFD49 /* Game.swift */; };
@@ -77,6 +82,11 @@
 		2425349228AF8B7C00C992E1 /* hit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit.mp3; sourceTree = "<group>"; };
 		2425349328AF8B7D00C992E1 /* miss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = miss.mp3; sourceTree = "<group>"; };
 		2425349628AF8D2F00C992E1 /* sunk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sunk.mp3; sourceTree = "<group>"; };
+		2425349828AFE2D800C992E1 /* victory.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = victory.mp3; sourceTree = "<group>"; };
+		2425349A28AFE76A00C992E1 /* defeat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = defeat.mp3; sourceTree = "<group>"; };
+		2425349C28AFEC2900C992E1 /* deploy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = deploy.mp3; sourceTree = "<group>"; };
+		2425349E28AFECE000C992E1 /* ocean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ocean.mp3; sourceTree = "<group>"; };
+		242534A028AFFF0700C992E1 /* SoundEffectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectManager.swift; sourceTree = "<group>"; };
 		2447A16228A66AEC008CFD49 /* Ocean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ocean.swift; sourceTree = "<group>"; };
 		2447A16428A66BDC008CFD49 /* OceanZoneState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanZoneState.swift; sourceTree = "<group>"; };
 		2447A16628A66C04008CFD49 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -211,11 +221,16 @@
 		2425348F28AF883500C992E1 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				2425349E28AFECE000C992E1 /* ocean.mp3 */,
+				2425349C28AFEC2900C992E1 /* deploy.mp3 */,
+				2425349A28AFE76A00C992E1 /* defeat.mp3 */,
+				2425349828AFE2D800C992E1 /* victory.mp3 */,
 				2425349628AF8D2F00C992E1 /* sunk.mp3 */,
 				2425349228AF8B7C00C992E1 /* hit.mp3 */,
 				2425349328AF8B7D00C992E1 /* miss.mp3 */,
 				2425349028AF885000C992E1 /* homebackground.mp3 */,
 				2410CC2628A7A6E700749E53 /* AudioManager.swift */,
+				242534A028AFFF0700C992E1 /* SoundEffectManager.swift */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -378,10 +393,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				24036E8A28A2A57700F54BBC /* pirates.json in Resources */,
+				2425349B28AFE76A00C992E1 /* defeat.mp3 in Resources */,
 				2425349528AF8B7D00C992E1 /* miss.mp3 in Resources */,
 				24036E6B28A2A2E300F54BBC /* Assets.xcassets in Resources */,
+				2425349928AFE2D800C992E1 /* victory.mp3 in Resources */,
 				2425349428AF8B7D00C992E1 /* hit.mp3 in Resources */,
 				2425349128AF885000C992E1 /* homebackground.mp3 in Resources */,
+				2425349F28AFECE000C992E1 /* ocean.mp3 in Resources */,
+				2425349D28AFEC2900C992E1 /* deploy.mp3 in Resources */,
 				2425349728AF8D2F00C992E1 /* sunk.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +433,7 @@
 				247B0B5B28ACDD9600273173 /* DeployView.swift in Sources */,
 				24036E9328A2A7FD00F54BBC /* HomeView.swift in Sources */,
 				2447A16328A66AEC008CFD49 /* Ocean.swift in Sources */,
+				242534A128AFFF0700C992E1 /* SoundEffectManager.swift in Sources */,
 				24036EA028A2C21200F54BBC /* PracticeView.swift in Sources */,
 				245538C228AF6E5D002F1E7E /* HumanGameView.swift in Sources */,
 				C909E45B28A63FA900DD9282 /* Fleet.swift in Sources */,

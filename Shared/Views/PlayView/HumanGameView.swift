@@ -21,6 +21,9 @@ struct HumanGameView: View {
         .padding()
         .navigationBarHidden(true)
         .background(Color.theme.background)
+        .onAppear {
+        AudioManager.instance.startPlayer(track: "ocean", loop: true)
+        }
     }
 }
 
