@@ -20,6 +20,8 @@ struct DeployView: View {
         Coordinate(x: 4, y: 0),
     ]
 
+    @State private var isGoingToGameView = false
+
 
     var body: some View {
 
@@ -41,6 +43,11 @@ struct DeployView: View {
             DeployOceanView(shipBaseCoordinate: shipBaseCoordinate, fleet: $fleet, shipStatus: $shipStatus)
             Spacer()
             HStack {
+                NavigationLink(destination: HumanGameView(game: Game(deployedFleet: createShip())),
+                               isActive: $isGoingToGameView) {
+                    EmptyView()
+                }
+
                 Button (action: { presentationMode.wrappedValue.dismiss() }) {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.theme.primaryText, lineWidth: 3)
@@ -53,8 +60,11 @@ struct DeployView: View {
                     .controlSize(.regular)
                     .cornerRadius(20)
 
+                Spacer()
+
                 Button {
                     print("Start Game")
+                    self.isGoingToGameView = true
                 } label: {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.theme.primaryText, lineWidth: 3)
@@ -66,6 +76,8 @@ struct DeployView: View {
                 }
                     .controlSize(.regular)
                     .cornerRadius(20)
+
+
             }
                 .background(Color.theme.background)
                 .foregroundColor(Color.theme.primaryText)
@@ -73,6 +85,14 @@ struct DeployView: View {
             .padding()
             .navigationBarHidden(true)
             .background(Color.theme.background)
+    }
+
+    func createShip() -> [Ship] {
+        var deployedFleet: [Ship] = []
+        for index in (0..<Fleet.shipsInFleet.count) {
+            deployedFleet.append(Ship(Fleet.shipsInFleet[index].name, coordinates: fleet[index]))
+        }
+        return deployedFleet
     }
 }
 

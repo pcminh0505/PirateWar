@@ -33,7 +33,7 @@ struct OceanView: View {
 
                     let offsetX = ship.isVertical() ? baseOffsetX + CGFloat(ship.compartments[0].location.x) * squareSize: baseOffsetX + CGFloat(ship.compartments[0].location.y) * squareSize
 
-                    let baseOffsetY = ship.length % 2 == 0 ? squareSize * CGFloat(ship.length / 2): squareSize * CGFloat(ship.length / 2) + squareSize / 2
+                    let baseOffsetY = ship.length % 2 == 0 ? squareSize * CGFloat(ship.length / 2) : squareSize * CGFloat(ship.length / 2) + squareSize / 2
 
                     let offsetY = ship.isVertical() ? baseOffsetY + CGFloat(ship.compartments[0].location.y) * squareSize: -(baseOffsetY + CGFloat(ship.compartments[0].location.x) * squareSize)
 
@@ -60,5 +60,6 @@ struct OceanView_Previews: PreviewProvider {
     static var previews: some View {
         OceanView()
             .environmentObject(Game())
+
     }
 }

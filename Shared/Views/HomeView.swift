@@ -45,9 +45,6 @@ struct HomeView: View {
         }
             .background(Color.theme.background)
             .foregroundColor(Color.theme.primaryText)
-
-
-
     }
 }
 

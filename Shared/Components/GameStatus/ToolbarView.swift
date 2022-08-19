@@ -36,5 +36,6 @@ struct ToolbarView_Previews: PreviewProvider {
     static var previews: some View {
         ToolbarView()
             .environmentObject(Game())
+            
     }
 }

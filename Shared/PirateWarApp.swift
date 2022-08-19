@@ -9,11 +9,9 @@ import SwiftUI
 
 @main
 struct PirateWarApp: App {
-    @StateObject private var game = Game()
     var body: some Scene {
         WindowGroup {
             LaunchView()
-                .environmentObject(game)
         }
     }
 }

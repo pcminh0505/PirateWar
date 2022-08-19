@@ -11,7 +11,7 @@ import Combine
 /*
  The classic Battleship game
  */
-final class Game: ObservableObject {
+class Game: ObservableObject {
     static let numCols = 10
     static let numRows = 10
     var ocean: Ocean
@@ -22,10 +22,21 @@ final class Game: ObservableObject {
     @Published var message = ""
     var over: Bool { return fleet.isDestroyed() }
 
+    // Practice Mode
     init() {
         self.ocean = Ocean(numCols: Game.numCols, numRows: Game.numRows)
         self.fleet = Fleet()
         reset()
+    }
+
+    // Human deployed mode
+    init(deployedFleet: [Ship]) {
+        self.ocean = Ocean(numCols: Game.numCols, numRows: Game.numRows)
+        self.fleet = Fleet()
+        self.zoneStates = defaultZoneStates()
+        self.message = ""
+        self.selectedZone = Coordinate.unset
+        self.fleet.dragDeploy(on: self.ocean, deployedShips: deployedFleet)
     }
 
     /*
@@ -44,9 +55,9 @@ final class Game: ObservableObject {
     func zoneTapped(_ location: Coordinate) {
         //if we already tapped this location or the game is over, just ignore it
         if ((zoneStates[location.x][location.y] == .sunk) ||
-            (zoneStates[location.x][location.y] == .miss) ||
-            (zoneStates[location.x][location.y] == .hit) ||
-            over) {
+                (zoneStates[location.x][location.y] == .miss) ||
+                (zoneStates[location.x][location.y] == .hit) ||
+                over) {
             return
         }
 
@@ -65,12 +76,15 @@ final class Game: ObservableObject {
                     hitShip.coordinates().forEach { shipCompartment in
                         zoneStates[shipCompartment.x][shipCompartment.y] = .sunk
                     }
+                    AudioManager.instance.startPlayer(track: "sunk", loop: false)
                 } else {
                     message = "Hit"
+                    AudioManager.instance.startPlayer(track: "hit", loop: false)
                 }
             } else {
                 zoneStates[location.x][location.y] = .miss
                 message = "Miss"
+                AudioManager.instance.startPlayer(track: "miss", loop: false, speed: 1.5)
             }
             selectedZone = Coordinate.unset
         } else {
