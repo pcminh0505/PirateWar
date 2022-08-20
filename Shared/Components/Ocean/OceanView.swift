@@ -36,7 +36,9 @@ struct OceanView: View {
                                             if game.over {
                                                 winner = .human
                                             } else {
-                                                turn += 1
+                                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                                    turn += 1
+                                                }
                                             }
                                         }
                                     }

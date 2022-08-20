@@ -19,7 +19,6 @@ class Game: ObservableObject {
 
     @Published var zoneStates = [[OceanZoneState]]()
     @Published var selectedZone: Coordinate = Coordinate.unset
-    @Published var turn = 1
     @Published var message = ""
     @Published var over: Bool = false
 
@@ -100,8 +99,6 @@ class Game: ObservableObject {
             self.over = true
             message += " YOU WIN!"
             HapticManager.notification(type: .success)
-        } else {
-            turn += 1
         }
     }
 

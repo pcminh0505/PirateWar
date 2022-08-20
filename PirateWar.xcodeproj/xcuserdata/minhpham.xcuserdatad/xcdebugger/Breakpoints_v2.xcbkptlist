@@ -30,8 +30,8 @@
             filePath = "Shared/Models/Game.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "Game"
             landmarkType = "3">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "Shared/Models/Game.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "reset()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "Shared/Models/Game.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "reset()"
             landmarkType = "7">
          </BreakpointContent>

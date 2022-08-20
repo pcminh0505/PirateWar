@@ -40,10 +40,10 @@ struct ToolbarView: View {
                         stopTimer()
                     }
 
-                    Text(game.message != "" ? game.message : "Game started!").id(turn)
+                    Text(game.message != "" ? game.message : "Game started!")
                         .frame(maxWidth: .infinity)
-                        .transition(.slide)
-                        .animation(.easeInOut(duration: 0.5), value: turn)
+                        .transition(.asymmetric(insertion: .scale, removal: .opacity))
+                        .animation(.spring(), value: game.message)
                 }
                     .foregroundColor(Color.theme.primaryText)
                     .padding()

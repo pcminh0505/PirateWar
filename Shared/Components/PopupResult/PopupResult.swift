@@ -12,7 +12,10 @@ struct PopupResult: View {
     let isVictory: Bool
     @Binding var show: Bool
 
-    let columns = [GridItem](repeating: GridItem(.flexible(), spacing: 0), count: 2)
+    let columns: [GridItem] = [
+        GridItem(.flexible(), alignment: .trailing),
+        GridItem(.flexible(), alignment: .center),
+    ]
 
     var body: some View {
         GeometryReader { geo in

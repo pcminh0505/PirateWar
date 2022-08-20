@@ -23,7 +23,6 @@ struct DeployView: View {
     @State private var isGoingToGameView = false
 
     var body: some View {
-        let _ = print(fleet)
         VStack {
             Text("Deploy your fleet 📌")
                 .font(.title2)
