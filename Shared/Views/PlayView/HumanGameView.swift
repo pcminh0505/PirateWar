@@ -42,10 +42,9 @@ struct HumanGameView: View {
                 }
             Spacer()
             VStack {
-                ToolbarView()
+                ToolbarView(winner: $winner, turn: $turn)
                     .environmentObject(humanGame)
                 HStack {
-                    
                     Text("Turn \(turn)")
                     Spacer()
                     Text("\(winner == .human ? "You" : "AI") won!")
@@ -64,7 +63,7 @@ struct HumanGameView: View {
             .navigationBarHidden(true)
             .background(Color.theme.background)
             .onAppear {
-            BackgroundManager.instance.startPlayer(track: "ocean", loop: true)
+//            BackgroundManager.instance.startPlayer(track: "ocean", loop: true)
         }
     }
     

@@ -32,7 +32,7 @@ struct OceanZoneView: View {
             return Image(systemName: "xmark")
                 .foregroundColor(Color.black)
         } else if (state == .selected) {
-            return Image(systemName: "circle.dotted")
+            return Image(systemName: "scope")
                 .foregroundColor(Color.theme.metal)
         } else {
             return Image(systemName: "circle")

@@ -71,11 +71,11 @@ class Game: ObservableObject {
 
                 if (hitShip.isSunk()) {
                     message = "🔥 \(hitShip.name) sunk!"
+                    SoundEffectManager.instance.startPlayer(track: "sunk", loop: false)
+                    HapticManager.notification(type: .success)
                     hitShip.coordinates().forEach { shipCompartment in
                         zoneStates[shipCompartment.x][shipCompartment.y] = .sunk
                     }
-                    SoundEffectManager.instance.startPlayer(track: "sunk", loop: false)
-                    HapticManager.notification(type: .success)
                 } else {
                     message = "Hit"
                     SoundEffectManager.instance.startPlayer(track: "hit", loop: false)
@@ -99,7 +99,6 @@ class Game: ObservableObject {
         if (fleet.isDestroyed()) {
             self.over = true
             message += " YOU WIN!"
-            SoundEffectManager.instance.startPlayer(track: "victory", loop: false)
             HapticManager.notification(type: .success)
         } else {
             turn += 1

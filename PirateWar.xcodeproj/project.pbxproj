@@ -45,13 +45,16 @@
 		242534A828B00FCA00C992E1 /* HuntAIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242534A728B00FCA00C992E1 /* HuntAIModel.swift */; };
 		242534AA28B01A0C00C992E1 /* AIOceanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242534A928B01A0C00C992E1 /* AIOceanView.swift */; };
 		242534AC28B01E2100C992E1 /* AIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242534AB28B01E2100C992E1 /* AIModel.swift */; };
+		242DA40B28B13B2D001CB039 /* InvertCornerRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242DA40A28B13B2D001CB039 /* InvertCornerRectangle.swift */; };
+		242DA40E28B1611F001CB039 /* PopupResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242DA40D28B1611F001CB039 /* PopupResult.swift */; };
+		242DA41028B16B45001CB039 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242DA40F28B16B45001CB039 /* Result.swift */; };
 		2447A16328A66AEC008CFD49 /* Ocean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16228A66AEC008CFD49 /* Ocean.swift */; };
 		2447A16528A66BDC008CFD49 /* OceanZoneState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16428A66BDC008CFD49 /* OceanZoneState.swift */; };
 		2447A16728A66C04008CFD49 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16628A66C04008CFD49 /* Game.swift */; };
 		2447A16A28A670E2008CFD49 /* OceanZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16928A670E2008CFD49 /* OceanZoneView.swift */; };
 		2447A16C28A67112008CFD49 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16B28A67112008CFD49 /* ToolbarView.swift */; };
 		2447A16E28A6713B008CFD49 /* OceanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16D28A6713B008CFD49 /* OceanView.swift */; };
-		2447A17028A6C9C3008CFD49 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16F28A6C9C3008CFD49 /* StatusView.swift */; };
+		2447A17028A6C9C3008CFD49 /* FleetStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16F28A6C9C3008CFD49 /* FleetStatusView.swift */; };
 		245538C228AF6E5D002F1E7E /* HumanGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245538C128AF6E5D002F1E7E /* HumanGameView.swift */; };
 		247B0B5128ABFDFB00273173 /* DraggableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5028ABFDFB00273173 /* DraggableImage.swift */; };
 		247B0B5428AC9FFE00273173 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5328AC9FFE00273173 /* HapticManager.swift */; };
@@ -98,13 +101,16 @@
 		242534A728B00FCA00C992E1 /* HuntAIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntAIModel.swift; sourceTree = "<group>"; };
 		242534A928B01A0C00C992E1 /* AIOceanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIOceanView.swift; sourceTree = "<group>"; };
 		242534AB28B01E2100C992E1 /* AIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIModel.swift; sourceTree = "<group>"; };
+		242DA40A28B13B2D001CB039 /* InvertCornerRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvertCornerRectangle.swift; sourceTree = "<group>"; };
+		242DA40D28B1611F001CB039 /* PopupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupResult.swift; sourceTree = "<group>"; };
+		242DA40F28B16B45001CB039 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		2447A16228A66AEC008CFD49 /* Ocean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ocean.swift; sourceTree = "<group>"; };
 		2447A16428A66BDC008CFD49 /* OceanZoneState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanZoneState.swift; sourceTree = "<group>"; };
 		2447A16628A66C04008CFD49 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		2447A16928A670E2008CFD49 /* OceanZoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanZoneView.swift; sourceTree = "<group>"; };
 		2447A16B28A67112008CFD49 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		2447A16D28A6713B008CFD49 /* OceanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanView.swift; sourceTree = "<group>"; };
-		2447A16F28A6C9C3008CFD49 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		2447A16F28A6C9C3008CFD49 /* FleetStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetStatusView.swift; sourceTree = "<group>"; };
 		245538C128AF6E5D002F1E7E /* HumanGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanGameView.swift; sourceTree = "<group>"; };
 		247B0B5028ABFDFB00273173 /* DraggableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableImage.swift; sourceTree = "<group>"; };
 		247B0B5328AC9FFE00273173 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
@@ -196,6 +202,8 @@
 		24036E8428A2A52200F54BBC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				242DA40C28B16110001CB039 /* PopupResult */,
+				242DA40928B13B17001CB039 /* CurvedSideRectangle */,
 				247B0B5928ACDD4D00273173 /* FleetDeploy */,
 				247B0B5828ACDD2C00273173 /* Ocean */,
 				247B0B5728ACDD0300273173 /* GameStatus */,
@@ -259,6 +267,22 @@
 			path = AI;
 			sourceTree = "<group>";
 		};
+		242DA40928B13B17001CB039 /* CurvedSideRectangle */ = {
+			isa = PBXGroup;
+			children = (
+				242DA40A28B13B2D001CB039 /* InvertCornerRectangle.swift */,
+			);
+			path = CurvedSideRectangle;
+			sourceTree = "<group>";
+		};
+		242DA40C28B16110001CB039 /* PopupResult */ = {
+			isa = PBXGroup;
+			children = (
+				242DA40D28B1611F001CB039 /* PopupResult.swift */,
+			);
+			path = PopupResult;
+			sourceTree = "<group>";
+		};
 		2447A16828A67081008CFD49 /* PlayView */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,7 +296,7 @@
 		247B0B5728ACDD0300273173 /* GameStatus */ = {
 			isa = PBXGroup;
 			children = (
-				2447A16F28A6C9C3008CFD49 /* StatusView.swift */,
+				2447A16F28A6C9C3008CFD49 /* FleetStatusView.swift */,
 				2447A16B28A67112008CFD49 /* ToolbarView.swift */,
 			);
 			path = GameStatus;
@@ -307,6 +331,7 @@
 				2447A16228A66AEC008CFD49 /* Ocean.swift */,
 				2447A16428A66BDC008CFD49 /* OceanZoneState.swift */,
 				C97FA52428B09E820085DFC4 /* Winner.swift */,
+				242DA40F28B16B45001CB039 /* Result.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -448,11 +473,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C909E46128A645AA00DD9282 /* ShipCompartment.swift in Sources */,
+				242DA40E28B1611F001CB039 /* PopupResult.swift in Sources */,
+				242DA41028B16B45001CB039 /* Result.swift in Sources */,
 				247B0B5428AC9FFE00273173 /* HapticManager.swift in Sources */,
 				24036EA328A2C22500F54BBC /* LeaderboardView.swift in Sources */,
 				C909E45F28A6457E00DD9282 /* Ship.swift in Sources */,
 				24C32E4128AE540F00EC14FC /* Location.swift in Sources */,
 				242534A828B00FCA00C992E1 /* HuntAIModel.swift in Sources */,
+				242DA40B28B13B2D001CB039 /* InvertCornerRectangle.swift in Sources */,
 				24036E6928A2A2E300F54BBC /* LaunchView.swift in Sources */,
 				24036EA628A2C23600F54BBC /* SettingsView.swift in Sources */,
 				2410CC2728A7A6E700749E53 /* BackgroundManager.swift in Sources */,
@@ -464,7 +492,7 @@
 				24036EA028A2C21200F54BBC /* PracticeView.swift in Sources */,
 				245538C228AF6E5D002F1E7E /* HumanGameView.swift in Sources */,
 				C909E45B28A63FA900DD9282 /* Fleet.swift in Sources */,
-				2447A17028A6C9C3008CFD49 /* StatusView.swift in Sources */,
+				2447A17028A6C9C3008CFD49 /* FleetStatusView.swift in Sources */,
 				24036EA928A2C25000F54BBC /* HowToPlayView.swift in Sources */,
 				2447A16528A66BDC008CFD49 /* OceanZoneState.swift in Sources */,
 				24036E9A28A2B44F00F54BBC /* LottieView.swift in Sources */,
