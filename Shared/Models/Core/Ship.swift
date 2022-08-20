@@ -20,7 +20,7 @@ class Ship {
     init(_ name: String, coordinates: [Coordinate]) {
         self.name = name
         self.compartments = [ShipCompartment]()
-        for coordinate in coordinates {
+        for coordinate in coordinates.sorted(by: { $0.x < $1.x }) {
             compartments.append(ShipCompartment(location: coordinate))
         }
     }

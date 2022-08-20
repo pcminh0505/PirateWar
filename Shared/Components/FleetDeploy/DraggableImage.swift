@@ -75,6 +75,7 @@ struct DraggableImage: View {
                         fleetLocation[index] = LocationHelper.mapFullCoordinate(isVertical: shipStatus.isVertical, length: length, topLocation: currentCoordinate)
                     } else {
                         self.dragAmount = self.accumulated
+                        self.dragState = .good
                     }
 
 //                    if Game().ocean.contains(currentCoordinate) {

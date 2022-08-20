@@ -9,7 +9,6 @@
 import Foundation
 
 struct HuntParityAIModel {
-    private var turns = 0
     private var attacked: [Coordinate] = []
     private var knownShips: [SeekAndDestroy] = []
     private var lastMove: Move?

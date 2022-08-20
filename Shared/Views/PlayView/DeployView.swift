@@ -22,9 +22,8 @@ struct DeployView: View {
 
     @State private var isGoingToGameView = false
 
-
     var body: some View {
-
+        let _ = print(fleet)
         VStack {
             Text("Deploy your fleet 📌")
                 .font(.title2)
@@ -43,7 +42,7 @@ struct DeployView: View {
             DeployOceanView(shipBaseCoordinate: shipBaseCoordinate, fleet: $fleet, shipStatus: $shipStatus)
             Spacer()
             HStack {
-                NavigationLink(destination: HumanGameView(game: Game(deployedFleet: createShip())),
+                NavigationLink(destination: HumanGameView(deployedFleet: createShip(deployedLocation: fleet)),
                                isActive: $isGoingToGameView) {
                     EmptyView()
                 }
@@ -91,10 +90,10 @@ struct DeployView: View {
     }
         
 
-    func createShip() -> [Ship] {
+    func createShip(deployedLocation: [[Coordinate]]) -> [Ship] {
         var deployedFleet: [Ship] = []
         for index in (0..<Fleet.shipsInFleet.count) {
-            deployedFleet.append(Ship(Fleet.shipsInFleet[index].name, coordinates: fleet[index]))
+            deployedFleet.append(Ship(Fleet.shipsInFleet[index].name, coordinates: deployedLocation[index]))
         }
         return deployedFleet
     }

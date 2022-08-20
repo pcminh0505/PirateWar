@@ -9,7 +9,8 @@ import SwiftUI
 
 struct OceanView: View {
     let showDeployedFleet: Bool
-
+    @Binding var turn: Int
+    @Binding var winner: Winner
     @EnvironmentObject var game: Game
     let range = (0..<(Game.numCols * Game.numRows))
     let columns = [GridItem](repeating: GridItem(.flexible(), spacing: 0), count: Game.numCols)
@@ -24,8 +25,23 @@ struct OceanView: View {
                         let location = Coordinate(x: x, y: y)
                         OceanZoneView(state: $game.zoneStates[x][y])
                             .onTapGesture {
-                            game.zoneTapped(location)
-                        }
+                                // Alow tab only winner is unknown
+                                if winner == .unknown {
+                                    if game.zoneStates[x][y] == .selected || game.zoneStates[x][y] == .clear {
+                                        game.zoneTapped(location)
+                                        // If valid hit
+                                        if (game.zoneStates[x][y] == .hit ||
+                                            game.zoneStates[x][y] == .sunk ||
+                                            game.zoneStates[x][y] == .miss) {
+                                            if game.over {
+                                                winner = .human
+                                            } else {
+                                                turn += 1
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                     }
                 }
                 ForEach(game.fleet.ships, id: \.name) { ship in
@@ -48,7 +64,7 @@ struct OceanView: View {
                                 y: offsetY)
                         .rotationEffect(Angle(degrees: ship.isVertical() ? 0 : 90))
                         .allowsHitTesting(false)
-                        .opacity(isDeployedFleet ? 0.3 : ship.isSunk() ? 0.3 : 0.0)
+                        .opacity(showDeployedFleet ? 0.3 : ship.isSunk() ? 0.3 : 0.0)
                 }
             }
                 .frame(maxWidth: geo.size.width)
@@ -60,7 +76,7 @@ struct OceanView: View {
 
 struct OceanView_Previews: PreviewProvider {
     static var previews: some View {
-        OceanView(showDeployedFleet: true)
+        OceanView(showDeployedFleet: true, turn: .constant(1), winner: .constant(.unknown))
             .environmentObject(Game())
     }
 }

@@ -65,6 +65,7 @@
 		C909E45F28A6457E00DD9282 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45E28A6457E00DD9282 /* Ship.swift */; };
 		C909E46128A645AA00DD9282 /* ShipCompartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E46028A645AA00DD9282 /* ShipCompartment.swift */; };
 		C97FA52328AB54430085DFC4 /* DeployOceanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97FA52228AB54430085DFC4 /* DeployOceanView.swift */; };
+		C97FA52528B09E820085DFC4 /* Winner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97FA52428B09E820085DFC4 /* Winner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,7 @@
 		C909E45E28A6457E00DD9282 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		C909E46028A645AA00DD9282 /* ShipCompartment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipCompartment.swift; sourceTree = "<group>"; };
 		C97FA52228AB54430085DFC4 /* DeployOceanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployOceanView.swift; sourceTree = "<group>"; };
+		C97FA52428B09E820085DFC4 /* Winner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 				C909E46028A645AA00DD9282 /* ShipCompartment.swift */,
 				2447A16228A66AEC008CFD49 /* Ocean.swift */,
 				2447A16428A66BDC008CFD49 /* OceanZoneState.swift */,
+				C97FA52428B09E820085DFC4 /* Winner.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				2447A16728A66C04008CFD49 /* Game.swift in Sources */,
 				242534AA28B01A0C00C992E1 /* AIOceanView.swift in Sources */,
 				C909E45D28A63FFF00DD9282 /* Coordinate.swift in Sources */,
+				C97FA52528B09E820085DFC4 /* Winner.swift in Sources */,
 				2447A16E28A6713B008CFD49 /* OceanView.swift in Sources */,
 				242534A628B00FA700C992E1 /* RandomAIModel.swift in Sources */,
 				242534AC28B01E2100C992E1 /* AIModel.swift in Sources */,

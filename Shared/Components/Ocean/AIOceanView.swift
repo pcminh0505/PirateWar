@@ -9,13 +9,9 @@ import SwiftUI
 
 struct AIOceanView: View {
     @EnvironmentObject var game: Game
-
-
     let range = (0..<(Game.numCols * Game.numRows))
     let columns = [GridItem](repeating: GridItem(.flexible(), spacing: 0), count: Game.numCols)
 
-    @State var bot = HuntParityAIModel()
-    
     var body: some View {
         GeometryReader { geo in
             ZStack {
@@ -24,19 +20,6 @@ struct AIOceanView: View {
                         let y = index / Game.numRows
                         let x = index - (y * Game.numCols)
                         OceanZoneView(state: $game.zoneStates[x][y])
-                    }
-                }
-                .onTapGesture {
-                    if !game.over {
-                        let location: Coordinate = bot.nextMove()
-                        game.zoneTapped(location)
-                        game.zoneTapped(location)
-                        if (game.zoneStates[location.x][location.y] == .sunk ||
-                            game.zoneStates[location.x][location.y] == .hit) {
-                            bot.feedback(success: true)
-                        } else {
-                            bot.feedback(success: false)
-                        }
                     }
                 }
                 ForEach(game.fleet.ships, id: \.name) { ship in

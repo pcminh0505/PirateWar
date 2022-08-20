@@ -9,7 +9,6 @@
 import Foundation
 
 struct RandomAIModel: AIModel {
-    private var turns = 0
     private var attacked: [Coordinate] = []
 
     public init() { }
