@@ -19,6 +19,7 @@ class Game: ObservableObject {
 
     @Published var zoneStates = [[OceanZoneState]]()
     @Published var selectedZone: Coordinate = Coordinate.unset
+    @Published var turn = 1
     @Published var message = ""
     var over: Bool { return fleet.isDestroyed() }
 
@@ -99,6 +100,8 @@ class Game: ObservableObject {
             message += " YOU WIN!"
             SoundEffectManager.instance.startPlayer(track: "victory", loop: false)
             HapticManager.notification(type: .success)
+        } else {
+            turn += 1
         }
     }
 

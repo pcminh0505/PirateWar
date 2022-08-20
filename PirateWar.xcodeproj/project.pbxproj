@@ -40,6 +40,11 @@
 		2425349D28AFEC2900C992E1 /* deploy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2425349C28AFEC2900C992E1 /* deploy.mp3 */; };
 		2425349F28AFECE000C992E1 /* ocean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2425349E28AFECE000C992E1 /* ocean.mp3 */; };
 		242534A128AFFF0700C992E1 /* SoundEffectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242534A028AFFF0700C992E1 /* SoundEffectManager.swift */; };
+		242534A428B00F9B00C992E1 /* SequentialAIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242534A328B00F9B00C992E1 /* SequentialAIModel.swift */; };
+		242534A628B00FA700C992E1 /* RandomAIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242534A528B00FA700C992E1 /* RandomAIModel.swift */; };
+		242534A828B00FCA00C992E1 /* HuntAIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242534A728B00FCA00C992E1 /* HuntAIModel.swift */; };
+		242534AA28B01A0C00C992E1 /* AIOceanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242534A928B01A0C00C992E1 /* AIOceanView.swift */; };
+		242534AC28B01E2100C992E1 /* AIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242534AB28B01E2100C992E1 /* AIModel.swift */; };
 		2447A16328A66AEC008CFD49 /* Ocean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16228A66AEC008CFD49 /* Ocean.swift */; };
 		2447A16528A66BDC008CFD49 /* OceanZoneState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16428A66BDC008CFD49 /* OceanZoneState.swift */; };
 		2447A16728A66C04008CFD49 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16628A66C04008CFD49 /* Game.swift */; };
@@ -48,12 +53,12 @@
 		2447A16E28A6713B008CFD49 /* OceanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16D28A6713B008CFD49 /* OceanView.swift */; };
 		2447A17028A6C9C3008CFD49 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16F28A6C9C3008CFD49 /* StatusView.swift */; };
 		245538C228AF6E5D002F1E7E /* HumanGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245538C128AF6E5D002F1E7E /* HumanGameView.swift */; };
-		247B0B4828AAB2E300273173 /* AIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B4728AAB2E300273173 /* AIModel.swift */; };
 		247B0B5128ABFDFB00273173 /* DraggableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5028ABFDFB00273173 /* DraggableImage.swift */; };
 		247B0B5428AC9FFE00273173 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5328AC9FFE00273173 /* HapticManager.swift */; };
 		247B0B5528AC9FFE00273173 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5328AC9FFE00273173 /* HapticManager.swift */; };
 		247B0B5B28ACDD9600273173 /* DeployView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5A28ACDD9600273173 /* DeployView.swift */; };
 		247B0B5C28ACDD9600273173 /* DeployView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5A28ACDD9600273173 /* DeployView.swift */; };
+		24B0965828B02AE2002A614F /* HuntParityAIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0965728B02AE2002A614F /* HuntParityAIModel.swift */; };
 		24C32E4128AE540F00EC14FC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C32E4028AE540F00EC14FC /* Location.swift */; };
 		C909E45B28A63FA900DD9282 /* Fleet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45A28A63FA900DD9282 /* Fleet.swift */; };
 		C909E45D28A63FFF00DD9282 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45C28A63FFF00DD9282 /* Coordinate.swift */; };
@@ -87,6 +92,11 @@
 		2425349C28AFEC2900C992E1 /* deploy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = deploy.mp3; sourceTree = "<group>"; };
 		2425349E28AFECE000C992E1 /* ocean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ocean.mp3; sourceTree = "<group>"; };
 		242534A028AFFF0700C992E1 /* SoundEffectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectManager.swift; sourceTree = "<group>"; };
+		242534A328B00F9B00C992E1 /* SequentialAIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequentialAIModel.swift; sourceTree = "<group>"; };
+		242534A528B00FA700C992E1 /* RandomAIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAIModel.swift; sourceTree = "<group>"; };
+		242534A728B00FCA00C992E1 /* HuntAIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntAIModel.swift; sourceTree = "<group>"; };
+		242534A928B01A0C00C992E1 /* AIOceanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIOceanView.swift; sourceTree = "<group>"; };
+		242534AB28B01E2100C992E1 /* AIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIModel.swift; sourceTree = "<group>"; };
 		2447A16228A66AEC008CFD49 /* Ocean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ocean.swift; sourceTree = "<group>"; };
 		2447A16428A66BDC008CFD49 /* OceanZoneState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanZoneState.swift; sourceTree = "<group>"; };
 		2447A16628A66C04008CFD49 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -95,10 +105,10 @@
 		2447A16D28A6713B008CFD49 /* OceanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanView.swift; sourceTree = "<group>"; };
 		2447A16F28A6C9C3008CFD49 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		245538C128AF6E5D002F1E7E /* HumanGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanGameView.swift; sourceTree = "<group>"; };
-		247B0B4728AAB2E300273173 /* AIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIModel.swift; sourceTree = "<group>"; };
 		247B0B5028ABFDFB00273173 /* DraggableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableImage.swift; sourceTree = "<group>"; };
 		247B0B5328AC9FFE00273173 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		247B0B5A28ACDD9600273173 /* DeployView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployView.swift; sourceTree = "<group>"; };
+		24B0965728B02AE2002A614F /* HuntParityAIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntParityAIModel.swift; sourceTree = "<group>"; };
 		24C32E4028AE540F00EC14FC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		C909E45A28A63FA900DD9282 /* Fleet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fleet.swift; sourceTree = "<group>"; };
 		C909E45C28A63FFF00DD9282 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
@@ -235,6 +245,18 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
+		242534AD28B027F700C992E1 /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				242534AB28B01E2100C992E1 /* AIModel.swift */,
+				242534A328B00F9B00C992E1 /* SequentialAIModel.swift */,
+				242534A528B00FA700C992E1 /* RandomAIModel.swift */,
+				242534A728B00FCA00C992E1 /* HuntAIModel.swift */,
+				24B0965728B02AE2002A614F /* HuntParityAIModel.swift */,
+			);
+			path = AI;
+			sourceTree = "<group>";
+		};
 		2447A16828A67081008CFD49 /* PlayView */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +281,7 @@
 			children = (
 				2447A16928A670E2008CFD49 /* OceanZoneView.swift */,
 				2447A16D28A6713B008CFD49 /* OceanView.swift */,
+				242534A928B01A0C00C992E1 /* AIOceanView.swift */,
 			);
 			path = Ocean;
 			sourceTree = "<group>";
@@ -296,8 +319,8 @@
 		C909E45928A63D0400DD9282 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				242534AD28B027F700C992E1 /* AI */,
 				24C32E3C28AE36F700EC14FC /* Core */,
-				247B0B4728AAB2E300273173 /* AIModel.swift */,
 				2447A16628A66C04008CFD49 /* Game.swift */,
 			);
 			path = Models;
@@ -425,14 +448,15 @@
 				247B0B5428AC9FFE00273173 /* HapticManager.swift in Sources */,
 				24036EA328A2C22500F54BBC /* LeaderboardView.swift in Sources */,
 				C909E45F28A6457E00DD9282 /* Ship.swift in Sources */,
-				247B0B4828AAB2E300273173 /* AIModel.swift in Sources */,
 				24C32E4128AE540F00EC14FC /* Location.swift in Sources */,
+				242534A828B00FCA00C992E1 /* HuntAIModel.swift in Sources */,
 				24036E6928A2A2E300F54BBC /* LaunchView.swift in Sources */,
 				24036EA628A2C23600F54BBC /* SettingsView.swift in Sources */,
 				2410CC2728A7A6E700749E53 /* BackgroundManager.swift in Sources */,
 				247B0B5B28ACDD9600273173 /* DeployView.swift in Sources */,
 				24036E9328A2A7FD00F54BBC /* HomeView.swift in Sources */,
 				2447A16328A66AEC008CFD49 /* Ocean.swift in Sources */,
+				24B0965828B02AE2002A614F /* HuntParityAIModel.swift in Sources */,
 				242534A128AFFF0700C992E1 /* SoundEffectManager.swift in Sources */,
 				24036EA028A2C21200F54BBC /* PracticeView.swift in Sources */,
 				245538C228AF6E5D002F1E7E /* HumanGameView.swift in Sources */,
@@ -442,8 +466,12 @@
 				2447A16528A66BDC008CFD49 /* OceanZoneState.swift in Sources */,
 				24036E9A28A2B44F00F54BBC /* LottieView.swift in Sources */,
 				2447A16728A66C04008CFD49 /* Game.swift in Sources */,
+				242534AA28B01A0C00C992E1 /* AIOceanView.swift in Sources */,
 				C909E45D28A63FFF00DD9282 /* Coordinate.swift in Sources */,
 				2447A16E28A6713B008CFD49 /* OceanView.swift in Sources */,
+				242534A628B00FA700C992E1 /* RandomAIModel.swift in Sources */,
+				242534AC28B01E2100C992E1 /* AIModel.swift in Sources */,
+				242534A428B00F9B00C992E1 /* SequentialAIModel.swift in Sources */,
 				2447A16A28A670E2008CFD49 /* OceanZoneView.swift in Sources */,
 				247B0B5128ABFDFB00273173 /* DraggableImage.swift in Sources */,
 				C97FA52328AB54430085DFC4 /* DeployOceanView.swift in Sources */,

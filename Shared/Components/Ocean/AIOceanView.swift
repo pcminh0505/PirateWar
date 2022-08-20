@@ -1,5 +1,5 @@
 //
-//  OceanView.swift
+//  AIOceanView.swift
 //  PirateWar (iOS)
 //
 //  Created by Minh Pham on 12/08/2022.
@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-struct OceanView: View {
-    let showDeployedFleet: Bool
-
+struct AIOceanView: View {
     @EnvironmentObject var game: Game
+
+
     let range = (0..<(Game.numCols * Game.numRows))
     let columns = [GridItem](repeating: GridItem(.flexible(), spacing: 0), count: Game.numCols)
 
+    @State var bot = HuntParityAIModel()
+    
     var body: some View {
         GeometryReader { geo in
             ZStack {
@@ -21,10 +23,19 @@ struct OceanView: View {
                     ForEach(range, id: \.self) { index in
                         let y = index / Game.numRows
                         let x = index - (y * Game.numCols)
-                        let location = Coordinate(x: x, y: y)
                         OceanZoneView(state: $game.zoneStates[x][y])
-                            .onTapGesture {
-                            game.zoneTapped(location)
+                    }
+                }
+                .onTapGesture {
+                    if !game.over {
+                        let location: Coordinate = bot.nextMove()
+                        game.zoneTapped(location)
+                        game.zoneTapped(location)
+                        if (game.zoneStates[location.x][location.y] == .sunk ||
+                            game.zoneStates[location.x][location.y] == .hit) {
+                            bot.feedback(success: true)
+                        } else {
+                            bot.feedback(success: false)
                         }
                     }
                 }
@@ -48,7 +59,7 @@ struct OceanView: View {
                                 y: offsetY)
                         .rotationEffect(Angle(degrees: ship.isVertical() ? 0 : 90))
                         .allowsHitTesting(false)
-                        .opacity(isDeployedFleet ? 0.3 : ship.isSunk() ? 0.3 : 0.0)
+                        .opacity(0.3)
                 }
             }
                 .frame(maxWidth: geo.size.width)
@@ -58,9 +69,9 @@ struct OceanView: View {
     }
 }
 
-struct OceanView_Previews: PreviewProvider {
+struct AIOceanView_Previews: PreviewProvider {
     static var previews: some View {
-        OceanView(showDeployedFleet: true)
+        AIOceanView()
             .environmentObject(Game())
     }
 }

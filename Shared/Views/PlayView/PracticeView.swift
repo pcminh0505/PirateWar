@@ -14,7 +14,7 @@ struct PracticeView: View {
         VStack {
             ToolbarView()
                 .environmentObject(game)
-            OceanView(isDeployedFleet: false)
+            OceanView(showDeployedFleet: false)
                 .environmentObject(game)
             Spacer()
 //            StatusView(squareSize: UIScreen.main.bounds.width * 0.5 / 10)

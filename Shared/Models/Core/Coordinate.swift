@@ -18,7 +18,7 @@ struct Coordinate: Hashable {
     static func == (c1: Coordinate, c2: Coordinate) -> Bool {
         return c1.x == c2.x && c1.y == c2.y
     }
-    
+
     static func != (c1: Coordinate, c2: Coordinate) -> Bool {
         return c1.x != c2.x || c1.y != c2.y
     }
@@ -27,5 +27,10 @@ struct Coordinate: Hashable {
 extension Coordinate: CustomStringConvertible {
     var description: String {
         return "(\(x), \(y))"
+    }
+
+    func increment(x: Int, y: Int) -> Coordinate {
+        let newOrigin = Coordinate(x: self.x + x, y: self.y + y)
+        return newOrigin
     }
 }
