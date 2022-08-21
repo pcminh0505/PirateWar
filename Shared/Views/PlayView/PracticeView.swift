@@ -12,11 +12,19 @@ struct PracticeView: View {
     @State var turn: Int = 1
     @State var winner: Winner = Winner.unknown
 
+    // Timer
+    @State var hours: Int = 0
+    @State var minutes: Int = 0
+    @State var seconds: Int = 0
+    @State var timerIsPaused: Bool = true
+    @State var timer: Timer? = nil
+    @State var timerValue: String = ""
+
     @State var showPopupResult: Bool = false
     var body: some View {
         ZStack {
             VStack {
-                ToolbarView(winner: $winner, turn: $turn)
+                ToolbarView(turn: $turn, timerValue: $timerValue)
                     .environmentObject(game)
                 Spacer()
                 OceanView(showDeployedFleet: true, turn: $turn, winner: $winner)
@@ -38,7 +46,7 @@ struct PracticeView: View {
                         .cornerRadius(20)
 
                     Button {
-                        print("Hello")
+                        reset()
                     } label: {
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.theme.primaryText, lineWidth: 2)
@@ -66,7 +74,44 @@ struct PracticeView: View {
         }
             .onAppear {
             BackgroundManager.instance.startPlayer(track: "ocean", loop: true)
+            startTimer()
         }
+    }
+
+    func reset() {
+        game.reset()
+        restartTimer()
+        startTimer()
+    }
+
+    func startTimer() {
+        timerIsPaused = false
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { tempTimer in
+            if self.seconds == 59 {
+                self.seconds = 0
+                if self.minutes == 59 {
+                    self.minutes = 0
+                    self.hours = self.hours + 1
+                } else {
+                    self.minutes = self.minutes + 1
+                }
+            } else {
+                self.seconds = self.seconds + 1
+            }
+            self.timerValue = "\(String(format: "%02d", hours)):\(String(format: "%02d", minutes)):\(String(format: "%02d", seconds))"
+        }
+    }
+
+    func stopTimer() {
+        timerIsPaused = true
+        timer?.invalidate()
+        timer = nil
+    }
+
+    func restartTimer() {
+        hours = 0
+        minutes = 0
+        seconds = 0
     }
 }
 

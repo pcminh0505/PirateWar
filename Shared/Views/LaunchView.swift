@@ -21,10 +21,7 @@ struct LaunchView: View {
         VStack {
             if self.isActive {
                 // Load main view
-                NavigationView {
-                    HomeView()
-                        .navigationBarHidden(true)
-                }
+                HomeView()
                     .onAppear {
                     BackgroundManager.instance.startPlayer(track: "homebackground", loop: true)
                 }

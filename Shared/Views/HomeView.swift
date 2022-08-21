@@ -26,25 +26,28 @@ struct HomeView: View {
     @State private var isSelectingPlayMode: Bool = false
 
     var body: some View {
-        ZStack {
-            LottieView(name: "pirates", loopMode: .loop)
-                .padding(.top, -350)
+        NavigationView {
+            ZStack {
+                LottieView(name: "pirates", loopMode: .loop)
+                    .padding(.top, -350)
 
-            VStack {
-                if !isSelectingPlayMode {
-                    menuList
-//                        .transition(.move(edge: .leading))
+                VStack {
+                    if !isSelectingPlayMode {
+                        menuList
+    //                        .transition(.move(edge: .leading))
+                    }
+                    if isSelectingPlayMode {
+                        playList
+    //                        .transition(.move(edge: .trailing))
+                    }
                 }
-                if isSelectingPlayMode {
-                    playList
-//                        .transition(.move(edge: .trailing))
-                }
+                    .padding()
+                    .padding(.top, 250)
             }
-                .padding()
-                .padding(.top, 250)
+                .navigationBarHidden(true)
+                .background(Color.theme.background)
+                .foregroundColor(Color.theme.primaryText)
         }
-            .background(Color.theme.background)
-            .foregroundColor(Color.theme.primaryText)
     }
 }
 
