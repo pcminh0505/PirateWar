@@ -16,8 +16,17 @@ struct HomeView: View {
         NavigationView {
             ZStack {
                 LottieView(name: "pirates", loopMode: .loop)
-                    .padding(.top, -350)
+                    .padding(.top, -250)
                 VStack {
+                    HStack {
+                        Image(systemName: "person.circle")
+
+                        Spacer()
+                        Image(systemName: "info.circle")
+                    }
+                        .font(.title2)
+                    Spacer()
+
                     if !isSelectingPlayMode {
                         menuList
                             .transition(.move(edge: .leading))
@@ -27,8 +36,7 @@ struct HomeView: View {
                             .transition(.move(edge: .trailing))
                     }
                 }
-                    .padding()
-                    .padding(.top, 250)
+                    .padding(30)
             }
                 .navigationBarHidden(true)
                 .background(Color.theme.background)
@@ -70,7 +78,7 @@ extension HomeView {
 //                .controlSize(.regular)
 //                .cornerRadius(20)
             Button {
-                withAnimation(Animation.easeInOut(duration: 0.1), {
+                withAnimation(Animation.easeInOut(duration: 0.15), {
                     isSelectingPlayMode.toggle()
                 })
             } label: {
@@ -155,14 +163,14 @@ extension HomeView {
                 .cornerRadius(20)
 
             Button {
-                withAnimation(Animation.easeInOut(duration: 0.1), {
+                withAnimation(Animation.easeInOut(duration: 0.15), {
                     isSelectingPlayMode.toggle()
                 })
             } label: {
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(Color.theme.primaryText, lineWidth: 3)
                     .overlay(
-                    Text("⬅ Back")
+                    (Text(Image(systemName: "arrowshape.turn.up.backward")) + Text(" Back"))
                         .font(.headline)
                 )
                     .frame(height: 55)

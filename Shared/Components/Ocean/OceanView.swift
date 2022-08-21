@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OceanView: View {
-    let showDeployedFleet: Bool
+    let showDeployedFleet: Bool // Debugging 
     @Binding var turn: Int
     @Binding var winner: Winner
     @EnvironmentObject var game: Game
@@ -66,7 +66,7 @@ struct OceanView: View {
                                 y: offsetY)
                         .rotationEffect(Angle(degrees: ship.isVertical() ? 0 : 90))
                         .allowsHitTesting(false)
-                        .opacity(showDeployedFleet ? 0.3 : ship.isSunk() ? 0.3 : 0.0)
+                        .opacity(game.over ? 0.3 : ship.isSunk() ? 0.3 : 0.0)
                 }
             }
                 .frame(maxWidth: geo.size.width)

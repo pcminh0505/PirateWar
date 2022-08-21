@@ -26,7 +26,7 @@ struct PracticeView: View {
     var body: some View {
         ZStack {
             VStack {
-                ToolbarView(turn: $turn, timerValue: $timerValue)
+                GameStatusView(turn: $turn, timerValue: $timerValue)
                     .environmentObject(game)
                 Spacer()
                 OceanView(showDeployedFleet: false, turn: $turn, winner: $winner)
@@ -40,7 +40,7 @@ struct PracticeView: View {
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.theme.primaryText, lineWidth: 2)
                             .overlay(
-                            Text("Back to Home")
+                            (Text(Image(systemName: "arrowshape.turn.up.backward")) + Text(" Back"))
                                 .font(.headline)
                         )
                             .frame(height: 55)
@@ -54,7 +54,7 @@ struct PracticeView: View {
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.theme.primaryText, lineWidth: 2)
                             .overlay(
-                            Text("Reset")
+                            (Text(Image(systemName: "arrow.counterclockwise")) + Text(" Reset"))
                                 .font(.headline)
                         )
                             .frame(height: 55)

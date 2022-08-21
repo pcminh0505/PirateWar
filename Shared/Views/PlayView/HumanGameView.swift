@@ -20,6 +20,7 @@ struct HumanGameView: View {
     @State var botTurn = false
     @State var winner: Winner = Winner.unknown
 
+    @State var showEnemyFleet: Bool = false
     // Timer
     @State var seconds: Int = 0
     @State var timerIsPaused: Bool = true
@@ -41,26 +42,50 @@ struct HumanGameView: View {
     var body: some View {
         ZStack {
             VStack(spacing: 10) {
-                ToolbarView(turn: $turn, timerValue: $timerValue)
+                GameStatusView(turn: $turn, timerValue: $timerValue)
                     .environmentObject(humanGame)
-                Spacer()
 
-                if !botTurn {
-                    VStack(alignment: .center) {
-                        Text("Your turn")
-                        OceanView(showDeployedFleet: true, turn: $turn, winner: $winner)
-                            .matchedGeometryEffect(id: "SwitchOceanView", in: animation)
+
+
+                VStack (alignment: .center, spacing: 10) {
+                    Text(botTurn ? "🤖 Bot is playing..." : "📌 Your turn")
+                        .font(.title3)
+                        .bold()
+                        .foregroundColor(Color.theme.primaryText)
+
+                    HStack {
+                        Button {
+                            withAnimation {
+                                showEnemyFleet.toggle()
+                            }
+                        } label: {
+                            HStack (spacing: 10) {
+                                Image(systemName: "chevron.up.square")
+                                    .rotationEffect(.degrees(self.showEnemyFleet ? 0 : 180))
+                                    .animation(.easeInOut, value: showEnemyFleet)
+                                Text(showEnemyFleet ? "Hide Enemy Fleet" : "Show Enemy Fleet")
+
+                            }
+                                .foregroundColor(Color.theme.primaryText)
+                        }
+                    }
+                    if showEnemyFleet {
+                        FleetStatusView(squareSize: UIScreen.main.bounds.width * 0.05)
                             .environmentObject(humanGame)
                     }
+
+                }
+                if !botTurn {
+                    OceanView(showDeployedFleet: false, turn: $turn, winner: $winner)
+                        .matchedGeometryEffect(id: "SwitchOceanView", in: animation)
+                        .environmentObject(humanGame)
                 }
                 if botTurn {
-                    VStack(alignment: .center) {
-                        Text("Bot is playing")
-                        AIOceanView()
-                            .matchedGeometryEffect(id: "SwitchOceanView", in: animation)
-                            .environmentObject(botGame)
-                    }
+                    AIOceanView()
+                        .matchedGeometryEffect(id: "SwitchOceanView", in: animation)
+                        .environmentObject(botGame)
                 }
+                Spacer()
                 HStack(spacing: 20) {
                     Button {
                         navigationHelper.selection = nil
@@ -69,7 +94,7 @@ struct HumanGameView: View {
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.theme.primaryText, lineWidth: 2)
                             .overlay(
-                            Text("Back to Home")
+                            (Text(Image(systemName: "list.dash")) + Text(" Back to Home"))
                                 .font(.headline)
                         )
                             .frame(height: 55)
@@ -84,7 +109,7 @@ struct HumanGameView: View {
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.theme.primaryText, lineWidth: 2)
                             .overlay(
-                            Text("Reset")
+                            (Text(Image(systemName: "arrow.counterclockwise")) + Text(" Reset"))
                                 .font(.headline)
                         )
                             .frame(height: 55)
@@ -127,6 +152,8 @@ struct HumanGameView: View {
             startTimer()
         }
             .onChange(of: winner) { value in
+            humanGame.over = true
+            botGame.over = true
             stopTimer()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.result = Result(turn: turn, seconds: seconds, destroyedShips: humanGame.fleet.shipsDestroyed(), hitShot: humanGame.hitShot())
@@ -140,6 +167,7 @@ struct HumanGameView: View {
             game.zoneTapped(location)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 game.zoneTapped(location)
+//                self.winner = .AI // Debug
                 if game.over {
                     self.winner = .AI
                 } else if (game.zoneStates[location.x][location.y] == .sunk ||

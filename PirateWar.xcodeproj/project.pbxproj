@@ -54,7 +54,7 @@
 		2447A16528A66BDC008CFD49 /* OceanZoneState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16428A66BDC008CFD49 /* OceanZoneState.swift */; };
 		2447A16728A66C04008CFD49 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16628A66C04008CFD49 /* Game.swift */; };
 		2447A16A28A670E2008CFD49 /* OceanZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16928A670E2008CFD49 /* OceanZoneView.swift */; };
-		2447A16C28A67112008CFD49 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16B28A67112008CFD49 /* ToolbarView.swift */; };
+		2447A16C28A67112008CFD49 /* GameStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16B28A67112008CFD49 /* GameStatusView.swift */; };
 		2447A16E28A6713B008CFD49 /* OceanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16D28A6713B008CFD49 /* OceanView.swift */; };
 		2447A17028A6C9C3008CFD49 /* FleetStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447A16F28A6C9C3008CFD49 /* FleetStatusView.swift */; };
 		245538C228AF6E5D002F1E7E /* HumanGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245538C128AF6E5D002F1E7E /* HumanGameView.swift */; };
@@ -112,7 +112,7 @@
 		2447A16428A66BDC008CFD49 /* OceanZoneState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanZoneState.swift; sourceTree = "<group>"; };
 		2447A16628A66C04008CFD49 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		2447A16928A670E2008CFD49 /* OceanZoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanZoneView.swift; sourceTree = "<group>"; };
-		2447A16B28A67112008CFD49 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
+		2447A16B28A67112008CFD49 /* GameStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatusView.swift; sourceTree = "<group>"; };
 		2447A16D28A6713B008CFD49 /* OceanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanView.swift; sourceTree = "<group>"; };
 		2447A16F28A6C9C3008CFD49 /* FleetStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetStatusView.swift; sourceTree = "<group>"; };
 		245538C128AF6E5D002F1E7E /* HumanGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanGameView.swift; sourceTree = "<group>"; };
@@ -309,7 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				2447A16F28A6C9C3008CFD49 /* FleetStatusView.swift */,
-				2447A16B28A67112008CFD49 /* ToolbarView.swift */,
+				2447A16B28A67112008CFD49 /* GameStatusView.swift */,
 			);
 			path = GameStatus;
 			sourceTree = "<group>";
@@ -524,7 +524,7 @@
 				247B0B5128ABFDFB00273173 /* DraggableImage.swift in Sources */,
 				C97FA52328AB54430085DFC4 /* DeployOceanView.swift in Sources */,
 				24036E6728A2A2E300F54BBC /* PirateWarApp.swift in Sources */,
-				2447A16C28A67112008CFD49 /* ToolbarView.swift in Sources */,
+				2447A16C28A67112008CFD49 /* GameStatusView.swift in Sources */,
 				24036E9728A2AE4300F54BBC /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -82,7 +82,7 @@ class Game: ObservableObject {
                 zoneStates[location.x][location.y] = .hit
 
                 if (hitShip.isSunk()) {
-                    message = "🔥 \(hitShip.name) sunk!"
+                    message = "🔥 \(hitShip.name) sunk"
                     SoundEffectManager.instance.startPlayer(track: "sunk", loop: false)
                     HapticManager.notification(type: .success)
                     hitShip.coordinates().forEach { shipCompartment in

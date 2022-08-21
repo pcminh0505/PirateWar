@@ -12,7 +12,7 @@ struct FleetStatusView: View {
     let squareSize: CGFloat
 
     var body: some View {
-        HStack (alignment: .bottom, spacing: 0) {
+        HStack (alignment: .bottom, spacing: 20) {
             ForEach(game.fleet.ships, id: \.name) { ship in
                 VStack (spacing: 0) {
                     ForEach((1...ship.length), id: \.self) { _ in
@@ -29,7 +29,6 @@ struct FleetStatusView: View {
                         }
                     }
                 }
-                    .frame(maxWidth: .infinity, alignment: .center)
             }
         }
     }
