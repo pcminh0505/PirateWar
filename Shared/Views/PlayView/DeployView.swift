@@ -76,7 +76,7 @@ struct DeployView: View {
             Spacer()
             DeployOceanView(shipBaseCoordinate: shipBaseCoordinate, fleet: $fleet, shipStatus: $shipStatus)
             Spacer()
-            HStack(spacing: 20) {
+            HStack(spacing: 10) {
                 Button (action: {
                     presentationMode.wrappedValue.dismiss()
                     BackgroundManager.instance.startPlayer(track: "homebackground", loop: true)
@@ -85,7 +85,9 @@ struct DeployView: View {
                         .stroke(Color.theme.primaryText, lineWidth: 3)
                         .overlay(
                         (Text(Image(systemName: "arrowshape.turn.up.backward")) + Text(" Back"))
-                            .font(.headline)
+                            .font(.body)
+                            .bold()
+                            .padding()
                     )
                         .frame(height: 55)
                 }
@@ -100,8 +102,10 @@ struct DeployView: View {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.theme.primaryText, lineWidth: 3)
                         .overlay(
-                        Text("🏴‍☠️ Start Game")
-                            .font(.headline)
+                        Text("🏴‍☠️ Battle")
+                            .font(.body)
+                            .bold()
+                            .padding()
                     )
                         .frame(height: 55)
                 }

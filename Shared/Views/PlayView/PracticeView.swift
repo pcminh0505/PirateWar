@@ -21,6 +21,7 @@ struct PracticeView: View {
     @State var timerValue: String = "00:00:00"
 
     @State var showPopupResult: Bool = false
+    @State var showEnemyFleet: Bool = false
     @State var result = Result.zero
 
     var body: some View {
@@ -28,11 +29,31 @@ struct PracticeView: View {
             VStack {
                 GameStatusView(turn: $turn, timerValue: $timerValue)
                     .environmentObject(game)
+                HStack {
+                    Button {
+                        withAnimation {
+                            showEnemyFleet.toggle()
+                        }
+                    } label: {
+                        HStack (spacing: 10) {
+                            Image(systemName: "chevron.up.square")
+                                .rotationEffect(.degrees(self.showEnemyFleet ? 0 : 180))
+                                .animation(.easeInOut, value: showEnemyFleet)
+                            Text(showEnemyFleet ? "Hide Enemy Fleet" : "Show Enemy Fleet")
+
+                        }
+                            .foregroundColor(Color.theme.primaryText)
+                    }
+                }
+                if showEnemyFleet {
+                    FleetStatusView(squareSize: UIScreen.main.bounds.width * 0.05)
+                        .environmentObject(game)
+                }
                 Spacer()
                 OceanView(showDeployedFleet: false, turn: $turn, winner: $winner)
                     .environmentObject(game)
                 Spacer()
-                HStack(spacing: 20) {
+                HStack(spacing: 10) {
                     Button {
                         navigationHelper.selection = nil
                         BackgroundManager.instance.startPlayer(track: "homebackground", loop: true)
@@ -41,7 +62,9 @@ struct PracticeView: View {
                             .stroke(Color.theme.primaryText, lineWidth: 2)
                             .overlay(
                             (Text(Image(systemName: "arrowshape.turn.up.backward")) + Text(" Back"))
-                                .font(.headline)
+                                .font(.body)
+                                .bold()
+                                .padding()
                         )
                             .frame(height: 55)
                     }
@@ -55,7 +78,9 @@ struct PracticeView: View {
                             .stroke(Color.theme.primaryText, lineWidth: 2)
                             .overlay(
                             (Text(Image(systemName: "arrow.counterclockwise")) + Text(" Reset"))
-                                .font(.headline)
+                                .font(.body)
+                                .bold()
+                                .padding()
                         )
                             .frame(height: 55)
                     }

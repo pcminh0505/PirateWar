@@ -86,7 +86,7 @@ struct HumanGameView: View {
                         .environmentObject(botGame)
                 }
                 Spacer()
-                HStack(spacing: 20) {
+                HStack(spacing: 10) {
                     Button {
                         navigationHelper.selection = nil
                         BackgroundManager.instance.startPlayer(track: "homebackground", loop: true)
@@ -94,8 +94,10 @@ struct HumanGameView: View {
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.theme.primaryText, lineWidth: 2)
                             .overlay(
-                            (Text(Image(systemName: "list.dash")) + Text(" Back to Home"))
-                                .font(.headline)
+                            (Text(Image(systemName: "list.dash")) + Text(" Home"))
+                                .font(.body)
+                                .bold()
+                                .padding()
                         )
                             .frame(height: 55)
                     }
@@ -110,7 +112,9 @@ struct HumanGameView: View {
                             .stroke(Color.theme.primaryText, lineWidth: 2)
                             .overlay(
                             (Text(Image(systemName: "arrow.counterclockwise")) + Text(" Reset"))
-                                .font(.headline)
+                                .font(.body)
+                                .bold()
+                                .padding()
                         )
                             .frame(height: 55)
                     }
