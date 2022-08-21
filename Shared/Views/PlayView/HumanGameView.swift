@@ -18,17 +18,17 @@ struct HumanGameView: View {
     @State var bot = HuntParityAIModel()
     @State var turn = 1
     @State var botTurn = false
-    @State var showPopupResult = false
     @State var winner: Winner = Winner.unknown
 
-
     // Timer
-    @State var hours: Int = 0
-    @State var minutes: Int = 0
     @State var seconds: Int = 0
     @State var timerIsPaused: Bool = true
     @State var timer: Timer? = nil
-    @State var timerValue: String = ""
+    @State var timerValue: String = "00:00:00"
+
+    // Popup Result
+    @State var result = Result.zero
+    @State var showPopupResult = false
 
     @Namespace private var animation
 
@@ -48,8 +48,7 @@ struct HumanGameView: View {
                 if !botTurn {
                     VStack(alignment: .center) {
                         Text("Your turn")
-                        OceanView(showDeployedFleet: false, turn: $turn, winner: $winner)
-                            .transition(.move(edge: .leading))
+                        OceanView(showDeployedFleet: true, turn: $turn, winner: $winner)
                             .matchedGeometryEffect(id: "SwitchOceanView", in: animation)
                             .environmentObject(humanGame)
                     }
@@ -58,7 +57,6 @@ struct HumanGameView: View {
                     VStack(alignment: .center) {
                         Text("Bot is playing")
                         AIOceanView()
-                            .transition(.move(edge: .trailing))
                             .matchedGeometryEffect(id: "SwitchOceanView", in: animation)
                             .environmentObject(botGame)
                     }
@@ -80,7 +78,6 @@ struct HumanGameView: View {
                         .cornerRadius(20)
 
                     Button {
-
                         isReset.toggle()
                         BackgroundManager.instance.startPlayer(track: "deploy", loop: true)
                     } label: {
@@ -113,15 +110,27 @@ struct HumanGameView: View {
                 .padding()
                 .navigationBarHidden(true)
                 .background(Color.theme.background)
-            PopupResult(isVictory: winner == .human, show: $showPopupResult)
-                .onChange(of: winner) { _ in
-                showPopupResult = true
+            PopupResult(isVictory: winner == .human, show: $showPopupResult, result: $result)
+                .onChange(of: winner) { value in
+                if value != .unknown {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        withAnimation(.easeIn) {
+                            showPopupResult = true
+                        }
+                    }
+                }
             }
 
         }
             .onAppear {
             BackgroundManager.instance.startPlayer(track: "ocean", loop: true)
             startTimer()
+        }
+            .onChange(of: winner) { value in
+            stopTimer()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.result = Result(turn: turn, seconds: seconds, destroyedShips: humanGame.fleet.shipsDestroyed(), hitShot: humanGame.hitShot())
+            }
         }
     }
 
@@ -146,18 +155,8 @@ struct HumanGameView: View {
     func startTimer() {
         timerIsPaused = false
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { tempTimer in
-            if self.seconds == 59 {
-                self.seconds = 0
-                if self.minutes == 59 {
-                    self.minutes = 0
-                    self.hours = self.hours + 1
-                } else {
-                    self.minutes = self.minutes + 1
-                }
-            } else {
-                self.seconds = self.seconds + 1
-            }
-            self.timerValue = "\(String(format: "%02d", hours)):\(String(format: "%02d", minutes)):\(String(format: "%02d", seconds))"
+            self.seconds += 1
+            self.timerValue = TimeHelper.printSecondsToTimeNumber(self.seconds)
         }
     }
 
@@ -168,8 +167,6 @@ struct HumanGameView: View {
     }
 
     func restartTimer() {
-        hours = 0
-        minutes = 0
         seconds = 0
     }
 }

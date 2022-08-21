@@ -11,6 +11,7 @@ struct PopupResult: View {
     @Environment(\.colorScheme) var colorScheme
     let isVictory: Bool
     @Binding var show: Bool
+    @Binding var result: Result
 
     let columns: [GridItem] = [
         GridItem(.flexible(), alignment: .trailing),
@@ -36,21 +37,21 @@ struct PopupResult: View {
                         LazyVGrid(columns: columns, spacing: 20) {
                             Text("Number of Turns")
                                 .font(.headline)
-                            Text("17")
+                            Text("\(result.turn)")
                             Text("Time ellapsed")
                                 .font(.headline)
-                            Text("30:00")
-                            Text("Destroyed Fleet")
+                            Text(TimeHelper.printSecondsToTimeNumber(result.seconds))
+                            Text("Destroyed Ships")
                                 .font(.headline)
-                            Text("5")
+                            Text("\(result.destroyedShips)")
                             Text("Accuracy")
                                 .font(.headline)
-                            Text("50%")
+                            Text("\(String(format: "%.2f", result.accuracy * 100))%")
                             Text("Total Score")
                                 .font(.title2)
                                 .foregroundColor(colorScheme == .dark ? Color.theme.darkBlue : Color.theme.red)
                                 .bold()
-                            Text("100")
+                            Text("\(result.totalScore)")
                                 .font(.title2)
                                 .foregroundColor(colorScheme == .dark ? Color.theme.darkBlue : Color.theme.red)
                                 .bold()
@@ -63,7 +64,7 @@ struct PopupResult: View {
                         .cornerRadius(25)
                         .frame(maxWidth: geo.size.width * 0.85, maxHeight: geo.size.height * 0.6)
                 }
-                .transition(AnyTransition.opacity.animation(.easeInOut))
+                    .transition(AnyTransition.opacity.animation(.easeInOut))
             }
         }
     }
@@ -71,7 +72,7 @@ struct PopupResult: View {
 
 struct PopupResult_Previews: PreviewProvider {
     static var previews: some View {
-        PopupResult(isVictory: true, show: .constant(true))
+        PopupResult(isVictory: true, show: .constant(true), result: .constant( Result(turn: 20, seconds: 120, destroyedShips: 5, hitShot: 17)))
             .preferredColorScheme(.light)
     }
 }

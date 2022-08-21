@@ -28,6 +28,18 @@ class Game: ObservableObject {
         self.fleet = Fleet()
         reset()
     }
+    
+    func hitShot() -> Int {
+        var count: Int = 0
+        for row in zoneStates {
+            for col in row {
+                if col == .hit || col == .sunk {
+                    count += 1
+                }
+            }
+        }
+        return count
+    }
 
     // Human deployed mode
     init(deployedFleet: [Ship]) {
@@ -45,6 +57,7 @@ class Game: ObservableObject {
         self.fleet.randomDeploy(on: self.ocean)
         self.message = ""
         self.selectedZone = Coordinate.unset
+        self.over = false
     }
 
     

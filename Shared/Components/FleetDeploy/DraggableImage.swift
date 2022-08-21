@@ -85,6 +85,11 @@ struct DraggableImage: View {
                 self.stateChange = false
             }
         }
+            .onDisappear {
+                // Reset
+                self.dragAmount = CGSize.zero
+                self.accumulated = CGSize.zero
+            }
     }
 
     var dragColor: Color {

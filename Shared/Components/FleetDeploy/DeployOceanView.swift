@@ -10,7 +10,7 @@ import SwiftUI
 struct DeployOceanView: View {
     let range = (0..<(Game.numCols * Game.numRows))
     let columns = [GridItem](repeating: GridItem(.flexible(), spacing: 0), count: Game.numCols)
-    var shipBaseCoordinate: [Coordinate]
+    let shipBaseCoordinate: [Coordinate]
 
     @State var stateChange = [Bool](repeating: false, count: 5)
     @Binding var fleet: [[Coordinate]]
@@ -49,6 +49,7 @@ struct DeployOceanView: View {
                         .overlay(
                         Color.clear
                             .onAppear {
+                            shipStatus[index].isVertical = true
                             shipStatus[index].topLocation = Coordinate(x: index, y: 0)
                             fleet[index] = LocationHelper.mapFullCoordinate(isVertical: shipStatus[index].isVertical, length: ship.length, topLocation: shipStatus[index].topLocation)
                         }

@@ -89,7 +89,6 @@ struct DeployView: View {
         }
     }
         
-
     func createShip(deployedLocation: [[Coordinate]]) -> [Ship] {
         var deployedFleet: [Ship] = []
         for index in (0..<Fleet.shipsInFleet.count) {

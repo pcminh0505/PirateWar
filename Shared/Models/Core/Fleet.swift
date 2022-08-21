@@ -28,6 +28,11 @@ class Fleet {
     func isDestroyed() -> Bool {
         return !ships.contains(where: { !$0.isSunk() })
     }
+    
+    //
+    func shipsDestroyed() -> Int {
+        return ships.filter{ $0.isSunk() }.count
+    }
 
 
     // Return the ship occupying the given Coordinate or nil if none found

@@ -9,20 +9,20 @@ import SwiftUI
 
 struct PracticeView: View {
     @EnvironmentObject var navigationHelper: NavigationHelper
-    
+
     @StateObject var game = Game()
     @State var turn: Int = 1
     @State var winner: Winner = Winner.unknown
 
     // Timer
-    @State var hours: Int = 0
-    @State var minutes: Int = 0
     @State var seconds: Int = 0
     @State var timerIsPaused: Bool = true
     @State var timer: Timer? = nil
-    @State var timerValue: String = ""
+    @State var timerValue: String = "00:00:00"
 
     @State var showPopupResult: Bool = false
+    @State var result = Result.zero
+
     var body: some View {
         ZStack {
             VStack {
@@ -70,19 +70,35 @@ struct PracticeView: View {
                 .background(Color.theme.background)
 
 
-            PopupResult(isVictory: winner == .human, show: $showPopupResult)
-                .onChange(of: winner) { _ in
-                showPopupResult = true
+            PopupResult(isVictory: winner == .human, show: $showPopupResult, result: $result)
+                .onChange(of: winner) { value in
+                if value != .unknown {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        withAnimation(.easeIn) {
+                            showPopupResult = true
+                        }
+                    }
+                }
             }
         }
             .onAppear {
             BackgroundManager.instance.startPlayer(track: "ocean", loop: true)
             startTimer()
         }
+            .onChange(of: winner) { value in
+            stopTimer()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.result = Result(turn: turn, seconds: seconds, destroyedShips: game.fleet.shipsDestroyed(), hitShot: game.hitShot())
+            }
+        }
     }
 
     func reset() {
         game.reset()
+        self.turn = 1
+        self.result = .zero
+        self.winner = .unknown
+        self.showPopupResult = false
         restartTimer()
         startTimer()
     }
@@ -90,18 +106,10 @@ struct PracticeView: View {
     func startTimer() {
         timerIsPaused = false
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { tempTimer in
-            if self.seconds == 59 {
-                self.seconds = 0
-                if self.minutes == 59 {
-                    self.minutes = 0
-                    self.hours = self.hours + 1
-                } else {
-                    self.minutes = self.minutes + 1
-                }
-            } else {
-                self.seconds = self.seconds + 1
-            }
-            self.timerValue = "\(String(format: "%02d", hours)):\(String(format: "%02d", minutes)):\(String(format: "%02d", seconds))"
+
+            self.seconds += 1
+
+            self.timerValue = TimeHelper.printSecondsToTimeNumber(self.seconds)
         }
     }
 
@@ -112,8 +120,6 @@ struct PracticeView: View {
     }
 
     func restartTimer() {
-        hours = 0
-        minutes = 0
         seconds = 0
     }
 }
