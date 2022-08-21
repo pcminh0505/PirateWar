@@ -44,53 +44,47 @@ struct DraggableImage: View {
                 self.dragState = shipMoved(location: self.dragAmount)
             }
                 .onEnded { _ in
-                if stateChange {
-                    let tmp = self.accumulated
-                    if shipStatus.isVertical {
-                        self.dragAmount = CGSize(
-                            width: CGFloat(Int(-tmp.height / squareSize)) * squareSize,
-                            height: CGFloat(Int(tmp.width / squareSize)) * squareSize)
-                    } else {
-                        self.dragAmount = CGSize(
-                            width: CGFloat(Int(tmp.height / squareSize)) * squareSize,
-                            height: CGFloat(Int(-tmp.width / squareSize)) * squareSize)
-                    }
-                    self.dragState = .good
-                    self.accumulated = self.dragAmount
-                    self.stateChange = false
+
+                var currentCoordinate = shipStatus.topLocation
+                if shipStatus.isVertical {
+                    currentCoordinate.x = initCoordinate.x + Int(dragAmount.width / squareSize)
+                    currentCoordinate.y = initCoordinate.y + Int(dragAmount.height / squareSize)
                 } else {
-                    var currentCoordinate = shipStatus.topLocation
-                    if shipStatus.isVertical {
-                        currentCoordinate.x = initCoordinate.x + Int(dragAmount.width / squareSize)
-                        currentCoordinate.y = initCoordinate.y + Int(dragAmount.height / squareSize)
-                    } else {
-                        currentCoordinate.x = initCoordinate.x + length / 2 - Int(dragAmount.height / squareSize)
-                        currentCoordinate.y = initCoordinate.y + length / 2 + Int(dragAmount.width / squareSize)
-                    }
-
-                    if self.dragState != .bad {
-                        self.dragAmount = CGSize(width: CGFloat(Int(dragAmount.width / squareSize)) * squareSize, height: CGFloat(Int(dragAmount.height / squareSize)) * squareSize)
-                        self.dragState = .good
-                        shipStatus.topLocation = currentCoordinate
-                        fleetLocation[index] = LocationHelper.mapFullCoordinate(isVertical: shipStatus.isVertical, length: length, topLocation: currentCoordinate)
-                    } else {
-                        self.dragAmount = self.accumulated
-                        self.dragState = .good
-                    }
-
-//                    if Game().ocean.contains(currentCoordinate) {
-//                        self.dragAmount = CGSize(width: CGFloat(Int(dragAmount.width / squareSize)) * squareSize, height: CGFloat(Int(dragAmount.height / squareSize)) * squareSize)
-//                        self.dragState = .good
-//                        shipStatus.topLocation = currentCoordinate
-//                    } else {
-//                        self.dragAmount = .zero
-//                        self.dragState = .bad
-//                    }
-                    self.stateChange = false
-                    self.accumulated = self.dragAmount
+                    currentCoordinate.x = initCoordinate.x + length / 2 - Int(dragAmount.height / squareSize)
+                    currentCoordinate.y = initCoordinate.y + length / 2 + Int(dragAmount.width / squareSize)
                 }
+
+                if self.dragState != .bad {
+                    self.dragAmount = CGSize(width: CGFloat(Int(dragAmount.width / squareSize)) * squareSize, height: CGFloat(Int(dragAmount.height / squareSize)) * squareSize)
+                    self.dragState = .good
+                    shipStatus.topLocation = currentCoordinate
+                    fleetLocation[index] = LocationHelper.mapFullCoordinate(isVertical: shipStatus.isVertical, length: length, topLocation: currentCoordinate)
+                } else {
+                    self.dragAmount = self.accumulated
+                    self.dragState = .good
+                }
+                self.stateChange = false
+                self.accumulated = self.dragAmount
+
             }
         )
+            .onChange(of: fleetLocation) { newValue in
+            if stateChange {
+                let tmp = self.accumulated
+                if shipStatus.isVertical {
+                    self.dragAmount = CGSize(
+                        width: CGFloat(Int(-tmp.height / squareSize)) * squareSize,
+                        height: CGFloat(Int(tmp.width / squareSize)) * squareSize)
+                } else {
+                    self.dragAmount = CGSize(
+                        width: CGFloat(Int(tmp.height / squareSize)) * squareSize,
+                        height: CGFloat(Int(-tmp.width / squareSize)) * squareSize)
+                }
+                self.dragState = .good
+                self.accumulated = self.dragAmount
+                self.stateChange = false
+            }
+        }
     }
 
     var dragColor: Color {

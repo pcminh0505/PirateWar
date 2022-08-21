@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HumanGameView: View {
+    @EnvironmentObject var navigationHelper: NavigationHelper
+    @Binding var isReset: Bool
     let deployedFleet: [Ship]
 
     // Game initializers
@@ -30,14 +32,15 @@ struct HumanGameView: View {
 
     @Namespace private var animation
 
-    init(deployedFleet: [Ship]) {
+    init(deployedFleet: [Ship], isReset: Binding<Bool>) {
         self.deployedFleet = deployedFleet
+        self._isReset = isReset
         _botGame = StateObject(wrappedValue: Game(deployedFleet: deployedFleet))
     }
 
     var body: some View {
         ZStack {
-            VStack {
+            VStack(spacing: 10) {
                 ToolbarView(turn: $turn, timerValue: $timerValue)
                     .environmentObject(humanGame)
                 Spacer()
@@ -47,7 +50,7 @@ struct HumanGameView: View {
                         Text("Your turn")
                         OceanView(showDeployedFleet: false, turn: $turn, winner: $winner)
                             .transition(.move(edge: .leading))
-                            .matchedGeometryEffect(id: "SwitchView", in: animation)
+                            .matchedGeometryEffect(id: "SwitchOceanView", in: animation)
                             .environmentObject(humanGame)
                     }
                 }
@@ -56,20 +59,51 @@ struct HumanGameView: View {
                         Text("Bot is playing")
                         AIOceanView()
                             .transition(.move(edge: .trailing))
-                            .matchedGeometryEffect(id: "SwitchView", in: animation)
+                            .matchedGeometryEffect(id: "SwitchOceanView", in: animation)
                             .environmentObject(botGame)
                     }
                 }
+                HStack(spacing: 20) {
+                    Button {
+                        navigationHelper.selection = nil
+                        BackgroundManager.instance.startPlayer(track: "homebackground", loop: true)
+                    } label: {
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.theme.primaryText, lineWidth: 2)
+                            .overlay(
+                            Text("Back to Home")
+                                .font(.headline)
+                        )
+                            .frame(height: 55)
+                    }
+                        .controlSize(.regular)
+                        .cornerRadius(20)
+
+                    Button {
+
+                        isReset.toggle()
+                        BackgroundManager.instance.startPlayer(track: "deploy", loop: true)
+                    } label: {
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.theme.primaryText, lineWidth: 2)
+                            .overlay(
+                            Text("Reset")
+                                .font(.headline)
+                        )
+                            .frame(height: 55)
+                    }
+                        .controlSize(.regular)
+                        .cornerRadius(20)
+                }
+                    .foregroundColor(Color.theme.primaryText)
             }
                 .onChange(of: turn) { _ in
                 withAnimation {
                     botTurn.toggle()
                 }
                 if winner != .AI || winner == .unknown {
+                    botMove(game: botGame)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                        botMove(game: botGame)
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                         withAnimation {
                             botTurn.toggle()
                         }
@@ -95,21 +129,18 @@ struct HumanGameView: View {
         if !game.over {
             let location: Coordinate = bot.nextMove()
             game.zoneTapped(location)
-            game.zoneTapped(location)
-            if game.over {
-                self.winner = .AI
-            } else if (game.zoneStates[location.x][location.y] == .sunk ||
-                    game.zoneStates[location.x][location.y] == .hit) {
-                bot.feedback(success: true)
-            } else {
-                bot.feedback(success: false)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                game.zoneTapped(location)
+                if game.over {
+                    self.winner = .AI
+                } else if (game.zoneStates[location.x][location.y] == .sunk ||
+                        game.zoneStates[location.x][location.y] == .hit) {
+                    bot.feedback(success: true)
+                } else {
+                    bot.feedback(success: false)
+                }
             }
         }
-    }
-
-    func reset() {
-        restartTimer()
-        startTimer()
     }
 
     func startTimer() {
@@ -145,6 +176,7 @@ struct HumanGameView: View {
 
 struct HumanGameView_Previews: PreviewProvider {
     static var previews: some View {
-        HumanGameView(deployedFleet: [])
+        HumanGameView(deployedFleet: [], isReset: .constant(false))
+            .environmentObject(NavigationHelper())
     }
 }

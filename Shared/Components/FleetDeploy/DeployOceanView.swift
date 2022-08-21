@@ -78,7 +78,7 @@ struct DeployOceanView: View {
                             let newShipLocation = LocationHelper.mapFullCoordinate(isVertical: !shipStatus[index].isVertical, length: ship.length, topLocation: currentCoordinate)
 
                             if (ocean.contains(currentCoordinate) &&
-                                    ocean.contains(fleet[index]) &&
+                                    ocean.contains(newShipLocation) &&
                                     !LocationHelper.isOverlapped (shipCoordinate: newShipLocation, fleet: otherShips)) {
                                 self.stateChange[index] = true
                                 shipStatus[index].isVertical.toggle()

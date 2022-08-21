@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PracticeView: View {
+    @EnvironmentObject var navigationHelper: NavigationHelper
+    
     @StateObject var game = Game()
     @State var turn: Int = 1
     @State var winner: Winner = Winner.unknown
@@ -27,12 +29,13 @@ struct PracticeView: View {
                 ToolbarView(turn: $turn, timerValue: $timerValue)
                     .environmentObject(game)
                 Spacer()
-                OceanView(showDeployedFleet: true, turn: $turn, winner: $winner)
+                OceanView(showDeployedFleet: false, turn: $turn, winner: $winner)
                     .environmentObject(game)
                 Spacer()
                 HStack(spacing: 20) {
                     Button {
-                        print("Hello")
+                        navigationHelper.selection = nil
+                        BackgroundManager.instance.startPlayer(track: "homebackground", loop: true)
                     } label: {
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.theme.primaryText, lineWidth: 2)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct HuntParityAIModel {
+struct HuntParityAIModel: AIModel {
     private var attacked: [Coordinate] = []
     private var knownShips: [SeekAndDestroy] = []
     private var lastMove: Move?

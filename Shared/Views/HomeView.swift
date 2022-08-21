@@ -8,37 +8,23 @@
 import SwiftUI
 
 struct HomeView: View {
-    private var menuOptions: [String: String] = [
-        "play": "🕹 Play",
-        "instruction": "📖 How to Play",
-        "leaderboard": "🏆 Leaderboard",
-        "settings": "⚙️ Settings",
-    ]
-    private var playOptions: [String: String] = [
-        "bot": "🤖 Single Player (vs AI)",
-        "practice": "🎯 Practice",
-        "back": "⬅ Back",
-    ]
+    @EnvironmentObject var navigationHelper: NavigationHelper
 
-    @State private var menuSelection: String? = nil
-    @State private var playSelection: String? = nil
-
-    @State private var isSelectingPlayMode: Bool = false
+    @State var isSelectingPlayMode: Bool = false
 
     var body: some View {
         NavigationView {
             ZStack {
                 LottieView(name: "pirates", loopMode: .loop)
                     .padding(.top, -350)
-
                 VStack {
                     if !isSelectingPlayMode {
                         menuList
-    //                        .transition(.move(edge: .leading))
+                            .transition(.move(edge: .leading))
                     }
                     if isSelectingPlayMode {
                         playList
-    //                        .transition(.move(edge: .trailing))
+                            .transition(.move(edge: .trailing))
                     }
                 }
                     .padding()
@@ -48,6 +34,9 @@ struct HomeView: View {
                 .background(Color.theme.background)
                 .foregroundColor(Color.theme.primaryText)
         }
+            .onAppear {
+            BackgroundManager.instance.startPlayer(track: "homebackground", loop: true)
+        }
     }
 }
 
@@ -55,141 +44,143 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
             .preferredColorScheme(.dark)
+            .environmentObject(NavigationHelper())
     }
 }
 
 extension HomeView {
     private var menuList: some View {
-        VStack (alignment: .leading, spacing: 20) {
-            NavigationLink(tag: "instruction", selection: $menuSelection) {
-                HowToPlayView()
+        VStack (alignment: .leading, spacing: 15) {
+//            NavigationLink(tag: "instruction", selection: $navigationHelper.selection) {
+//                HowToPlayView()
+//            } label: {
+//                EmptyView()
+//            }
+//            Button {
+//                navigationHelper.selection = "instruction"
+//            } label: {
+//                RoundedRectangle(cornerRadius: 20)
+//                    .stroke(Color.theme.primaryText, lineWidth: 3)
+//                    .overlay(
+//                    Text("📖 How to Play")
+//                        .font(.headline)
+//                )
+//                    .frame(height: 55)
+//            }
+//                .controlSize(.regular)
+//                .cornerRadius(20)
+            Button {
+                withAnimation(Animation.easeInOut(duration: 0.1), {
+                    isSelectingPlayMode.toggle()
+                })
             } label: {
-                EmptyView()
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.theme.primaryText, lineWidth: 3)
+                    .overlay(
+                    Text("🕹 Play")
+                        .font(.headline)
+                )
+                    .frame(height: 55)
             }
-            NavigationLink(tag: "leaderboard", selection: $menuSelection) {
+                .controlSize(.regular)
+                .cornerRadius(20)
+
+            Button {
+                navigationHelper.selection = "leaderboard"
+            } label: {
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.theme.primaryText, lineWidth: 3)
+                    .overlay(
+                    Text("🏆 Leaderboard")
+                        .font(.headline)
+                )
+                    .frame(height: 55)
+            }
+                .controlSize(.regular)
+                .cornerRadius(20)
+
+            Button {
+                navigationHelper.selection = "settings"
+            } label: {
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.theme.primaryText, lineWidth: 3)
+                    .overlay(
+                    Text("⚙️ Settings")
+                        .font(.headline)
+                )
+                    .frame(height: 55)
+            }
+                .controlSize(.regular)
+                .cornerRadius(20)
+
+            NavigationLink(tag: "leaderboard", selection: $navigationHelper.selection) {
                 LeaderboardView()
             } label: {
                 EmptyView()
             }
-            NavigationLink(tag: "settings", selection: $menuSelection) {
+            NavigationLink(tag: "settings", selection: $navigationHelper.selection) {
                 SettingsView()
             } label: {
                 EmptyView()
             }
-
-            Button {
-                isSelectingPlayMode.toggle()
-            } label: {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.theme.primaryText, lineWidth: 3)
-                    .overlay(
-                    Text(menuOptions["play"]!)
-                        .font(.headline)
-                )
-                    .frame(height: 55)
-            }
-                .controlSize(.regular)
-                .cornerRadius(20)
-
-            Button {
-                menuSelection = "instruction"
-            } label: {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.theme.primaryText, lineWidth: 3)
-                    .overlay(
-                    Text(menuOptions["instruction"]!)
-                        .font(.headline)
-                )
-                    .frame(height: 55)
-            }
-                .controlSize(.regular)
-                .cornerRadius(20)
-
-            Button {
-                menuSelection = "leaderboard"
-            } label: {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.theme.primaryText, lineWidth: 3)
-                    .overlay(
-                    Text(menuOptions["leaderboard"]!)
-                        .font(.headline)
-                )
-                    .frame(height: 55)
-            }
-                .controlSize(.regular)
-                .cornerRadius(20)
-
-            Button {
-                menuSelection = "settings"
-            } label: {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.theme.primaryText, lineWidth: 3)
-                    .overlay(
-                    Text(menuOptions["settings"]!)
-                        .font(.headline)
-                )
-                    .frame(height: 55)
-            }
-                .controlSize(.regular)
-                .cornerRadius(20)
         }
     }
     private var playList: some View {
-        VStack (alignment: .leading, spacing: 20) {
-            NavigationLink(tag: "bot", selection: $playSelection) {
+        VStack (alignment: .leading, spacing: 15) {
+            Button {
+                navigationHelper.selection = "bot"
+            } label: {
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.theme.primaryText, lineWidth: 3)
+                    .overlay(
+                    Text("🤖 Single Player (vs AI)")
+                        .font(.headline)
+                )
+                    .frame(height: 55)
+            }
+                .controlSize(.regular)
+                .cornerRadius(20)
+            Button {
+                navigationHelper.selection = "practice"
+            } label: {
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.theme.primaryText, lineWidth: 3)
+                    .overlay(
+                    Text("🎯 Practice")
+                        .font(.headline)
+                )
+                    .frame(height: 55)
+            }
+                .controlSize(.regular)
+                .cornerRadius(20)
+
+            Button {
+                withAnimation(Animation.easeInOut(duration: 0.1), {
+                    isSelectingPlayMode.toggle()
+                })
+            } label: {
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.theme.primaryText, lineWidth: 3)
+                    .overlay(
+                    Text("⬅ Back")
+                        .font(.headline)
+                )
+                    .frame(height: 55)
+            }
+                .controlSize(.regular)
+                .cornerRadius(20)
+
+            NavigationLink(tag: "bot", selection: $navigationHelper.selection) {
                 DeployView()
             } label: {
                 EmptyView()
-            }
-            NavigationLink(tag: "practice", selection: $playSelection) {
+            }.isDetailLink(false)
+            NavigationLink(tag: "practice", selection: $navigationHelper.selection) {
                 PracticeView()
             } label: {
                 EmptyView()
-            }
-
-            Button {
-                playSelection = "bot"
-            } label: {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.theme.primaryText, lineWidth: 3)
-                    .overlay(
-                    Text(playOptions["bot"]!)
-                        .font(.headline)
-                )
-                    .frame(height: 55)
-            }
-                .controlSize(.regular)
-                .cornerRadius(20)
-
-            Button {
-                playSelection = "practice"
-            } label: {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.theme.primaryText, lineWidth: 3)
-                    .overlay(
-                    Text(playOptions["practice"]!)
-                        .font(.headline)
-                )
-                    .frame(height: 55)
-            }
-                .controlSize(.regular)
-                .cornerRadius(20)
-
-            Button {
-                isSelectingPlayMode.toggle()
-            } label: {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.theme.primaryText, lineWidth: 3)
-                    .overlay(
-                    Text(playOptions["back"]!)
-                        .font(.headline)
-                )
-                    .frame(height: 55)
-            }
-                .controlSize(.regular)
-                .cornerRadius(20)
+            }.isDetailLink(false)
         }
-            .padding(.top, -55)
     }
 
 }

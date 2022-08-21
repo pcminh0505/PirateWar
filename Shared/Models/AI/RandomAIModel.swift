@@ -29,6 +29,6 @@ struct RandomAIModel: AIModel {
     }
 
     public mutating func feedback(success: Bool) {
-
+        // No feedback based
     }
 }

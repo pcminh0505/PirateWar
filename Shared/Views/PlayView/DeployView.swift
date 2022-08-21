@@ -33,7 +33,6 @@ struct DeployView: View {
                 Text("1. Drag the ship to your prefered position")
                 Text("2. Tap to rotate the ship horizontally or vertically")
                 Text("3. Note that you can only drag/rotate a ship on a valid postion (within the board and not overlapping with others")
-                Text("4. Need reference? Refer to this link")
             }
                 .font(.headline)
                 .foregroundColor(Color.theme.primaryText)
@@ -41,12 +40,15 @@ struct DeployView: View {
             DeployOceanView(shipBaseCoordinate: shipBaseCoordinate, fleet: $fleet, shipStatus: $shipStatus)
             Spacer()
             HStack {
-                NavigationLink(destination: HumanGameView(deployedFleet: createShip(deployedLocation: fleet)),
+                NavigationLink(destination: HumanGameView(deployedFleet: createShip(deployedLocation: fleet), isReset: $isGoingToGameView),
                                isActive: $isGoingToGameView) {
                     EmptyView()
-                }
+                }.isDetailLink(false)
 
-                Button (action: { presentationMode.wrappedValue.dismiss() }) {
+                Button (action: {
+                    presentationMode.wrappedValue.dismiss()
+                    BackgroundManager.instance.startPlayer(track: "homebackground", loop: true)
+                }) {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.theme.primaryText, lineWidth: 3)
                         .overlay(
@@ -61,8 +63,7 @@ struct DeployView: View {
                 Spacer()
 
                 Button {
-                    print("Start Game")
-                    self.isGoingToGameView = true
+                    self.isGoingToGameView.toggle()
                 } label: {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.theme.primaryText, lineWidth: 3)

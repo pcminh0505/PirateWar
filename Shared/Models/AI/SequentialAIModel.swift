@@ -12,6 +12,7 @@ struct SequentialAIModel: AIModel {
     public init() { }
 
     public mutating func feedback(success: Bool) {
+        // No feedback based
     }
 
     public mutating func nextMove() -> Coordinate {

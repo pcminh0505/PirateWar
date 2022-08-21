@@ -7,7 +7,14 @@
 
 import Foundation
 
-protocol AIModel{
+// Future improvement: Add .sunk notification to optimize prediction
+enum Feedback {
+    case miss
+    case hit
+    case sunk
+}
+
+protocol AIModel {
     init()
     
     mutating func nextMove() -> Coordinate

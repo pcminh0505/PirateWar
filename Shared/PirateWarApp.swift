@@ -12,6 +12,7 @@ struct PirateWarApp: App {
     var body: some Scene {
         WindowGroup {
             LaunchView()
+                .environmentObject(NavigationHelper())
         }
     }
 }

@@ -22,9 +22,6 @@ struct LaunchView: View {
             if self.isActive {
                 // Load main view
                 HomeView()
-                    .onAppear {
-                    BackgroundManager.instance.startPlayer(track: "homebackground", loop: true)
-                }
             } else {
                 ZStack {
                     // Load launch/splash view
@@ -49,12 +46,11 @@ struct LaunchView: View {
                         .padding(.bottom, 100)
                 }
                     .background(Color.theme.background)
-
             }
         }
             .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                withAnimation {
+                withAnimation(.easeInOut) {
                     self.opacity = 0.0
                     self.isActive = true
                 }
