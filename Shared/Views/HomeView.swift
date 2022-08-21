@@ -13,6 +13,7 @@ struct HomeView: View {
     @State var isSelectingPlayMode: Bool = false
 
     var body: some View {
+        // Should use NavigationStack on newer version
         NavigationView {
             ZStack {
                 LottieView(name: "pirates", loopMode: .loop)
@@ -42,6 +43,7 @@ struct HomeView: View {
                 .background(Color.theme.background)
                 .foregroundColor(Color.theme.primaryText)
         }
+            .navigationViewStyle(.stack)
             .onAppear {
             BackgroundManager.instance.startPlayer(track: "homebackground", loop: true)
         }
