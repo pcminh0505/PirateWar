@@ -10,20 +10,33 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
     @AppStorage("difficulty") var difficulty: Difficulty = .easy
+    @AppStorage("backgroundMusic") var backgroundMusic = true
+    @AppStorage("soundEffect") var soundEffect = true
+
 
     var body: some View {
+//        let _ = print("Background Music", backgroundMusic)
+//        let _ = print("Sound Effect", soundEffect)
         ZStack {
             VStack (alignment: .center, spacing: 20) {
                 Text("Sounds")
                     .font(.title3)
                     .bold()
-                Toggle(isOn: .constant(true)) {
+                Toggle(isOn: $backgroundMusic) {
                     Text("Background Music")
                         .foregroundColor(Color.theme.secondaryText)
                 }
-                Toggle(isOn: .constant(true)) {
+                    .onChange(of: backgroundMusic) { value in
+                    // Effect immediately
+                    BackgroundManager.instance.player?.volume = value ? 1.0 : 0.0
+                }
+                Toggle(isOn: $soundEffect) {
                     Text("Sound Effect")
                         .foregroundColor(Color.theme.secondaryText)
+                }
+                    .onChange(of: soundEffect) { value in
+                    // Effect immediately
+                    SoundEffectManager.instance.player?.volume = value ? 1.0 : 0.0
                 }
 
 

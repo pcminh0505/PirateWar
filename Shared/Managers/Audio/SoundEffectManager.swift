@@ -26,6 +26,7 @@ final class SoundEffectManager {
             if (loop) {
                 player?.numberOfLoops = -1
             }
+            player?.volume = UserDefaults.standard.bool(forKey: "soundEffect") ? 1.0 : 0.0
             player?.enableRate = true
             player?.rate = speed
             player?.play()

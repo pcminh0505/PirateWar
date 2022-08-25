@@ -20,7 +20,10 @@ struct InfoView: View {
 
     let personalURL = URL(string: "https://pcminh0505.vercel.app/")!
 
-
+    init() {
+        // Hide scroll bar
+        UITableView.appearance().showsVerticalScrollIndicator = false
+    }
     var body: some View {
         NavigationView {
             List {
@@ -174,7 +177,7 @@ struct InfoView: View {
                         Spacer()
                         Link("Minh Pham", destination: personalURL)
                     }
-                    
+
                 } header: {
                     Text("Association")
                 }

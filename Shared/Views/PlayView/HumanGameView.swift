@@ -40,6 +40,7 @@ struct HumanGameView: View {
     }
 
     var body: some View {
+//        let _ = print(bot) // Debug
         ZStack {
             VStack(spacing: 10) {
                 GameStatusView(turn: $turn, timerValue: $timerValue)
