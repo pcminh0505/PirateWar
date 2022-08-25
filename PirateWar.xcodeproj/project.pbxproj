@@ -66,6 +66,7 @@
 		24B0965828B02AE2002A614F /* HuntParityAIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0965728B02AE2002A614F /* HuntParityAIModel.swift */; };
 		24C32E4128AE540F00EC14FC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C32E4028AE540F00EC14FC /* Location.swift */; };
 		24F1AB1028B72F4800A1B8C0 /* XMarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F1AB0F28B72F4800A1B8C0 /* XMarkButton.swift */; };
+		24F1AB1228B7AA0400A1B8C0 /* AILevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F1AB1128B7AA0400A1B8C0 /* AILevel.swift */; };
 		C909E45B28A63FA900DD9282 /* Fleet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45A28A63FA900DD9282 /* Fleet.swift */; };
 		C909E45D28A63FFF00DD9282 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45C28A63FFF00DD9282 /* Coordinate.swift */; };
 		C909E45F28A6457E00DD9282 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45E28A6457E00DD9282 /* Ship.swift */; };
@@ -123,6 +124,7 @@
 		24B0965728B02AE2002A614F /* HuntParityAIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntParityAIModel.swift; sourceTree = "<group>"; };
 		24C32E4028AE540F00EC14FC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		24F1AB0F28B72F4800A1B8C0 /* XMarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMarkButton.swift; sourceTree = "<group>"; };
+		24F1AB1128B7AA0400A1B8C0 /* AILevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AILevel.swift; sourceTree = "<group>"; };
 		C909E45A28A63FA900DD9282 /* Fleet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fleet.swift; sourceTree = "<group>"; };
 		C909E45C28A63FFF00DD9282 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		C909E45E28A6457E00DD9282 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				24C32E4028AE540F00EC14FC /* Location.swift */,
 				242DA41228B1F2B6001CB039 /* Navigation.swift */,
 				241D5E6E28B222EC0047E66D /* Time.swift */,
+				24F1AB1128B7AA0400A1B8C0 /* AILevel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				C97FA52328AB54430085DFC4 /* DeployOceanView.swift in Sources */,
 				24036E6728A2A2E300F54BBC /* PirateWarApp.swift in Sources */,
 				2447A16C28A67112008CFD49 /* GameStatusView.swift in Sources */,
+				24F1AB1228B7AA0400A1B8C0 /* AILevel.swift in Sources */,
 				24036E9728A2AE4300F54BBC /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,7 +15,7 @@ struct HumanGameView: View {
     // Game initializers
     @StateObject var botGame: Game
     @StateObject var humanGame = Game()
-    @State var bot = HuntParityAIModel()
+    @State var bot: AIModel = AIModelManager.getBotLevel(bot: UserDefaults.standard.string(forKey: "difficulty") ?? "Easy")
     @State var turn = 1
     @State var botTurn = false
     @State var winner: Winner = Winner.unknown
@@ -44,8 +44,6 @@ struct HumanGameView: View {
             VStack(spacing: 10) {
                 GameStatusView(turn: $turn, timerValue: $timerValue)
                     .environmentObject(humanGame)
-
-
 
                 VStack (alignment: .center, spacing: 10) {
                     Text(botTurn ? "🤖 Bot is playing..." : "📌 Your turn")
@@ -144,6 +142,7 @@ struct HumanGameView: View {
                 if value != .unknown {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         withAnimation(.easeIn) {
+                            SoundEffectManager.instance.startPlayer(track: winner == .human ? "victory" : "defeat", loop: false)
                             showPopupResult = true
                         }
                     }

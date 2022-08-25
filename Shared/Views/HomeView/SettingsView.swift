@@ -4,25 +4,19 @@
 //
 //  Created by Minh Pham on 09/08/2022.
 //
-
+import Combine
 import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
-
-    @State var difficulty: Difficulty = .easy
+    @AppStorage("difficulty") var difficulty: Difficulty = .easy
 
     var body: some View {
         ZStack {
             VStack (alignment: .center, spacing: 20) {
-                Text("Appearance and Sounds")
+                Text("Sounds")
                     .font(.title3)
                     .bold()
-
-                Toggle(isOn: .constant(true)) {
-                    Text("Dark Mode")
-                        .foregroundColor(Color.theme.secondaryText)
-                }
                 Toggle(isOn: .constant(true)) {
                     Text("Background Music")
                         .foregroundColor(Color.theme.secondaryText)
@@ -36,11 +30,11 @@ struct SettingsView: View {
                 Text("AI Difficulty")
                     .font(.title3)
                     .bold()
-                Picker("Choose Difficulty", selection: $difficulty) {
-                    ForEach(Difficulty.allCases, id: \.self) {
-                        Text($0.rawValue)
-                    }
-                }
+                Picker("AI Difficulty", selection: $difficulty, content: {
+                    ForEach(Difficulty.allCases, id: \.self, content: { item in
+                        Text(item.rawValue).tag(item)
+                    })
+                })
                     .pickerStyle(SegmentedPickerStyle())
 
                 Text("Account Management")
@@ -72,7 +66,7 @@ struct SettingsView_Previews: PreviewProvider {
     }
 }
 
-enum Difficulty: String, CaseIterable {
+enum Difficulty: String, CaseIterable, Codable {
     case noob = "Noob"
     case easy = "Easy"
     case medium = "Medium"
