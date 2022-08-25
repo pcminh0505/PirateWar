@@ -28,8 +28,8 @@
 		24036EA428A2C22500F54BBC /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA228A2C22500F54BBC /* LeaderboardView.swift */; };
 		24036EA628A2C23600F54BBC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA528A2C23600F54BBC /* SettingsView.swift */; };
 		24036EA728A2C23600F54BBC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA528A2C23600F54BBC /* SettingsView.swift */; };
-		24036EA928A2C25000F54BBC /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA828A2C25000F54BBC /* HowToPlayView.swift */; };
-		24036EAA28A2C25000F54BBC /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA828A2C25000F54BBC /* HowToPlayView.swift */; };
+		24036EA928A2C25000F54BBC /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA828A2C25000F54BBC /* InfoView.swift */; };
+		24036EAA28A2C25000F54BBC /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA828A2C25000F54BBC /* InfoView.swift */; };
 		2410CC2728A7A6E700749E53 /* BackgroundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2410CC2628A7A6E700749E53 /* BackgroundManager.swift */; };
 		241D5E6F28B222EC0047E66D /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D5E6E28B222EC0047E66D /* Time.swift */; };
 		2425349128AF885000C992E1 /* homebackground.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2425349028AF885000C992E1 /* homebackground.mp3 */; };
@@ -65,6 +65,7 @@
 		247B0B5C28ACDD9600273173 /* DeployView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B0B5A28ACDD9600273173 /* DeployView.swift */; };
 		24B0965828B02AE2002A614F /* HuntParityAIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0965728B02AE2002A614F /* HuntParityAIModel.swift */; };
 		24C32E4128AE540F00EC14FC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C32E4028AE540F00EC14FC /* Location.swift */; };
+		24F1AB1028B72F4800A1B8C0 /* XMarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F1AB0F28B72F4800A1B8C0 /* XMarkButton.swift */; };
 		C909E45B28A63FA900DD9282 /* Fleet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45A28A63FA900DD9282 /* Fleet.swift */; };
 		C909E45D28A63FFF00DD9282 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45C28A63FFF00DD9282 /* Coordinate.swift */; };
 		C909E45F28A6457E00DD9282 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909E45E28A6457E00DD9282 /* Ship.swift */; };
@@ -87,7 +88,7 @@
 		24036E9F28A2C21200F54BBC /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
 		24036EA228A2C22500F54BBC /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		24036EA528A2C23600F54BBC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		24036EA828A2C25000F54BBC /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
+		24036EA828A2C25000F54BBC /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		2410CC2628A7A6E700749E53 /* BackgroundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundManager.swift; sourceTree = "<group>"; };
 		241D5E6E28B222EC0047E66D /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		2425349028AF885000C992E1 /* homebackground.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = homebackground.mp3; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 		247B0B5A28ACDD9600273173 /* DeployView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployView.swift; sourceTree = "<group>"; };
 		24B0965728B02AE2002A614F /* HuntParityAIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntParityAIModel.swift; sourceTree = "<group>"; };
 		24C32E4028AE540F00EC14FC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		24F1AB0F28B72F4800A1B8C0 /* XMarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMarkButton.swift; sourceTree = "<group>"; };
 		C909E45A28A63FA900DD9282 /* Fleet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fleet.swift; sourceTree = "<group>"; };
 		C909E45C28A63FFF00DD9282 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		C909E45E28A6457E00DD9282 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		24036E8428A2A52200F54BBC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				24F1AB0E28B72F3800A1B8C0 /* XMarkButton */,
 				242DA40C28B16110001CB039 /* PopupResult */,
 				242DA40928B13B17001CB039 /* CurvedSideRectangle */,
 				247B0B5928ACDD4D00273173 /* FleetDeploy */,
@@ -288,7 +291,7 @@
 		242DA41128B1F13A001CB039 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				24036EA828A2C25000F54BBC /* HowToPlayView.swift */,
+				24036EA828A2C25000F54BBC /* InfoView.swift */,
 				24036EA228A2C22500F54BBC /* LeaderboardView.swift */,
 				24036EA528A2C23600F54BBC /* SettingsView.swift */,
 			);
@@ -356,6 +359,14 @@
 				241D5E6E28B222EC0047E66D /* Time.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		24F1AB0E28B72F3800A1B8C0 /* XMarkButton */ = {
+			isa = PBXGroup;
+			children = (
+				24F1AB0F28B72F4800A1B8C0 /* XMarkButton.swift */,
+			);
+			path = XMarkButton;
 			sourceTree = "<group>";
 		};
 		C909E45928A63D0400DD9282 /* Models */ = {
@@ -487,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C909E46128A645AA00DD9282 /* ShipCompartment.swift in Sources */,
+				24F1AB1028B72F4800A1B8C0 /* XMarkButton.swift in Sources */,
 				242DA40E28B1611F001CB039 /* PopupResult.swift in Sources */,
 				242DA41028B16B45001CB039 /* Result.swift in Sources */,
 				247B0B5428AC9FFE00273173 /* HapticManager.swift in Sources */,
@@ -509,7 +521,7 @@
 				245538C228AF6E5D002F1E7E /* HumanGameView.swift in Sources */,
 				C909E45B28A63FA900DD9282 /* Fleet.swift in Sources */,
 				2447A17028A6C9C3008CFD49 /* FleetStatusView.swift in Sources */,
-				24036EA928A2C25000F54BBC /* HowToPlayView.swift in Sources */,
+				24036EA928A2C25000F54BBC /* InfoView.swift in Sources */,
 				2447A16528A66BDC008CFD49 /* OceanZoneState.swift in Sources */,
 				24036E9A28A2B44F00F54BBC /* LottieView.swift in Sources */,
 				2447A16728A66C04008CFD49 /* Game.swift in Sources */,
@@ -537,7 +549,7 @@
 				24036E6A28A2A2E300F54BBC /* LaunchView.swift in Sources */,
 				24036EA728A2C23600F54BBC /* SettingsView.swift in Sources */,
 				24036E9428A2A7FD00F54BBC /* HomeView.swift in Sources */,
-				24036EAA28A2C25000F54BBC /* HowToPlayView.swift in Sources */,
+				24036EAA28A2C25000F54BBC /* InfoView.swift in Sources */,
 				24036E9B28A2B44F00F54BBC /* LottieView.swift in Sources */,
 				247B0B5528AC9FFE00273173 /* HapticManager.swift in Sources */,
 				247B0B5C28ACDD9600273173 /* DeployView.swift in Sources */,

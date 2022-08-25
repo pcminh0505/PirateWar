@@ -21,7 +21,7 @@ struct Result {
         self.accuracy = Float(hitShot) / Float(turn)
 
         // Formula
-        self.totalScore = max(((100 * destroyedShips - ((turn + (seconds / 60)))) * hitShot / turn), 0)
+        self.totalScore = max((100 * destroyedShips - ((turn + (seconds / 60)))) , 0)
     }
 
     static var zero = Result(turn: 1, seconds: 0, destroyedShips: 0, hitShot: 0)
