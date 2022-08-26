@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HumanGameView: View {
     @EnvironmentObject var navigationHelper: NavigationHelper
+    @EnvironmentObject var users: Users
+
     @Binding var isReset: Bool
     let deployedFleet: [Ship]
 
@@ -69,13 +71,13 @@ struct HumanGameView: View {
                         }
                     }
                     if showEnemyFleet {
-                        FleetStatusView(squareSize: UIScreen.main.bounds.width * 0.05)
+                        FleetStatusView(squareSize: min(UIScreen.main.bounds.width * 0.05, 30))
                             .environmentObject(humanGame)
                     }
 
                 }
                 if !botTurn {
-                    OceanView(showDeployedFleet: false, turn: $turn, winner: $winner)
+                    OceanView(showDeployedFleet: true, turn: $turn, winner: $winner)
                         .matchedGeometryEffect(id: "SwitchOceanView", in: animation)
                         .environmentObject(humanGame)
                 }
@@ -141,7 +143,7 @@ struct HumanGameView: View {
             PopupResult(isVictory: winner == .human, show: $showPopupResult, result: $result)
                 .onChange(of: winner) { value in
                 if value != .unknown {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         withAnimation(.easeIn) {
                             SoundEffectManager.instance.startPlayer(track: winner == .human ? "victory" : "defeat", loop: false)
                             showPopupResult = true
@@ -159,8 +161,10 @@ struct HumanGameView: View {
             humanGame.over = true
             botGame.over = true
             stopTimer()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.result = Result(turn: turn, seconds: seconds, destroyedShips: humanGame.fleet.shipsDestroyed(), hitShot: humanGame.hitShot())
+                
+                users.updateHighscore(newScore: self.result.totalScore)
             }
         }
     }
@@ -171,7 +175,7 @@ struct HumanGameView: View {
             game.zoneTapped(location)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 game.zoneTapped(location)
-//                self.winner = .AI // Debug
+//                self.winner = .human // Debug
                 if game.over {
                     self.winner = .AI
                 } else if (game.zoneStates[location.x][location.y] == .sunk ||

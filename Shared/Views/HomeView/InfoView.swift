@@ -17,7 +17,8 @@ struct InfoView: View {
     let pirateThemeURL = URL(string: "https://www.behance.net/gallery/96254475/Pirate-Game-Elements")!
     let lottieURL = URL(string: "https://lottiefiles.com/54038-pirates")!
     let pixabayURL = URL(string: "https://pixabay.com/")!
-
+    let rankingURL = URL(string: "https://www.artstation.com/artwork/Aq4VPz")!
+    
     let personalURL = URL(string: "https://pcminh0505.vercel.app/")!
 
     init() {
@@ -141,6 +142,8 @@ struct InfoView: View {
                     Link("🌟 Animated GIF: Lottie", destination: lottieURL)
                         .font(.headline)
                     Link("🔊 Sound Resources: Pixabay", destination: pixabayURL)
+                        .font(.headline)
+                    Link("🔊 Leaderboard Resources: ArtStation", destination: rankingURL)
                         .font(.headline)
                 } header: {
                     Text("Resources")

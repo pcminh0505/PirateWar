@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OceanView: View {
-    let showDeployedFleet: Bool // Debugging 
+    let showDeployedFleet: Bool // Debugging
     @Binding var turn: Int
     @Binding var winner: Winner
     @EnvironmentObject var game: Game
@@ -25,25 +25,25 @@ struct OceanView: View {
                         let location = Coordinate(x: x, y: y)
                         OceanZoneView(state: $game.zoneStates[x][y])
                             .onTapGesture {
-                                // Alow tab only winner is unknown
-                                if winner == .unknown {
-                                    if game.zoneStates[x][y] == .selected || game.zoneStates[x][y] == .clear {
-                                        game.zoneTapped(location)
-                                        // If valid hit
-                                        if (game.zoneStates[x][y] == .hit ||
+                            // Alow tab only winner is unknown
+                            if winner == .unknown {
+                                if game.zoneStates[x][y] == .selected || game.zoneStates[x][y] == .clear {
+                                    game.zoneTapped(location)
+                                    // If valid hit
+                                    if (game.zoneStates[x][y] == .hit ||
                                             game.zoneStates[x][y] == .sunk ||
                                             game.zoneStates[x][y] == .miss) {
-                                            if game.over {
-                                                winner = .human
-                                            } else {
-                                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                                    turn += 1
-                                                }
+                                        if game.over {
+                                            winner = .human
+                                        } else {
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                                turn += 1
                                             }
                                         }
                                     }
                                 }
                             }
+                        }
                     }
                 }
                 ForEach(game.fleet.ships, id: \.name) { ship in
@@ -66,7 +66,9 @@ struct OceanView: View {
                                 y: offsetY)
                         .rotationEffect(Angle(degrees: ship.isVertical() ? 0 : 90))
                         .allowsHitTesting(false)
-                        .opacity(game.over ? 0.3 : ship.isSunk() ? 0.3 : 0.0)
+//                        .opacity(game.over ? 0.3 : ship.isSunk() ? 0.3 : 0.0)
+                        .opacity(showDeployedFleet ? 0.3 : ship.isSunk() ? 0.3 : 0.0) // Debug
+
                 }
             }
                 .frame(maxWidth: geo.size.width)

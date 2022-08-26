@@ -13,12 +13,12 @@ struct SettingsView: View {
     @AppStorage("backgroundMusic") var backgroundMusic = true
     @AppStorage("soundEffect") var soundEffect = true
 
-
+//    @AppStorage("users") var users: [String: Int] =
     var body: some View {
 //        let _ = print("Background Music", backgroundMusic)
 //        let _ = print("Sound Effect", soundEffect)
         ZStack {
-            VStack (alignment: .center, spacing: 20) {
+            VStack (alignment: .center, spacing: 25) {
                 Text("Sounds")
                     .font(.title3)
                     .bold()
@@ -53,8 +53,7 @@ struct SettingsView: View {
                 Text("Account Management")
                     .font(.title3)
                     .bold()
-
-
+                ProfileSection()
                 Spacer()
             }
                 .padding(50)

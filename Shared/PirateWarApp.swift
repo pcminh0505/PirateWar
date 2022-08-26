@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct PirateWarApp: App {
+    @StateObject var users = Users()
     var body: some Scene {
         WindowGroup {
             LaunchView()
                 .environmentObject(NavigationHelper())
+                .environmentObject(users)
         }
     }
 }

@@ -31,6 +31,9 @@
 		24036EA928A2C25000F54BBC /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA828A2C25000F54BBC /* InfoView.swift */; };
 		24036EAA28A2C25000F54BBC /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24036EA828A2C25000F54BBC /* InfoView.swift */; };
 		2410CC2728A7A6E700749E53 /* BackgroundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2410CC2628A7A6E700749E53 /* BackgroundManager.swift */; };
+		2414D81F28B8A9AF001489D0 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2414D81E28B8A9AF001489D0 /* Users.swift */; };
+		2414D82228B8B0F6001489D0 /* ProfileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2414D82128B8B0F6001489D0 /* ProfileSection.swift */; };
+		2414D83128B8DD85001489D0 /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2414D83028B8DD85001489D0 /* Ranking.swift */; };
 		241D5E6F28B222EC0047E66D /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D5E6E28B222EC0047E66D /* Time.swift */; };
 		2425349128AF885000C992E1 /* homebackground.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2425349028AF885000C992E1 /* homebackground.mp3 */; };
 		2425349428AF8B7D00C992E1 /* hit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2425349228AF8B7C00C992E1 /* hit.mp3 */; };
@@ -91,6 +94,9 @@
 		24036EA528A2C23600F54BBC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		24036EA828A2C25000F54BBC /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		2410CC2628A7A6E700749E53 /* BackgroundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundManager.swift; sourceTree = "<group>"; };
+		2414D81E28B8A9AF001489D0 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		2414D82128B8B0F6001489D0 /* ProfileSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSection.swift; sourceTree = "<group>"; };
+		2414D83028B8DD85001489D0 /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
 		241D5E6E28B222EC0047E66D /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		2425349028AF885000C992E1 /* homebackground.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = homebackground.mp3; sourceTree = "<group>"; };
 		2425349228AF8B7C00C992E1 /* hit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit.mp3; sourceTree = "<group>"; };
@@ -208,6 +214,7 @@
 		24036E8428A2A52200F54BBC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2414D82028B8B0E6001489D0 /* ProfileSection */,
 				24F1AB0E28B72F3800A1B8C0 /* XMarkButton */,
 				242DA40C28B16110001CB039 /* PopupResult */,
 				242DA40928B13B17001CB039 /* CurvedSideRectangle */,
@@ -243,6 +250,14 @@
 				247B0B5328AC9FFE00273173 /* HapticManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		2414D82028B8B0E6001489D0 /* ProfileSection */ = {
+			isa = PBXGroup;
+			children = (
+				2414D82128B8B0F6001489D0 /* ProfileSection.swift */,
+			);
+			path = ProfileSection;
 			sourceTree = "<group>";
 		};
 		2425348F28AF883500C992E1 /* Audio */ = {
@@ -360,6 +375,8 @@
 				242DA41228B1F2B6001CB039 /* Navigation.swift */,
 				241D5E6E28B222EC0047E66D /* Time.swift */,
 				24F1AB1128B7AA0400A1B8C0 /* AILevel.swift */,
+				2414D81E28B8A9AF001489D0 /* Users.swift */,
+				2414D83028B8DD85001489D0 /* Ranking.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -505,6 +522,7 @@
 				242DA40E28B1611F001CB039 /* PopupResult.swift in Sources */,
 				242DA41028B16B45001CB039 /* Result.swift in Sources */,
 				247B0B5428AC9FFE00273173 /* HapticManager.swift in Sources */,
+				2414D82228B8B0F6001489D0 /* ProfileSection.swift in Sources */,
 				24036EA328A2C22500F54BBC /* LeaderboardView.swift in Sources */,
 				C909E45F28A6457E00DD9282 /* Ship.swift in Sources */,
 				24C32E4128AE540F00EC14FC /* Location.swift in Sources */,
@@ -524,6 +542,7 @@
 				245538C228AF6E5D002F1E7E /* HumanGameView.swift in Sources */,
 				C909E45B28A63FA900DD9282 /* Fleet.swift in Sources */,
 				2447A17028A6C9C3008CFD49 /* FleetStatusView.swift in Sources */,
+				2414D83128B8DD85001489D0 /* Ranking.swift in Sources */,
 				24036EA928A2C25000F54BBC /* InfoView.swift in Sources */,
 				2447A16528A66BDC008CFD49 /* OceanZoneState.swift in Sources */,
 				24036E9A28A2B44F00F54BBC /* LottieView.swift in Sources */,
@@ -532,6 +551,7 @@
 				C909E45D28A63FFF00DD9282 /* Coordinate.swift in Sources */,
 				C97FA52528B09E820085DFC4 /* Winner.swift in Sources */,
 				2447A16E28A6713B008CFD49 /* OceanView.swift in Sources */,
+				2414D81F28B8A9AF001489D0 /* Users.swift in Sources */,
 				242534A628B00FA700C992E1 /* RandomAIModel.swift in Sources */,
 				242534AC28B01E2100C992E1 /* AIModel.swift in Sources */,
 				242534A428B00F9B00C992E1 /* SequentialAIModel.swift in Sources */,
