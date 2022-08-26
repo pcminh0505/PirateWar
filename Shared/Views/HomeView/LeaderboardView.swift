@@ -9,7 +9,41 @@ import SwiftUI
 
 struct LeaderboardView: View {
     var body: some View {
-        Text("Hello, LeaderboardView!")
+        
+        VStack {
+            Text("🏆 Leaderboard 🏅")
+                .font(.title2)
+                .bold()
+            Spacer()
+            
+            VStack(alignment: .center, spacing: 20) {
+                VStack {
+                    Text("⭐️⭐️⭐️⭐️ Master ⭐️⭐️⭐️⭐️")
+                    Text("450+")
+                        .font(.caption)
+                }
+                
+                VStack {
+                    Text("⭐️⭐️⭐️ Captain ⭐️⭐️⭐️")
+                    Text("300+")
+                        .font(.caption)
+                }
+                
+                VStack {
+                    Text("⭐️⭐️ Pirate ⭐️⭐️")
+                    Text("150+")
+                        .font(.caption)
+                }
+
+                VStack {
+                    Text("⭐️ Seadog ⭐️")
+                }
+            }
+            
+            Spacer()
+        }
+//        .padding()
+        .navigationBarHidden(true)
     }
 }
 

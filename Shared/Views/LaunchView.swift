@@ -29,7 +29,7 @@ struct LaunchView: View {
                     Text("🏴‍☠️ Pirate War 📌")
                         .foregroundColor(Color.theme.primaryText).opacity(opacity)
                         .font(.title2)
-                        .padding(.top, 320)
+                        .padding(.top, UIScreen.main.bounds.height * 0.5)
                         .onAppear {
                         // Adjust in and out opacity animation
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
@@ -63,7 +63,7 @@ struct LaunchView: View {
         static var previews: some View {
             LaunchView()
                 .preferredColorScheme(.dark)
-            //            .previewInterfaceOrientation(.landscapeRight)
+                .environmentObject(NavigationHelper())
         }
     }
 }

@@ -125,7 +125,7 @@ extension HomeView {
                 LeaderboardView()
             } label: {
                 EmptyView()
-            }
+            }.isDetailLink(false)
             NavigationLink(tag: "bot", selection: $navigationHelper.selection) {
                 DeployView()
             } label: {

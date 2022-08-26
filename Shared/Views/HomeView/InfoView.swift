@@ -154,6 +154,12 @@ struct InfoView: View {
                         Text("Pirate War")
                     }
                     HStack {
+                        Text("RMIT University")
+                            .bold()
+                        Spacer()
+                        Text("SGS Campus")
+                    }
+                    HStack {
                         Text("Course ID")
                             .bold()
                         Spacer()
