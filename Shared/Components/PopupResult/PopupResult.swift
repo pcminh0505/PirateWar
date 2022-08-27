@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct PopupResult: View {
-    @Environment(\.colorScheme) var colorScheme
+    @EnvironmentObject var users: Users
+
     let isVictory: Bool
     @Binding var show: Bool
     @Binding var result: Result
@@ -19,6 +20,7 @@ struct PopupResult: View {
     ]
 
     var body: some View {
+        let user = users.getCurrentUser()
         GeometryReader { geo in
             if show {
                 ZStack() {
@@ -27,7 +29,7 @@ struct PopupResult: View {
                         show.toggle()
                     }
 
-                    VStack {
+                    VStack (spacing: 15) {
                         Image(isVictory ? "Victory" : "Defeat")
                             .resizable()
                             .scaledToFit()
@@ -49,22 +51,30 @@ struct PopupResult: View {
                             Text("\(String(format: "%.2f", result.accuracy * 100))%")
                             Text("Total Score")
                                 .font(.title2)
-                                .foregroundColor(colorScheme == .dark ? Color.theme.darkBlue : Color.theme.red)
+                                .foregroundColor(isVictory ? Color.theme.blue : Color.theme.red)
                                 .bold()
                             Text("\(result.totalScore)")
                                 .font(.title2)
-                                .foregroundColor(colorScheme == .dark ? Color.theme.darkBlue : Color.theme.red)
+                                .foregroundColor(isVictory ? Color.theme.blue : Color.theme.red)
                                 .bold()
                         }
-                            .foregroundColor(Color.theme.primaryText)
-                    }
 
+
+                        Text("🏆 New highscore achieved! 🏆")
+                            .font(.caption)
+                            .bold()
+                            .opacity(result.totalScore > user.1 ? 1.0 : 0.0)
+                    }
                         .padding()
+                        .foregroundColor(Color.theme.primaryText)
                         .background(Color.theme.woodBackground)
                         .cornerRadius(25)
                         .frame(maxWidth: geo.size.width * 0.85, maxHeight: geo.size.height * 0.6)
                 }
                     .transition(AnyTransition.opacity.animation(.easeInOut))
+                    .onDisappear {
+                    users.updateHighscore(newScore: result.totalScore)
+                }
             }
         }
     }
@@ -72,7 +82,8 @@ struct PopupResult: View {
 
 struct PopupResult_Previews: PreviewProvider {
     static var previews: some View {
-        PopupResult(isVictory: true, show: .constant(true), result: .constant( Result(turn: 20, seconds: 120, destroyedShips: 5, hitShot: 17)))
+        PopupResult(isVictory: true, show: .constant(true), result: .constant(Result(turn: 20, seconds: 120, destroyedShips: 5, hitShot: 17)))
             .preferredColorScheme(.light)
+            .environmentObject(Users())
     }
 }

@@ -24,7 +24,7 @@ struct SettingsView: View {
                     .bold()
                 Toggle(isOn: $backgroundMusic) {
                     Text("Background Music")
-                        .foregroundColor(Color.theme.secondaryText)
+                        .foregroundColor(backgroundMusic ? Color.theme.primaryText : Color.theme.secondaryText)
                 }
                     .onChange(of: backgroundMusic) { value in
                     // Effect immediately
@@ -32,7 +32,7 @@ struct SettingsView: View {
                 }
                 Toggle(isOn: $soundEffect) {
                     Text("Sound Effect")
-                        .foregroundColor(Color.theme.secondaryText)
+                        .foregroundColor(soundEffect ? Color.theme.primaryText : Color.theme.secondaryText)
                 }
                     .onChange(of: soundEffect) { value in
                     // Effect immediately

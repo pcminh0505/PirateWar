@@ -77,7 +77,7 @@ struct HumanGameView: View {
 
                 }
                 if !botTurn {
-                    OceanView(showDeployedFleet: true, turn: $turn, winner: $winner)
+                    OceanView(showDeployedFleet: false, turn: $turn, winner: $winner)
                         .matchedGeometryEffect(id: "SwitchOceanView", in: animation)
                         .environmentObject(humanGame)
                 }
@@ -163,8 +163,6 @@ struct HumanGameView: View {
             stopTimer()
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.result = Result(turn: turn, seconds: seconds, destroyedShips: humanGame.fleet.shipsDestroyed(), hitShot: humanGame.hitShot())
-                
-                users.updateHighscore(newScore: self.result.totalScore)
             }
         }
     }

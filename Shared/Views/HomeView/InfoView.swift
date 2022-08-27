@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InfoView: View {
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
 
     let classicBoardGame = URL(string: "https://www.ultraboardgames.com/battleship/game-rules.php")!
     let tipsToPlay = URL(string: "https://www.ultraboardgames.com/battleship/tips.php")!
@@ -18,7 +19,7 @@ struct InfoView: View {
     let lottieURL = URL(string: "https://lottiefiles.com/54038-pirates")!
     let pixabayURL = URL(string: "https://pixabay.com/")!
     let rankingURL = URL(string: "https://www.artstation.com/artwork/Aq4VPz")!
-    
+
     let personalURL = URL(string: "https://pcminh0505.vercel.app/")!
 
     init() {
@@ -116,6 +117,42 @@ struct InfoView: View {
 
                 Section {
                     VStack(alignment: .leading, spacing: 20) {
+                        Text("Account Management")
+                            .font(.headline)
+                            .foregroundColor(Color.theme.blue)
+
+                        Text("By default, there will be a Guest account. User can change it with his/her name, and later on can switch/add new user in the ⚙️ Settings")
+                            .font(.body)
+                    }
+                    VStack(alignment: .leading, spacing: 20) {
+                        Text("Scoring System")
+                            .font(.headline)
+                            .foregroundColor(Color.theme.blue)
+
+                        (Text("Highest Score will only be saved when playing vs AI. There are 4 badges level: ") +
+                            Text("Gold (450+)")
+                            .foregroundColor(Color.yellow)
+                            .bold() + Text(", ") +
+                            Text("Silver (300+)")
+                            .foregroundColor(Color.gray)
+                            .bold() + Text(", ") +
+                            Text("Bronze (150+)")
+                            .foregroundColor(Color.brown)
+                            .bold() + Text(", and ") +
+                            Text("Iron (0+).")
+                            .foregroundColor(Color.purple).bold()
+                        )
+                            .font(.body)
+                        
+                        Text("Each ship worth 100 points. Destroying 5 fleets will get you a maximum of 500 points. However, the points will be deducted by the number of missed shot and time playing")
+                    }
+
+                } header: {
+                    Text("User and Ranking")
+                }
+
+                Section {
+                    VStack(alignment: .leading, spacing: 20) {
                         Text("Player vs AI")
                             .font(.headline)
                             .foregroundColor(Color.theme.red.opacity(0.8))
@@ -143,7 +180,7 @@ struct InfoView: View {
                         .font(.headline)
                     Link("🔊 Sound Resources: Pixabay", destination: pixabayURL)
                         .font(.headline)
-                    Link("🔊 Leaderboard Resources: ArtStation", destination: rankingURL)
+                    Link("🏆 Leaderboard Resources: ArtStation", destination: rankingURL)
                         .font(.headline)
                 } header: {
                     Text("Resources")
@@ -192,12 +229,8 @@ struct InfoView: View {
                 }
 
             }
-                .onAppear {
-                // Placed here for sample purposes, normally set globally
-                UITableView.appearance().backgroundColor = .clear
-            }
+
                 .listStyle(GroupedListStyle())
-                .background(Color.theme.background)
                 .navigationTitle("Application Info")
                 .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

@@ -66,8 +66,8 @@ struct OceanView: View {
                                 y: offsetY)
                         .rotationEffect(Angle(degrees: ship.isVertical() ? 0 : 90))
                         .allowsHitTesting(false)
-//                        .opacity(game.over ? 0.3 : ship.isSunk() ? 0.3 : 0.0)
-                        .opacity(showDeployedFleet ? 0.3 : ship.isSunk() ? 0.3 : 0.0) // Debug
+                        .opacity(game.over ? 0.3 : ship.isSunk() ? 0.3 : 0.0)
+//                        .opacity(showDeployedFleet ? 0.3 : ship.isSunk() ? 0.3 : 0.0) // Debug
 
                 }
             }

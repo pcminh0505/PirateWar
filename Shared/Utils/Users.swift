@@ -50,6 +50,7 @@ class Users: ObservableObject {
         } else {
             // Add new user
             users[name] = 0
+            activeUser = name
             save()
         }
     }
