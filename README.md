@@ -25,6 +25,9 @@ Since this app is built only in 2 weeks for assessment purpose under iOS Develop
 - User Management and Ranking System.
 
 ## 📱 Screenshots (TBA)
+| Home Screen  | Deployment | AI vs Human |
+| ------------- | ------------- | ------------- |
+| ![Simulator Screen Recording - iPhone 14 Pro - 2022-11-11 at 22 30 27](https://user-images.githubusercontent.com/54668379/201657062-8bd6afeb-929c-4cf6-bcdf-30519480d065.gif) |  ![Simulator Screen Recording - iPhone 14 Pro - 2022-11-11 at 22 30 52](https://user-images.githubusercontent.com/54668379/201657179-26d21c79-ec05-40b0-9bc2-cf444a8a0204.gif) |  ![Simulator Screen Recording - iPhone 14 Pro - 2022-11-11 at 22 31 35](https://user-images.githubusercontent.com/54668379/201657209-7c4a96b7-d9bc-4a52-bae3-dae737cc9e76.gif) |
 
 ## 🧱 Project Structure
 
